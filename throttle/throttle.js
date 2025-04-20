@@ -24,10 +24,21 @@ function throttle(func, limit) {
 	};
 }
 
-console.log('hello');
+function throttleMini(func, delay) {
+	let lastCall = 0;
 
-const logScroll = throttle(() => {
-	console.log('Прокрутка страницы!');
-}, 10000);
+	return function (...args) {
+		const now = new Date().getTime();
+
+		if (now - lastCall >= delay) {
+			lastCall = now;
+			return func.apply(this, args);
+		}
+	};
+}
+
+const logScroll = throttleMini(() => {
+	console.log('Прокрутка страницы throttle mini!');
+}, 0);
 
 window.addEventListener('resize', logScroll);
