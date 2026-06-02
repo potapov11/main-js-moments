@@ -1,0 +1,118 @@
+site_name: Algo Prep — статьи
+
+site_description: Теория и заметки по подготовке к собеседованию Frontend Developer
+
+copyright: Copyright &copy; 2026
+
+
+
+theme:
+
+  name: material
+
+  language: ru
+
+  features:
+
+    - navigation.sections
+
+    - navigation.expand
+
+    - navigation.top
+
+    - search.suggest
+
+    - search.highlight
+
+    - content.code.copy
+
+  palette:
+
+    - media: "(prefers-color-scheme: light)"
+
+      scheme: default
+
+      primary: indigo
+
+      accent: indigo
+
+      toggle:
+
+        icon: material/brightness-4
+
+        name: Тёмная тема
+
+    - media: "(prefers-color-scheme: dark)"
+
+      scheme: slate
+
+      primary: indigo
+
+      accent: indigo
+
+      toggle:
+
+        icon: material/brightness-7
+
+        name: Светлая тема
+
+
+
+plugins:
+
+  - search:
+
+      lang:
+
+        - ru
+
+        - en
+
+
+
+markdown_extensions:
+
+  - admonition
+
+  - pymdownx.details
+
+  - pymdownx.superfences
+
+  - pymdownx.highlight:
+
+      anchor_linenums: true
+
+  - tables
+
+  - toc:
+
+      permalink: true
+
+
+
+nav:
+
+  - Главная: index.md
+
+  - Статьи:
+
+      - articles/index.md
+
+      - Алгоритмы:
+
+          - articles/algorithms/index.md
+
+          - Связные списки: articles/algorithms/linked-lists.md
+
+      - Браузер:
+
+          - articles/browser/index.md
+
+          - Клик и переход на другую страницу: articles/browser/click-to-navigation.md
+
+
+
+extra:
+
+  generator: false
+

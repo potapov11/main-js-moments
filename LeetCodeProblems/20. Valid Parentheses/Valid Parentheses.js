@@ -12,6 +12,7 @@ var isValid = function (s) {
 			array.push(char);
 		} else {
 			const last = array.pop();
+			console.log(last);
 
 			if (pairs[char] !== last) return false;
 		}
@@ -19,3 +20,5 @@ var isValid = function (s) {
 
 	return array.length === 0;
 };
+
+console.log(isValid('()[]{}'));

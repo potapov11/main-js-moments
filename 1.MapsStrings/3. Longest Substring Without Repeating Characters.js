@@ -1,44 +1,36 @@
-/**
- * @param {string} s
- * @return {number}
- */
+// 1. Longest Substring Without Repeating Characters (LeetCode 3)
+// Условие:
+// Найти длину самой длинной подстроки без повторяющихся символов.
+// Примеры входных данных:
 
-// Example 1:
+// s = "abcabcbb"
+// s = "bbbbb"
+// s = "pwwkew"
+// s = "acddbadnmbghj"
+// s = "dvdf"
 
-// Input: s = "abc abc bb"
-// Output: 3
-// Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
-// Example 2:
+const retMaxSubString = (string) => {
+	let maxCountLetter = 0;
+	let uniqSubStr = '';
 
-// Input: s = "bbbbb"
-// Output: 1
-// Explanation: The answer is "b", with the length of 1.
-// Example 3:
+	for (let i = 0; i < string.length; i++) {
+		let currentElement = string[i];
+		let currentIndexInUniq = uniqSubStr.indexOf(currentElement);
 
-// Input: s = "pwwkew"
-// Output: 3
-// Explanation: The answer is "wke", with the length of 3.
-// Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
-
-let s = 'aab';
-
-var lengthOfLongestSubstring = function (s) {
-	let maxCount = 0;
-	let maxSubString = '';
-
-	for (let i = 0; i < s.length; i++) {
-		let currentIndex = maxSubString.indexOf(s[i]);
-
-		if (currentIndex !== -1) {
-			console.log('here');
-			maxSubString = maxSubString.slice(currentIndex + 1);
+		if (currentIndexInUniq !== -1) {
+			uniqSubStr = uniqSubStr.slice(currentIndexInUniq + 1);
 		}
 
-		maxSubString += s[i];
-		maxCount = Math.max(maxCount, maxSubString.length);
+		uniqSubStr += currentElement;
+
+		maxCountLetter = Math.max(maxCountLetter, uniqSubStr.length);
 	}
 
-	return maxCount;
+	return maxCountLetter;
 };
 
-console.log(lengthOfLongestSubstring(s));
+console.log(retMaxSubString('abcabcbb'));
+console.log(retMaxSubString('bbbbb'));
+console.log(retMaxSubString('pwwkew'));
+console.log(retMaxSubString('acddbadnmbghj'));
+console.log(retMaxSubString('dvdf'));
