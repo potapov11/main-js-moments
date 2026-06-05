@@ -102,6 +102,10 @@ nav:
 
           - articles/algorithms/index.md
 
+          - Подсчёт сложности: articles/algorithms/complexity.md
+
+          - Два указателя: articles/algorithms/two-pointers.md
+
           - Связные списки: articles/algorithms/linked-lists.md
 
       - Браузер:

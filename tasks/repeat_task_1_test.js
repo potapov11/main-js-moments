@@ -1,30 +1,16 @@
-// Дан массив строк strs.
-// Нужно сгруппировать анаграммы вместе и вернуть массив групп.
+var moveZeroes = function (nums) {
+  let write = 0;
+  for (let read = 0; read < nums.length; read++) {
+    if (nums[read] !== 0) {
+      nums[write] = nums[read];
+      write++;
+    }
+  }
+  for (let i = write; i < nums.length; i++) {
+    nums[i] = 0;
+  }
+};
 
-// Примеры:
-
-// ["eat","tea","tan","ate","nat","bat"] -> [["eat","tea","ate"],["tan","nat"],["bat"]]
-// [""] -> [[""]]
-// ["a"] -> [["a"]]
-
-function groupAnagam(arr = ["eat","tea","tan","ate","nat","bat"]) {
-	const hashMap = new Map();
-
-	function sortEl(el) {
-		return el.split('').sort().join('');
-	}
-
-	for(let i = 0; i < arr.length; i++) {
-		const key = sortEl(arr[i]);
-
-		if(!hashMap.has(key)) {
-			hashMap.set(key, [arr[i]])
-		} else {
-			hashMap.get(key).push(arr[i]);
-		}
-	}
-
-	return [...hashMap.values()]
-}
-
-groupAnagam();
+const nums = [0, 1, 0, 3, 12];
+moveZeroes(nums);
+console.log(nums); 

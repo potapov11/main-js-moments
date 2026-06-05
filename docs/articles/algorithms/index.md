@@ -6,6 +6,8 @@
 
 | Тема | Статья |
 |------|--------|
+| Подсчёт сложности (Big O) | [complexity.md](complexity.md) |
+| Два указателя (Two Pointers) | [two-pointers.md](two-pointers.md) |
 | Связные списки | [linked-lists.md](linked-lists.md) |
 
 ## Планируется
@@ -14,7 +16,6 @@
 - Префиксные суммы (Prefix Sum)
 - Бинарный поиск — паттерны
 - Map / Set на собеседовании
-- Два указателя (Two Pointers)
 - Стек и очередь
 
 Новые файлы: `docs/articles/algorithms/имя-статьи.md` + пункт в `mkdocs.yml` → **Статьи → Алгоритмы**.

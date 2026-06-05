@@ -1,57 +1,26 @@
-/**
- * ЗАДАЧА 1: Best Time to Buy and Sell Stock
- *
- * Условие:
- * Вам дан массив prices, где prices[i] - это цена акции в i-й день.
- *
- * Вы хотите максимизировать свою прибыль, выбрав один день для покупки акции
- * и выбрав другой день в будущем для продажи этой акции.
- *
- * Верните максимальную прибыль, которую вы можете получить от этой сделки.
- * Если вы не можете получить никакой прибыли, верните 0.
- *
- * Примеры:
- *
- * Пример 1:
- * Input: prices = [7,1,5,3,6,4]
- * Output: 5
- * Объяснение: Купите в день 1 (цена = 1) и продайте в день 5 (цена = 6),
- * прибыль = 6-1 = 5.
- * Обратите внимание, что покупка в день 2 и продажа в день 1 не разрешена,
- * потому что вы должны купить перед продажей.
- *
- * Пример 2:
- * Input: prices = [7,6,4,3,1]
- * Output: 0
- * Объяснение: В этом случае транзакции не совершаются, и максимальная прибыль = 0.
- *
- * Ограничения:
- * - 1 <= prices.length <= 10^5
- * - 0 <= prices[i] <= 10^4
- *
- * Реализуйте функцию:
- */
+// LeetCode 392 — Is Subsequence
+// Условие: строки s и t. Проверь, является ли s подпоследовательностью t 
+// (символы s встречаются в t в том же порядке, не обязательно подряд).
 
-const prices = [7, 1, 5, 3, 6, 4];
+// s = "abc",  t = "ahbgdc"  → true   (a…b…c в t)
+// s = "ax",   t = "ahbgdc"  → false
+// s = "",     t = "ahbgdc"  → true   (пустая всегда subsequence)
 
-var maxProfit = function (prices) {
-	let maxProfit = 0;
-	let minPrice = prices[0];
+function isSubsequence(s, t) {
+	if(!s.length) return true;
 
-	for (let i = 0; i < prices.length; i++) {
-		if (prices[i] < minPrice) {
-			minPrice = prices[i];
-		}
+	let startS = 0;
+	let count = 0;
 
-		if (prices[i] - minPrice > maxProfit) {
-			maxProfit = prices[i] - minPrice;
+	for(let startT = 0; startT < t.length; startT++) {
+		if(t[startT] === s[startS]) {
+			count++;
+			startS++;
 		}
 	}
+	
+	return  count === s.length
+}
 
-	return maxProfit;
-};
-
-// Тестовые случаи:
-console.log(maxProfit([7, 1, 5, 3, 6, 4])); // Ожидается: 5
-console.log(maxProfit([7, 6, 4, 3, 1])); // Ожидается: 0
-console.log(maxProfit([2, 4, 1])); // Ожидается: 2
+console.log(isSubsequence("abc", "ahbgdc"))
+console.log(isSubsequence("ax", "ahbgdc"))
