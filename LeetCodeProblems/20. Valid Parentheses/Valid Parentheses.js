@@ -12,6 +12,7 @@ var isValid = function (s) {
 			array.push(char);
 		} else {
 			const last = array.pop();
+			console.log(last);
 
 			if (pairs[char] !== last) return false;
 		}
