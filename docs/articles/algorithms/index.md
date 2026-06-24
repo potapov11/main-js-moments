@@ -9,6 +9,7 @@
 | Подсчёт сложности (Big O) | [complexity.md](complexity.md) |
 | Два указателя (Two Pointers) | [two-pointers.md](two-pointers.md) |
 | Связные списки | [linked-lists.md](linked-lists.md) |
+| Матрицы (2D-массивы) | [matrices.md](matrices.md) |
 
 ## Планируется
 

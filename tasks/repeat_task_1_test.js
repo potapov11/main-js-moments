@@ -1,16 +1,6 @@
-var moveZeroes = function (nums) {
-  let write = 0;
-  for (let read = 0; read < nums.length; read++) {
-    if (nums[read] !== 0) {
-      nums[write] = nums[read];
-      write++;
-    }
-  }
-  for (let i = write; i < nums.length; i++) {
-    nums[i] = 0;
-  }
-};
+// 3. Дан отсортированный по возрастанию массив целых чисел и число target.
+// Верни индексы двух разных элементов, сумма которых равна target. Гарантируется, что решение ровно одно. Используй только константную дополнительную память.
 
-const nums = [0, 1, 0, 3, 12];
-moveZeroes(nums);
-console.log(nums); 
+// Пример: nums = [1, 2, 4, 6, 10], target = 8 → [1, 3]
+
+

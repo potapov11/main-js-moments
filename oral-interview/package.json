@@ -1,0 +1,12 @@
+{
+  "name": "oral-interview",
+  "private": true,
+  "description": "Письменные ответы на вопросы собеседования (TypeScript)",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "typescript": "^5.8.3"
+  }
+}
