@@ -1,26 +1,45 @@
-// LeetCode 392 — Is Subsequence
-// Условие: строки s и t. Проверь, является ли s подпоследовательностью t 
-// (символы s встречаются в t в том же порядке, не обязательно подряд).
+// Задача
+// Верни массив квадратов каждого числа, тоже отсортированный по неубыванию.
 
-// s = "abc",  t = "ahbgdc"  → true   (a…b…c в t)
-// s = "ax",   t = "ahbgdc"  → false
-// s = "",     t = "ahbgdc"  → true   (пустая всегда subsequence)
+// Примеры
+// Пример 1
 
-function isSubsequence(s, t) {
-	if(!s.length) return true;
+// Вход:  nums = [-4, -1, 0, 3, 10]
+// Выход: [0, 1, 9, 16, 100]
+// Квадраты: 16, 1, 0, 9, 100 → после сортировки: 0, 1, 9, 16, 100
 
-	let startS = 0;
-	let count = 0;
+// Пример 2
 
-	for(let startT = 0; startT < t.length; startT++) {
-		if(t[startT] === s[startS]) {
-			count++;
-			startS++;
-		}
-	}
-	
-	return  count === s.length
+// Вход:  nums = [-7, -3, 2, 3, 11]
+// Выход: [4, 9, 9, 49, 121]
+// Пример 3
+
+// Вход:  nums = [-5, -3, -2, -1]
+// Выход: [1, 4, 9, 25]
+// Ограничения
+// 1 <= nums.length <= 10⁴
+// -10⁴ <= nums[i] <= 10⁴
+// nums отсортирован по неубыванию
+
+//[-4, -1, 0, 3, 10]
+
+function resultSquaredArray(nums) {
+  const resultArray = new Array(nums.length);
+  let start = 0;
+  let end  = nums.length - 1;
+
+  for (let i = nums.length - 1; i >= 0; i--) {
+    let squaredStart = nums[start] * nums[start];
+    let squaredEnd = nums[end] * nums[end];
+
+    if(squaredStart > squaredEnd) {
+      resultArray[i] = squaredStart;
+      start++
+    } else {
+      resultArray[i] = squaredEnd;
+      end--;
+    }
+  }
 }
 
-console.log(isSubsequence("abc", "ahbgdc"))
-console.log(isSubsequence("ax", "ahbgdc"))
+

@@ -76,7 +76,15 @@ markdown_extensions:
 
   - pymdownx.details
 
-  - pymdownx.superfences
+  - pymdownx.superfences:
+
+      custom_fences:
+
+        - name: mermaid
+
+          class: mermaid
+
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
   - pymdownx.highlight:
 
@@ -105,6 +113,8 @@ nav:
           - Подсчёт сложности: articles/algorithms/complexity.md
 
           - Два указателя: articles/algorithms/two-pointers.md
+
+          - Матрицы: articles/algorithms/matrices.md
 
           - Связные списки: articles/algorithms/linked-lists.md
 
