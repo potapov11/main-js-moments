@@ -1,0 +1,1698 @@
+﻿Оглавление
+React (80 вопросов)
+
+TypeScript (50 вопросов)
+
+JavaScript (70 вопросов)
+
+Архитектура и паттерны (45 вопросов)
+
+HTTP и сеть (40 вопросов)
+
+CSS и верстка (60 вопросов)
+
+Браузер и производительность (35 вопросов)
+
+Webpack/Vite и сборка (25 вопросов)
+
+Тестирование (20 вопросов)
+
+Базы данных и бэкенд (15 вопросов)
+
+Git и DevOps (20 вопросов)
+
+Алгоритмы и структуры данных (20 вопросов)
+
+Soft skills (20 вопросов) — раздел 13
+
+14. Вопросы с реальных собеседований (~50 вопросов)
+
+15. BigTech Middle — Frontend (~90 пунктов, Middle+)
+
+16. Расширенный банк — уникальные формулировки (~120 вопросов)
+
+17. Code Review — копируемые фрагменты с багами (~25 кейсов)
+
+18. Сценарии «что будет если» и trade-offs (~60 вопросов)
+
+Роли разделов (важно для интервьюера)
+1–11 — базовый банк по темам (теория, Junior → Middle).
+12 — теория алгоритмов и структур данных (Big O, паттерны). Не live coding.
+13 — soft skills (коммуникация, процессы).
+14 — вопросы с реальных собесов (продуктовые команды). Приоритет для Middle+.
+15 — BigTech Middle: дожим, trade-offs, system design lite, список medium-задач. Перекрывается с 14, но планка выше.
+При одной сессии не дублируй одну тему из 14 и 15 — выбери один раздел.
+16–18 — приоритет для разнообразия между сессиями; не повторяй одну и ту же формулировку, если тема уже была в `feedbacks/interview-feedback-DD.MM.md` за последние дни.
+17 — давать кандидату код целиком для копирования и исправления.
+
+1. REACT (80 вопросов)
+Основы React (15)
+[Q-REACT-001] Что такое React и его основные принципы?
+
+[Q-REACT-002] Что такое JSX? Как он транспилируется?
+
+[Q-REACT-003] В чем разница между элементами (elements) и компонентами (components)?
+
+[Q-REACT-004] Что такое Virtual DOM? Как он сравнивается с реальным DOM?
+
+[Q-REACT-005] Как работает алгоритм согласования (reconciliation)?
+
+[Q-REACT-006] Что такое ключи (keys) в React? Почему нельзя использовать index?
+
+[Q-REACT-007] Что такое "подъем состояния" (lifting state up)?
+
+[Q-REACT-008] Как передать данные от ребенка к родителю?
+
+[Q-REACT-009] Управляемые (controlled) vs неконтролируемые (uncontrolled) компоненты?
+
+[Q-REACT-010] Что такое refs? Когда использовать? createRef vs useRef?
+
+[Q-REACT-011] Как работать с формами в React?
+
+[Q-REACT-012] Что такое Fragment? Зачем нужен?
+
+[Q-REACT-013] Что такое порталы (Portals)? Реальный кейс использования?
+
+[Q-REACT-014] Как обрабатывать ошибки в React? Error Boundaries?
+
+[Q-REACT-015] Что такое StrictMode? Какие проверки выполняет?
+
+Компоненты и жизненный цикл (10)
+[Q-REACT-016] Функциональные vs классовые компоненты: плюсы и минусы?
+
+[Q-REACT-017] Какие методы жизненного цикла были в классовых компонентах?
+
+[Q-REACT-018] Как useEffect эмулирует методы жизненного цикла?
+
+[Q-REACT-019] Что такое чистая функция компонента? Почему React компоненты должны быть чистыми?
+
+[Q-REACT-020] Что такое React.memo? Когда использовать?
+
+[Q-REACT-021] Что такое PureComponent? Чем отличается от React.memo?
+
+[Q-REACT-022] Как работает shouldComponentUpdate?
+
+[Q-REACT-023] Что происходит при монтировании/обновлении/размонтировании?
+
+[Q-REACT-024] Как правильно размонтировать компонент и очистить подписки?
+
+[Q-REACT-025] Что такое "мерцание" (flash) при SSR и как его избежать?
+
+Хуки (Hooks) (20)
+[Q-REACT-026] Какие правила использования хуков? Почему они важны?
+
+[Q-REACT-027] Как работает useState? Что возвращает?
+
+[Q-REACT-028] Что такое useEffect? Массив зависимостей: как работает?
+
+[Q-REACT-029] Как useEffect определяет изменения зависимостей? Object.is?
+
+[Q-REACT-030] Что такое useLayoutEffect? Чем отличается от useEffect?
+
+[Q-REACT-031] Когда использовать useLayoutEffect вместо useEffect?
+
+[Q-REACT-032] Что такое useContext? Как оптимизировать контекст?
+
+[Q-REACT-033] Что такое useReducer? Когда лучше useState?
+
+[Q-REACT-034] useCallback vs useMemo: в чем разница? Примеры использования?
+
+[Q-REACT-035] Что такое useRef? Чем отличается от useState?
+
+[Q-REACT-036] Что такое useImperativeHandle? Когда использовать?
+
+[Q-REACT-037] Что такое useDebugValue? Зачем нужен?
+
+[Q-REACT-038] Как создать свой хук (custom hook)? Пример?
+
+[Q-REACT-039] Что такое useId? Зачем нужен?
+
+[Q-REACT-040] Что такое useTransition и useDeferredValue?
+
+[Q-REACT-041] Как работает useSyncExternalStore? Когда нужен?
+
+[Q-REACT-042] Что такое useInsertionEffect? (React 18)
+
+[Q-REACT-043] Как работают хуки под капотом? Почему порядок важен?
+
+[Q-REACT-044] Как отлаживать хуки? React DevTools?
+
+[Q-REACT-045] В чем проблема с "замыканиями" в useEffect?
+
+Управление состоянием (State Management) (10)
+[Q-REACT-046] Что такое локальный, глобальный и серверный state?
+
+[Q-REACT-047] Когда использовать Context API vs Redux?
+
+[Q-REACT-048] Как работает Redux? Flux паттерн?
+
+[Q-REACT-049] Что такое Redux Thunk vs Redux Saga?
+
+[Q-REACT-050] Что такое Redux Toolkit? Зачем нужен?
+
+[Q-REACT-051] Что такое Zustand? Чем отличается от Redux?
+
+[Q-REACT-052] Что такое MobX? Реактивное программирование?
+
+[Q-REACT-053] Что такое Recoil? Атомы и селекторы?
+
+[Q-REACT-054] Что такое Jotai? Когда использовать?
+
+[Q-REACT-055] Как управлять состоянием форм? React Hook Form, Formik?
+
+Производительность (Performance) (10)
+[Q-REACT-056] Какие инструменты для измерения производительности React?
+
+[Q-REACT-057] Что такое "рендер" в React? Когда происходит?
+
+[Q-REACT-058] Как избежать лишних рендеров?
+
+[Q-REACT-059] Что такое "bailing out of update"?
+
+[Q-REACT-060] Как работает батчинг обновлений в React 18?
+
+[Q-REACT-061] Что такое виртуализация списков? react-window, react-virtualized?
+
+[Q-REACT-062] Как лениво загружать компоненты? React.lazy + Suspense?
+
+[Q-REACT-063] Как оптимизировать контекст от частых обновлений?
+
+[Q-REACT-064] Что такое Code Splitting? Как реализовать?
+
+[Q-REACT-065] Как работает tree shaking в React?
+
+React 18+ и современные фичи (10)
+[Q-REACT-066] Что нового в React 18?
+
+[Q-REACT-067] Что такое Concurrent Rendering?
+
+[Q-REACT-068] Как работает автоматическое батчирование (automatic batching)?
+
+[Q-REACT-069] Что такое startTransition? Когда использовать?
+
+[Q-REACT-070] Что такое Suspense для данных?
+
+[Q-REACT-071] Что такое Server Components? Как работают?
+
+[Q-REACT-072] Что такое React Server Components vs Client Components?
+
+[Q-REACT-073] Что такое "use server" директива?
+
+[Q-REACT-074] Что такое "use client" директива?
+
+[Q-REACT-075] Что такое React Compiler (React Forget)?
+
+Роутинг (5)
+[Q-REACT-076] Как работает React Router v6? Чем отличается от v5?
+
+[Q-REACT-077] Что такое SPA (Single Page Application)? Плюсы и минусы?
+
+[Q-REACT-078] Как работает BrowserRouter vs HashRouter?
+
+[Q-REACT-079] Как защитить маршруты (PrivateRoute)?
+
+[Q-REACT-080] Что такое loaders и actions в React Router v6?
+
+2. TYPESCRIPT (50 вопросов)
+Основы (15)
+[Q-TS-001] Что такое TypeScript? Зачем нужен?
+
+[Q-TS-002] Чем отличается TypeScript от JavaScript?
+
+[Q-TS-003] Как TypeScript компилируется? Что такое tsconfig.json?
+
+[Q-TS-004] Базовые типы: string, number, boolean, null, undefined, void, never?
+
+[Q-TS-005] Что такое union (|) и intersection (&) типы?
+
+[Q-TS-006] Как работают литеральные типы?
+
+[Q-TS-007] Что такое any, unknown, never? В чем разница?
+
+[Q-TS-008] Что такое void? Когда возвращается?
+
+[Q-TS-009] Что такое null и undefined в TypeScript?
+
+[Q-TS-010] Как работает type inference?
+
+[Q-TS-011] Что такое type annotation?
+
+[Q-TS-012] Как типизировать массивы и кортежи (tuples)?
+
+[Q-TS-013] Что такое enum? Когда использовать?
+
+[Q-TS-014] Проблемы с enum? Альтернативы?
+
+[Q-TS-015] Как типизировать функции? Overloads?
+
+Интерфейсы и типы (10)
+[Q-TS-016] interface vs type: в чем разница? Когда что использовать?
+
+[Q-TS-017] Как расширять интерфейсы? (extends)
+
+[Q-TS-018] Как объединять типы? (intersection &)
+
+[Q-TS-019] Что такое declaration merging?
+
+[Q-TS-020] Как работает implements vs extends?
+
+[Q-TS-021] Как типизировать объекты с динамическими ключами? (index signature)
+
+[Q-TS-022] Как сделать свойства опциональными? (optional, Partial)
+
+[Q-TS-023] Как сделать свойства только для чтения? (readonly)
+
+[Q-TS-024] Что такое utility types: Partial, Required, Readonly?
+
+[Q-TS-025] Что такое Record, Pick, Omit, Exclude, Extract?
+
+Generics (10)
+[Q-TS-026] Что такое дженерики (generics)? Зачем нужны?
+
+[Q-TS-027] Как написать generic функцию?
+
+[Q-TS-028] Что такое generic constraints? extends keyof?
+
+[Q-TS-029] Как работает keyof оператор?
+
+[Q-TS-030] Что такое typeof в TS?
+
+[Q-TS-031] Как работает infer?
+
+[Q-TS-032] Что такое conditional types? T extends U ? X : Y
+
+[Q-TS-033] Что такое mapped types? { [P in K]: T[P] }
+
+[Q-TS-034] Что такое template literal types?
+
+[Q-TS-035] Как работают рекурсивные типы?
+
+Продвинутые типы (10)
+[Q-TS-036] Что такое unknown? Как с ним работать? type narrowing?
+
+[Q-TS-037] Что такое type guards? typeof, instanceof, in, пользовательские guards?
+
+[Q-TS-038] Что такое assertion functions? asserts value is Type
+
+[Q-TS-039] Что такое satisfies оператор? (TS 4.9)
+
+[Q-TS-040] Что такое as const утверждение?
+
+[Q-TS-041] Как работает NonNullable?
+
+[Q-TS-042] Что такое ReturnType, Parameters?
+
+[Q-TS-043] Что такое Awaited?
+
+[Q-TS-044] Как работать с модулями? пространства имен?
+
+[Q-TS-045] Как типизировать декораторы?
+
+React + TypeScript (5)
+[Q-TS-046] Как типизировать функциональный компонент? React.FC vs обычная функция?
+
+[Q-TS-047] Как типизировать пропсы? PropsWithChildren?
+
+[Q-TS-048] Как типизировать хуки: useState, useEffect, useReducer, useContext?
+
+[Q-TS-049] Как типизировать события: SyntheticEvent, MouseEvent, FormEvent?
+
+[Q-TS-050] Как типизировать refs? RefObject, MutableRefObject?
+
+3. JAVASCRIPT (70 вопросов)
+Основы и синтаксис (20)
+[Q-JS-001] В чем разница между var, let, const? (hoisting, TDZ)
+
+[Q-JS-002] Что такое hoisting?
+
+[Q-JS-003] Что такое Temporal Dead Zone (TDZ)?
+
+[Q-JS-004] Какие типы данных в JavaScript?
+
+[Q-JS-005] Разница между == и ===? Когда использовать?
+
+[Q-JS-006] Что такое приведение типов (type coercion)? Примеры?
+
+[Q-JS-007] Что такое замыкания (closures)? Пример использования?
+
+[Q-JS-008] Что такое область видимости (scope)? Глобальная, функциональная, блочная?
+
+[Q-JS-009] Что такое контекст выполнения (execution context)?
+
+[Q-JS-010] Что такое лексическое окружение (lexical environment)?
+
+[Q-JS-011] Как работает this? Правила определения?
+
+[Q-JS-012] Как явно привязать this? call, apply, bind?
+
+[Q-JS-013] Разница между стрелочной и обычной функцией?
+
+[Q-JS-014] Что такое spread оператор (...)? Rest параметры?
+
+[Q-JS-015] Что такое деструктуризация (destructuring)?
+
+[Q-JS-016] Что такое функции высшего порядка?
+
+[Q-JS-017] Что такое чистая функция?
+
+[Q-JS-018] Что такое иммутабельность (immutability)?
+
+[Q-JS-019] Как работает new оператор?
+
+[Q-JS-020] Что такое прототипное наследование?
+
+Асинхронность (15)
+[Q-JS-021] Что такое Event Loop? Call Stack, Task Queue, Microtask Queue?
+
+[Q-JS-022] Разница между микро- и макрозадачами? (microtasks vs macrotasks)
+
+[Q-JS-023] Что такое промисы (Promises)? Состояния?
+
+[Q-JS-024] Что такое callback hell? Как избежать?
+
+[Q-JS-025] Разница между Promise.all, allSettled, race, any?
+
+[Q-JS-026] Что такое async/await? Как работает под капотом?
+
+[Q-JS-027] Как обрабатывать ошибки в async/await? try/catch vs .catch?
+
+[Q-JS-028] Что такое генераторы? function*, yield?
+
+[Q-JS-029] Что такое async-генераторы?
+
+[Q-JS-030] Что такое setTimeout, setInterval, requestAnimationFrame?
+
+[Q-JS-031] Как работает queueMicrotask?
+
+[Q-JS-032] Что такое process.nextTick в Node.js?
+
+[Q-JS-033] Что такое отложенные вычисления? (thunk)
+
+[Q-JS-034] Что такое "гонка состояний"? Как избежать?
+
+[Q-JS-035] Как отменить промис? AbortController?
+
+Функции и объекты (10)
+[Q-JS-036] Что такое методы: map, filter, reduce, forEach?
+
+[Q-JS-037] Что такое call, apply, bind? Отличия?
+
+[Q-JS-038] Что такое каррирование (currying)? Пример?
+
+[Q-JS-039] Что такое частичное применение функций?
+
+[Q-JS-040] Что такое мемоизация (memoization)? Как реализовать?
+
+[Q-JS-041] Как клонировать объект? shallow vs deep?
+
+[Q-JS-042] Что такое WeakMap, WeakSet? Чем отличаются от Map, Set?
+
+[Q-JS-043] Что такое Object.create? Прототипное наследование?
+
+[Q-JS-044] Что такое Object.freeze, Object.seal?
+
+[Q-JS-045] Что такое геттеры и сеттеры? get, set?
+
+Классы и ООП (10)
+[Q-JS-046] Что такое классы в ES6?
+
+[Q-JS-047] Как работает наследование? extends, super?
+
+[Q-JS-048] Что такое статические методы и свойства? static?
+
+[Q-JS-049] Что такое приватные поля? #privateField?
+
+[Q-JS-050] Что такое абстрактные классы в JS?
+
+[Q-JS-051] Что такое миксины (mixins)?
+
+[Q-JS-052] Что такое композиция vs наследование?
+
+[Q-JS-053] Что такое полиморфизм в JS?
+
+[Q-JS-054] Что такое инкапсуляция?
+
+[Q-JS-055] Как эмулировали классы до ES6?
+
+Модули и сборка (10)
+[Q-JS-056] Что такое ES modules? import/export?
+
+[Q-JS-057] Разница между default и named export?
+
+[Q-JS-058] Что такое CommonJS? require/module.exports?
+
+[Q-JS-059] Разница между ES modules и CommonJS?
+
+[Q-JS-060] Что такое динамический импорт? import()
+
+[Q-JS-061] Что такое Tree Shaking?
+
+[Q-JS-062] Что такое Module Federation?
+
+[Q-JS-063] Что такое UMD, AMD?
+
+[Q-JS-064] Как работает циклическая зависимость?
+
+[Q-JS-065] Что такое "звездный импорт" import * as? Проблемы?
+
+Продвинутые темы (5)
+[Q-JS-066] Что такое Reflection API? Reflect, Proxy?
+
+[Q-JS-067] Что такое метапрограммирование? Symbol?
+
+[Q-JS-068] Что такое тайпизированные массивы? TypedArray, ArrayBuffer?
+
+[Q-JS-069] Что такое Web Workers? Shared Workers?
+
+[Q-JS-070] Как работает Atomics? SharedArrayBuffer?
+
+4. АРХИТЕКТУРА И ПАТТЕРНЫ (45 вопросов)
+SOLID и принципы (10)
+[Q-ARCH-001] Что такое SOLID? Каждый принцип с примером?
+
+[Q-ARCH-002] Single Responsibility Principle (SRP) во фронтенде?
+
+[Q-ARCH-003] Open-Closed Principle (OCP)?
+
+[Q-ARCH-004] Liskov Substitution Principle (LSP)?
+
+[Q-ARCH-005] Interface Segregation Principle (ISP)?
+
+[Q-ARCH-006] Dependency Inversion Principle (DIP)?
+
+[Q-ARCH-007] DRY (Don't Repeat Yourself) - где границы?
+
+[Q-ARCH-008] KISS (Keep It Simple, Stupid)?
+
+[Q-ARCH-009] YAGNI (You Aren't Gonna Need It)?
+
+[Q-ARCH-010] Composition over Inheritance? Почему?
+
+Паттерны проектирования (15)
+[Q-ARCH-011] Какие паттерны из GoF используете?
+
+[Q-ARCH-012] Паттерн Singleton? Проблемы в JS?
+
+[Q-ARCH-013] Паттерн Factory? Когда использовать?
+
+[Q-ARCH-014] Паттерн Builder? Пример?
+
+[Q-ARCH-015] Паттерн Observer? EventEmitter?
+
+[Q-ARCH-016] Паттерн Pub/Sub? Чем отличается от Observer?
+
+[Q-ARCH-017] Паттерн Strategy? Пример в React?
+
+[Q-ARCH-018] Паттерн Decorator? HOC в React?
+
+[Q-ARCH-019] Паттерн Adapter? Адаптер для API?
+
+[Q-ARCH-020] Паттерн Proxy? Пример в JS?
+
+[Q-ARCH-021] Паттерн Command? Redux actions?
+
+[Q-ARCH-022] Паттерн State? Конечные автоматы?
+
+[Q-ARCH-023] Паттерн Template Method?
+
+[Q-ARCH-024] Паттерн Visitor? Когда нужен?
+
+[Q-ARCH-025] Паттерн Middleware? Express, Redux?
+
+Архитектурные подходы (10)
+[Q-ARCH-026] Что такое Feature-Sliced Design (FSD)? Слои?
+
+[Q-ARCH-027] Что такое Component-Driven Development?
+
+[Q-ARCH-028] Что такое Atomic Design? Атомы, молекулы, организмы?
+
+[Q-ARCH-029] Что такое Container/Presentational паттерн?
+
+[Q-ARCH-030] Что такое Clean Architecture во фронтенде?
+
+[Q-ARCH-031] Что такое Hexagonal Architecture (Ports & Adapters)?
+
+[Q-ARCH-032] Что такое MVC, MVVM, MVP во фронтенде?
+
+[Q-ARCH-033] Что такое Flux? Однонаправленный поток данных?
+
+[Q-ARCH-034] Что такое CQRS? Command Query Responsibility Segregation?
+
+[Q-ARCH-035] Что такое Event Sourcing?
+
+Микрофронтенды (5)
+[Q-ARCH-036] Что такое Micro Frontends? Когда нужны?
+
+[Q-ARCH-037] Какие подходы к интеграции? IFrame, Web Components, Module Federation?
+
+[Q-ARCH-038] Как разделять состояние между микрофронтендами?
+
+[Q-ARCH-039] Как реализовать навигацию между приложениями?
+
+[Q-ARCH-040] Как организовать shared-библиотеки?
+
+API и коммуникация (5)
+[Q-ARCH-041] REST vs GraphQL? Когда что выбрать?
+
+[Q-ARCH-042] Что такое GraphQL? Плюсы и минусы?
+
+[Q-ARCH-043] Что такое gRPC-Web?
+
+[Q-ARCH-044] Что такое WebSocket? SSE? Когда что использовать?
+
+[Q-ARCH-045] Как реализовать long polling?
+
+5. HTTP И СЕТЬ (40 вопросов)
+Основы HTTP (15)
+[Q-HTTP-001] Как работает HTTP запрос? Структура?
+
+HTTP методы: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS?
+
+[Q-HTTP-002] Идемпотентность методов? Какие методы идемпотентны?
+
+[Q-HTTP-003] Что такое HTTP статусы? Все группы и примеры?
+
+[Q-HTTP-004] 1xx (Informational), 2xx (Success), 3xx (Redirection), 4xx (Client Error), 5xx (Server Error)?
+
+[Q-HTTP-005] Что такое заголовки? Основные: Content-Type, Authorization, Cache-Control?
+
+[Q-HTTP-006] Content-Type: application/json vs multipart/form-data?
+
+[Q-HTTP-007] Что такое cookie? Как работают? Атрибуты: HttpOnly, Secure, SameSite?
+
+[Q-HTTP-008] Что такое CORS? Preflight запрос? Как решить?
+
+[Q-HTTP-009] Что такое CSRF? Как защититься?
+
+[Q-HTTP-010] Что такое XSS? Как защититься?
+
+[Q-HTTP-011] Что такое HTTPS? Как работает TLS?
+
+[Q-HTTP-012] Что такое HTTP/2.0? Отличия от HTTP/1.1?
+
+[Q-HTTP-013] Что такое HTTP/3.0? QUIC протокол?
+
+[Q-HTTP-014] Что такое gzip, Brotli сжатие?
+
+REST API (10)
+[Q-HTTP-015] Что такое REST? Принципы REST?
+
+[Q-HTTP-016] Что такое ресурс (resource) в REST?
+
+[Q-HTTP-017] Как правильно именовать endpoints?
+
+[Q-HTTP-018] Что такое версионирование API? Стратегии?
+
+[Q-HTTP-019] Что такое HATEOAS?
+
+[Q-HTTP-020] Пагинация в REST: offset/limit vs cursor?
+
+[Q-HTTP-021] Фильтрация, сортировка, поиск в REST?
+
+[Q-HTTP-022] Что такое idempotency key?
+
+[Q-HTTP-023] Что такое rate limiting? Как реализовать на фронте?
+
+[Q-HTTP-024] Как документировать REST API? OpenAPI, Swagger?
+
+Аутентификация (8)
+[Q-HTTP-025] JWT токен: структура, как работает?
+
+[Q-HTTP-026] Где хранить JWT? localStorage vs cookies? Безопасность?
+
+[Q-HTTP-027] Refresh token механизм? Как работает?
+
+[Q-HTTP-028] OAuth 2.0 и OpenID Connect?
+
+[Q-HTTP-029] Basic Auth vs Bearer Auth?
+
+[Q-HTTP-030] Что такое Session-based auth?
+
+[Q-HTTP-031] Что такое SSO (Single Sign-On)?
+
+[Q-HTTP-032] Как реализовать "запомнить меня"?
+
+Сетевые технологии (7)
+[Q-HTTP-033] DNS: как работает? Что такое A, CNAME записи?
+
+[Q-HTTP-034] CDN: что это? Как ускоряет загрузку?
+
+[Q-HTTP-035] Что такое WebSocket? Как работает handshake?
+
+[Q-HTTP-036] Что такое Server-Sent Events (SSE)?
+
+[Q-HTTP-037] Что такое WebRTC? Когда использовать?
+
+[Q-HTTP-038] Что такое MQTT? Для IoT?
+
+[Q-HTTP-039] Что такое QUIC протокол?
+
+6. CSS И ВЕРСТКА (60 вопросов)
+Основы CSS (20)
+[Q-CSS-001] Что такое специфичность? Как считать селекторы?
+
+[Q-CSS-002] Каскадность CSS: как применяются стили?
+
+[Q-CSS-003] Что такое блочная модель (box model)? box-sizing?
+
+[Q-CSS-004] Разница между display: block, inline, inline-block, none?
+
+[Q-CSS-005] Разница между visibility: hidden и display: none?
+
+[Q-CSS-006] Позиционирование: static, relative, absolute, fixed, sticky?
+
+[Q-CSS-007] Что такое z-index? Контекст наложения (stacking context)?
+
+[Q-CSS-008] Единицы измерения: px, em, rem, vw, vh, %, fr?
+
+[Q-CSS-009] Работа с цветом: hex, rgb, hsl, rgba?
+
+[Q-CSS-010] Что такое псевдоклассы? Примеры: :hover, :first-child, :nth-of-type?
+
+[Q-CSS-011] Что такое псевдоэлементы? ::before, ::after, ::first-line?
+
+[Q-CSS-012] Что такое CSS-переменные (custom properties)? Преимущества?
+
+[Q-CSS-013] Как работает наследование в CSS?
+
+[Q-CSS-014] Что такое сброс стилей (reset)? normalize.css?
+
+[Q-CSS-015] Что такое вендорные префиксы? Autoprefixer?
+
+[Q-CSS-016] Что такое @import? Плюсы и минусы?
+
+[Q-CSS-017] Что такое @media? Адаптивная верстка?
+
+[Q-CSS-018] Breakpoints для мобильных, планшетов, десктопов?
+
+[Q-CSS-019] Что такое @keyframes? CSS-анимация?
+
+[Q-CSS-020] Что такое transition? Разница с анимацией?
+
+Flexbox (10)
+[Q-CSS-021] Что такое Flexbox? Когда использовать?
+
+[Q-CSS-022] Flex-контейнер и flex-элементы?
+
+[Q-CSS-023] Свойства контейнера: flex-direction, flex-wrap, justify-content, align-items, align-content?
+
+[Q-CSS-024] Свойства элементов: order, flex-grow, flex-shrink, flex-basis, align-self?
+
+[Q-CSS-025] Как центрировать элемент с помощью Flexbox?
+
+[Q-CSS-026] Как сделать "липкий" футер с Flexbox?
+
+[Q-CSS-027] Как сделать колонки одинаковой высоты?
+
+[Q-CSS-028] Flexbox vs Grid: когда что выбрать?
+
+[Q-CSS-029] Как работает автоматический margin в Flexbox?
+
+[Q-CSS-030] Что такое gap в Flexbox?
+
+CSS Grid (10)
+[Q-CSS-031] Что такое CSS Grid? Для чего?
+
+[Q-CSS-032] Grid-контейнер и grid-элементы?
+
+[Q-CSS-033] Свойства контейнера: grid-template-columns, grid-template-rows, gap?
+
+[Q-CSS-034] Что такое fr единица?
+
+[Q-CSS-035] Что такое grid-template-areas?
+
+[Q-CSS-036] Функции: repeat(), minmax(), fit-content()?
+
+[Q-CSS-037] Свойства элементов: grid-column, grid-row, grid-area?
+
+[Q-CSS-038] Как сделать адаптивную сетку с помощью Grid?
+
+[Q-CSS-039] Grid vs Flexbox для layout страницы?
+
+[Q-CSS-040] Что такое subgrid?
+
+Адаптивность и отзывчивость (10)
+[Q-CSS-041] Mobile First vs Desktop First подходы?
+
+[Q-CSS-042] Что такое viewport meta tag?
+
+[Q-CSS-043] Что такое responsive images? srcset, picture, sizes?
+
+[Q-CSS-044] Что такое Retina дисплеи? Как подготовить изображения?
+
+[Q-CSS-045] Что такое object-fit и object-position?
+
+[Q-CSS-046] Что такое aspect-ratio?
+
+[Q-CSS-047] Как работать с адаптивными шрифтами? clamp(), calc(), vw?
+
+[Q-CSS-048] Что такое container queries?
+
+[Q-CSS-049] Что такое CSS логические свойства? margin-inline-start?
+
+[Q-CSS-050] Как тестировать адаптивность в браузере?
+
+CSS-in-JS и препроцессоры (5)
+[Q-CSS-051] Препроцессоры: Sass, LESS? Плюсы и минусы?
+
+[Q-CSS-052] Что такое CSS Modules? Как работает?
+
+[Q-CSS-053] styled-components? Как работает под капотом?
+
+[Q-CSS-054] Emotion, Stitches, Panda CSS?
+
+[Q-CSS-055] Tailwind CSS? Utility-first подход?
+
+Анимации и графика (5)
+CSS transitions: свойства, easing functions?
+
+CSS animations: @keyframes, animation-* свойства?
+
+[Q-CSS-056] transform vs position для анимации? Производительность?
+
+[Q-CSS-057] Что такое will-change?
+
+[Q-CSS-058] Что такое Canvas, SVG, WebGL? Когда что использовать?
+
+7. БРАУЗЕР И ПРОИЗВОДИТЕЛЬНОСТЬ (35 вопросов)
+Браузерные технологии (15)
+[Q-BROWSER-001] Как браузер рендерит страницу? Critical Rendering Path?
+
+[Q-BROWSER-002] DOM (Document Object Model) vs CSSOM?
+
+[Q-BROWSER-003] Render Tree? Layout, Paint, Composite?
+
+[Q-BROWSER-004] Что такое reflow (layout) и repaint? Что дороже?
+
+[Q-BROWSER-005] Что такое compositing? Какие слои?
+
+[Q-BROWSER-006] Что такое event bubbling и capturing? Как остановить?
+
+[Q-BROWSER-007] Что такое event delegation? Пример использования?
+
+[Q-BROWSER-008] Что такое requestAnimationFrame? Когда использовать?
+
+[Q-BROWSER-009] Что такое requestIdleCallback?
+
+[Q-BROWSER-010] Что такое Web Workers? Когда нужны?
+
+[Q-BROWSER-011] Что такое Service Workers? Кэширование, PWA?
+
+[Q-BROWSER-012] Что такое IndexedDB? Когда использовать?
+
+[Q-BROWSER-013] Что такое localStorage, sessionStorage? Лимиты?
+
+[Q-BROWSER-014] Что такое Session Storage vs Local Storage vs Cookies?
+
+[Q-BROWSER-015] Что такое BroadcastChannel, SharedWorker?
+
+Производительность (20)
+[Q-BROWSER-016] Какие метрики Core Web Vitals? LCP, FID, CLS, INP?
+
+[Q-BROWSER-017] Что такое First Paint (FP) и First Contentful Paint (FCP)?
+
+[Q-BROWSER-018] Что такое Largest Contentful Paint (LCP)? Как оптимизировать?
+
+[Q-BROWSER-019] Что такое First Input Delay (FID) и Interaction to Next Paint (INP)?
+
+[Q-BROWSER-020] Что такое Cumulative Layout Shift (CLS)? Как избежать?
+
+[Q-BROWSER-021] Что такое Time to Interactive (TTI)?
+
+[Q-BROWSER-022] Что такое Total Blocking Time (TBT)?
+
+[Q-BROWSER-023] Как измерить производительность? Lighthouse, Web Vitals?
+
+[Q-BROWSER-024] Как оптимизировать загрузку изображений? lazy loading, webp?
+
+[Q-BROWSER-025] Как оптимизировать шрифты? font-display: swap?
+
+[Q-BROWSER-026] Как работает Critical CSS? Inline critical стили?
+
+[Q-BROWSER-027] Что такое код-сплиттинг (code splitting)?
+
+[Q-BROWSER-028] Что такое предзагрузка? preload, prefetch, preconnect, dns-prefetch?
+
+[Q-BROWSER-029] Разница между preload и prefetch?
+
+[Q-BROWSER-030] Как оптимизировать JavaScript? Remove dead code, minify?
+
+[Q-BROWSER-031] Что такое Web Workers для тяжелых вычислений?
+
+[Q-BROWSER-032] Как оптимизировать работу с DOM? DocumentFragment?
+
+[Q-BROWSER-033] Что такое Virtual Scrolling? Когда нужен?
+
+[Q-BROWSER-034] Как оптимизировать анимации? transform, opacity?
+
+[Q-BROWSER-035] Инструменты профилирования: Chrome DevTools Performance tab?
+
+8. WEBPACK/VITE И СБОРКА (25 вопросов)
+Webpack (15)
+[Q-BUILD-001] Что такое Webpack? Зачем нужен?
+
+[Q-BUILD-002] entry, output, loaders, plugins?
+
+[Q-BUILD-003] Что такое code splitting? Как настроить?
+
+[Q-BUILD-004] Разница между chunk и bundle?
+
+[Q-BUILD-005] Что такое Tree Shaking? Как работает?
+
+[Q-BUILD-006] Как работает hot module replacement (HMR)?
+
+[Q-BUILD-007] Что такое source maps? Типы? Pros/cons?
+
+[Q-BUILD-008] Как оптимизировать размер бандла?
+
+[Q-BUILD-009] Что такое webpack-dev-server? Как работает?
+
+[Q-BUILD-010] Что такое Module Federation? (Webpack 5)
+
+[Q-BUILD-011] Что такое asset modules? (file-loader, url-loader)
+
+[Q-BUILD-012] Что такое babel-loader? Зачем нужен Babel?
+
+[Q-BUILD-013] Что такое CSS extraction? MiniCssExtractPlugin?
+
+[Q-BUILD-014] Как работает кэширование в Webpack? contenthash?
+
+[Q-BUILD-015] Что такое webpack-merge? Зачем нужен?
+
+Vite (5)
+[Q-BUILD-016] Что такое Vite? Отличия от Webpack?
+
+[Q-BUILD-017] Как работает Vite? no-bundle dev server?
+
+[Q-BUILD-018] Что такое esbuild? Почему Vite его использует?
+
+[Q-BUILD-019] Что такое pre-bundling dependencies?
+
+[Q-BUILD-020] Как работает HMR в Vite?
+
+Другие инструменты (5)
+[Q-BUILD-021] Что такое Rollup? Когда использовать?
+
+[Q-BUILD-022] Что такое Parcel?
+
+[Q-BUILD-023] Что такое SWC? vs Babel?
+
+[Q-BUILD-024] Что такое Turbopack?
+
+[Q-BUILD-025] Что такое esbuild? Почему быстрый?
+
+9. ТЕСТИРОВАНИЕ (20 вопросов)
+Типы тестов (5)
+[Q-TEST-001] Unit тесты vs Integration тесты vs E2E?
+
+[Q-TEST-002] Что такое Snapshot тестирование?
+
+[Q-TEST-003] Что такое TDD (Test-Driven Development)?
+
+[Q-TEST-004] Что такое BDD (Behavior-Driven Development)?
+
+[Q-TEST-005] Что такое тестовое покрытие (coverage)? Какой процент нужен?
+
+Инструменты (10)
+[Q-TEST-006] Jest vs Vitest? Что выбрать?
+
+[Q-TEST-007] Как тестировать React компоненты? React Testing Library?
+
+[Q-TEST-008] Почему Testing Library, а не Enzyme?
+
+[Q-TEST-009] Как тестировать хуки? renderHook?
+
+[Q-TEST-010] Как тестировать асинхронный код?
+
+[Q-TEST-011] Как мокать модули? jest.mock?
+
+[Q-TEST-012] Как тестировать API запросы? MSW (Mock Service Worker)?
+
+[Q-TEST-013] Что такое Cypress? vs Selenium?
+
+[Q-TEST-014] Что такое Playwright? vs Puppeteer?
+
+[Q-TEST-015] Что такое Storybook? Как использовать для тестов?
+
+Best practices (5)
+[Q-TEST-016] Что тестировать в первую очередь?
+
+[Q-TEST-017] Как тестировать пользовательские сценарии?
+
+[Q-TEST-018] Как тестировать ошибки и граничные случаи?
+
+[Q-TEST-019] Как организовать тестовые данные? factories, fixtures?
+
+[Q-TEST-020] Как интегрировать тесты в CI/CD?
+
+10. БАЗЫ ДАННЫХ И БЭКЕНД (15 вопросов)
+Основы (8)
+[Q-BACKEND-001] Что такое SQL vs NoSQL? Когда что выбрать?
+
+[Q-BACKEND-002] Что такое ORM? Примеры для JS (Prisma, TypeORM, Sequelize)?
+
+[Q-BACKEND-003] Что такое миграции (migrations)?
+
+[Q-BACKEND-004] Что такое индексы? Зачем нужны?
+
+[Q-BACKEND-005] Что такое транзакции? ACID?
+
+[Q-BACKEND-006] Что такое нормализация и денормализация?
+
+[Q-BACKEND-007] Что такое JOIN? Типы: INNER, LEFT, RIGHT, FULL?
+
+[Q-BACKEND-008] Что такое агрегации? GROUP BY, HAVING?
+
+NoSQL (4)
+[Q-BACKEND-009] Что такое MongoDB? Документо-ориентированная БД?
+
+[Q-BACKEND-010] Что такое Redis? Кэширование, сессии?
+
+[Q-BACKEND-011] Что такое ElasticSearch? Поиск и аналитика?
+
+[Q-BACKEND-012] Что такое Firebase? Realtime Database, Firestore?
+
+Безопасность (3)
+[Q-BACKEND-013] SQL инъекции? Как защититься?
+
+[Q-BACKEND-014] Что такое prepared statements?
+
+[Q-BACKEND-015] Что такое шифрование данных? bcrypt?
+
+11. GIT И DEVOPS (20 вопросов)
+Git (12)
+[Q-GIT-001] Git flow? Стратегии ветвления?
+
+[Q-GIT-002] Что такое rebase vs merge?
+
+[Q-GIT-003] Что такое squash commits? Когда использовать?
+
+[Q-GIT-004] Что такое cherry-pick?
+
+[Q-GIT-005] Как отменить коммит? revert vs reset?
+
+[Q-GIT-006] Что такое stash? Когда использовать?
+
+[Q-GIT-007] Что такое interactive rebase? git rebase -i?
+
+[Q-GIT-008] Как работать с субмодулями (submodules)?
+
+[Q-GIT-009] Что такое git bisect? Как найти баг?
+
+[Q-GIT-010] Что такое git hooks? pre-commit, pre-push?
+
+[Q-GIT-011] Как разрешать конфликты? Стратегии?
+
+[Q-GIT-012] Что такое Git LFS? Для больших файлов?
+
+CI/CD (5)
+[Q-GIT-013] Что такое CI/CD? GitLab CI, GitHub Actions, Jenkins?
+
+[Q-GIT-014] Что такое пайплайн (pipeline)? Этапы?
+
+[Q-GIT-015] Что такое артефакты (artifacts)?
+
+[Q-GIT-016] Как автоматизировать деплой?
+
+[Q-GIT-017] Как настроить окружения: dev, staging, production?
+
+Docker (3)
+[Q-GIT-018] Что такое Docker? Контейнеризация?
+
+[Q-GIT-019] Docker vs Virtual Machine?
+
+[Q-GIT-020] Что такое Docker Compose?
+
+12. АЛГОРИТМЫ И СТРУКТУРЫ ДАННЫХ (20 вопросов)
+Назначение: теория (Big O, структуры, паттерны). Live coding — раздел 15 (список задач + условия ниже).
+Структуры данных (10)
+[Q-ALGO-001] Массивы: методы, сложность операций?
+
+[Q-ALGO-002] Связные списки (Linked Lists): односвязные, двусвязные?
+
+[Q-ALGO-003] Стек (Stack) и очередь (Queue): реализация?
+
+[Q-ALGO-004] Хеш-таблицы (Hash Tables): как работают? Коллизии?
+
+[Q-ALGO-005] Деревья (Trees): бинарные деревья, BST?
+
+[Q-ALGO-006] Графы (Graphs): представление, обход?
+
+[Q-ALGO-007] Set vs Map? Когда использовать?
+
+[Q-ALGO-008] Что такое WeakMap, WeakSet?
+
+[Q-ALGO-009] Что такое бинарная куча (Binary Heap)?
+
+[Q-ALGO-010] Что такое очередь с приоритетом?
+
+Алгоритмы (10)
+[Q-ALGO-011] Сортировка: пузырьком, быстрая, слиянием? Сложность?
+
+[Q-ALGO-012] Поиск: бинарный поиск? Линейный?
+
+[Q-ALGO-013] Рекурсия: что такое стек вызовов? Переполнение?
+
+[Q-ALGO-014] Динамическое программирование? Пример?
+
+[Q-ALGO-015] Жадные алгоритмы (Greedy)?
+
+[Q-ALGO-016] Обход графа: DFS, BFS? Разница?
+
+[Q-ALGO-017] Что такое Big O нотация? Примеры O(1), O(n), O(n²), O(log n)?
+
+[Q-ALGO-018] Как оценивать сложность алгоритмов?
+
+[Q-ALGO-019] Что такое мемоизация? Кэширование результатов?
+
+[Q-ALGO-020] Что такое двух указателей (two pointers)?
+
+13. SOFT SKILLS (20 вопросов)
+Коммуникация (8)
+[Q-SOFT-001] Как объяснить сложную техническую проблему нетехническому человеку?
+
+[Q-SOFT-002] Как вы проводите код-ревью? На что смотрите?
+
+[Q-SOFT-003] Как даете обратную связь коллегам?
+
+[Q-SOFT-004] Как решаете конфликт в команде?
+
+[Q-SOFT-005] Как эскалируете проблему?
+
+[Q-SOFT-006] Как работаете с legacy кодом?
+
+[Q-SOFT-007] Как оцениваете время на задачу?
+
+[Q-SOFT-008] Как документируете код и решения?
+
+Работа в команде (6)
+[Q-SOFT-009] Что такое Agile, Scrum, Kanban?
+
+[Q-SOFT-010] Как проводятся daily, planning, retro?
+
+[Q-SOFT-011] Что такое story points? Оценка задач?
+
+[Q-SOFT-012] Как работаете с требованиями? Что делать, если требования нечеткие?
+
+[Q-SOFT-013] Как приоритизируете задачи?
+
+[Q-SOFT-014] Как делитесь знаниями в команде?
+
+Карьерный рост (6)
+[Q-SOFT-015] Куда развиваетесь дальше? Tech lead, Architect, Manager?
+
+[Q-SOFT-016] Как следите за новыми технологиями?
+
+[Q-SOFT-017] Как выбираете, что учить дальше?
+
+[Q-SOFT-018] Что такое технический долг? Как с ним работать?
+
+[Q-SOFT-019] Как ведете технический блог/выступаете на конференциях?
+
+[Q-SOFT-020] Самый сложный баг в карьере? Как нашли и исправили?
+
+14. ВОПРОСЫ С РЕАЛЬНЫХ СОБЕСЕДОВАНИЙ (~51 вопрос)
+Назначение: продуктовые/bigtech собесы, Middle+. Для дожима и BigTech bar — раздел 15.
+
+Опыт и проекты (2)
+Расскажи о себе (технический фокус: стек, роль, вклад).
+[Q-BEHAV-001] Какая была самая интересная техническая задача? Что именно делал и какой результат?
+
+WebSocket / авторизация / security (10)
+[Q-SEC-001] Как обеспечить безопасность WebSocket-соединения?
+[Q-SEC-002] Как понять, что пользователь авторизован в REST API?
+[Q-SEC-003] Как передавать авторизацию в WebSocket?
+[Q-SEC-004] Можно ли передать Authorization header из браузера в WebSocket?
+[Q-SEC-005] Какие альтернативы header: cookie, query params, первое сообщение после подключения?
+[Q-SEC-006] Плюсы и минусы передачи токена через query string в WebSocket URL?
+[Q-SEC-007] Как защититься от утечки токена в логах/Referer при WebSocket auth?
+[Q-SEC-008] Чем отличается аутентификация REST-запроса от WebSocket handshake?
+[Q-SEC-009] Когда использовать cookie-based auth для WebSocket, а когда token в первом сообщении?
+[Q-SEC-010] Как обработать истечение токена во время активного WebSocket-соединения?
+
+Архитектура / FSD (5)
+[Q-ARCH-046] Что именно строил с нуля в проекте (архитектура, модули, инфра)?
+[Q-ARCH-047] Какое мнение про Feature-Sliced Design? Где уместен, где нет?
+[Q-ARCH-048] Что не понравилось в FSD на практике?
+[Q-ARCH-049] Какие проблемы были при внедрении FSD в команде?
+[Q-ARCH-050] Как онбордили разработчиков на FSD-структуру?
+
+HTML / CSS — практика (4)
+[Q-CSS-059] Как центрировать квадрат (несколько способов: flex, grid, absolute)?
+[Q-CSS-060] Чем отличается display: none от visibility: hidden?
+[Q-CSS-061] Flex vs Grid: в чём разница и когда что использовать?
+[Q-CSS-062] Когда Flex, когда Grid для layout страницы?
+
+HTTP / Browser lifecycle (6)
+[Q-HTTP-040] Из чего состоит HTTP-запрос (method, URL, headers, cookies, body)?
+[Q-HTTP-041] Что приходит в HTTP response (status, headers, body)?
+[Q-HTTP-042] Что происходит после ввода URL в браузере (пошагово)?
+[Q-HTTP-043] На каком этапе появляются headers, cookies и body?
+[Q-HTTP-044] Чем отличается request headers от response headers на практике?
+[Q-HTTP-045] Что делает браузер до отправки HTTP-запроса (DNS, TCP/TLS, redirect)?
+
+Frontend Security — углублённо (12)
+[Q-SEC-011] Что такое CSP (Content Security Policy) и зачем нужен?
+[Q-SEC-012] Как CSP ограничивает выполнение inline-скриптов и внешние источники?
+[Q-SEC-013] Какие основные CSP directives знаешь (default-src, script-src, connect-src, frame-ancestors)?
+[Q-SEC-014] Как CORS связан с безопасностью фронтенда?
+[Q-SEC-015] Как запретить запросы на нежелательные домены (CSP connect-src, network policy)?
+[Q-SEC-016] Что такое hash/nonce в CSP для inline-скриптов?
+[Q-SEC-017] Что такое SRI (Subresource Integrity) и когда применять?
+[Q-SEC-018] Какие клиентские уязвимости знаешь (XSS, CSRF, clickjacking, open redirect)?
+[Q-SEC-019] Как защититься от XSS на фронте и бэке?
+[Q-SEC-020] Чем frame-ancestors отличается от X-Frame-Options?
+[Q-SEC-021] Как безопасно хранить JWT на клиенте?
+[Q-SEC-022] Что такое SameSite cookie и как это помогает от CSRF?
+
+Event Emitter (3)
+[Q-REAL-001] Как работает Event Emitter (pub/sub на клиенте)?
+[Q-REAL-002] Чем Event Emitter отличается от нативных DOM events?
+[Q-REAL-003] Когда Event Emitter уместен во фронтенде, а когда лучше Context/Redux?
+
+Event Loop — углублённо (4)
+[Q-JS-071] Как работает Event Loop (call stack, Web APIs, microtasks, macrotasks)?
+[Q-JS-072] Что такое microtask starvation и когда возникает?
+[Q-JS-073] Чем microtask queue отличается от macrotask queue?
+[Q-JS-074] Почему Promise.then выполняется раньше setTimeout(..., 0)?
+
+TypeScript / Runtime (5)
+[Q-TS-051] Как работает instanceof в JavaScript/TypeScript?
+[Q-TS-052] Почему interface нельзя проверить в runtime?
+[Q-TS-053] В чём разница между type/interface и class/object при runtime-проверках?
+[Q-TS-054] Какие runtime type guards возможны (typeof, instanceof, in, Array.isArray)?
+[Q-TS-055] Как типизировать и проверять данные с API, если TS исчезает после компиляции?
+
+15. BIGTECH MIDDLE — FRONTEND (~90 пунктов)
+Назначение: подготовка и проверка на Middle в BigTech. Теория с дожимом + medium live coding. Частично пересекается с разделом 14 — не повторяй ту же тему в одной сессии.
+
+Критерий зачёта на Middle (BigTech: Яндекс, VK, Ozon, Avito, Meta, Google и аналоги)
+Ответ с первого раза: механизм + edge case + пример (не определение из Wikipedia).
+Алгоритм: рабочий код + time/space complexity без подсказки.
+Продуктовый блок (HTTP, security, browser) — обязателен, не опционален.
+Trade-offs: «почему так, а не иначе» без подсказки.
+
+Алгоритмы — must know (Middle)
+[Q-ALGO-LC-017] Two Sum, Valid Parentheses, Best Time Buy/Sell Stock, Contains Duplicate
+[Q-ALGO-LC-018] Longest Substring Without Repeating (sliding window), Merge Intervals, Maximum Subarray (Kadane)
+[Q-ALGO-LC-019] Group Anagrams, Binary Search, Product of Array Except Self
+[Q-ALGO-LC-020] BFS/DFS (граф/матрица), Number of Islands, Clone Graph (базово)
+[Q-ALGO-LC-001] Linked List: reverse, cycle detection, merge two lists
+[Q-ALGO-LC-002] Tree: max depth, validate BST, level order traversal
+[Q-ALGO-LC-003] DP easy: Climbing Stairs, House Robber
+Для каждой: решение + O(time) + O(space) + почему подход выбран.
+
+JavaScript — глубина (11)
+[Q-JS-108] Объясни Event Loop: call stack → microtasks → macrotasks. Приведи порядок вывода.
+[Q-JS-075] Что такое microtask starvation? Когда возникает и как проявляется?
+[Q-JS-076] Разница Promise.all / allSettled / race / any — когда что на фронте?
+[Q-JS-077] Как работает this в strict vs sloppy mode? Оторванный метод объекта.
+[Q-JS-078] Prototype chain: как JS ищет свойство? __proto__ vs prototype.
+[Q-JS-109] Shallow vs deep copy: способы и ловушки (structuredClone, JSON.parse).
+[Q-JS-079] Как работает debounce vs throttle? Реализуй throttle словами.
+[Q-JS-080] Почему 0.1 + 0.2 !== 0.3? Как решать денежные расчёты?
+[Q-JS-110] Event delegation: зачем, как работает, минусы.
+[Q-JS-081] WeakMap/WeakSet — зачем на фронте?
+[Q-JS-082] Как отменить fetch? AbortController + cleanup в React.
+
+TypeScript — Middle+ (10)
+[Q-TS-081] unknown vs any: runtime-баг и type guard.
+[Q-TS-082] Discriminated union + exhaustiveness (never в default).
+[Q-TS-083] Pick/Omit/Partial/Record — практические кейсы на API/types.
+[Q-TS-056] satisfies vs аннотация : Type — когда что?
+[Q-TS-057] Почему interface не существует в runtime? Как валидировать API?
+[Q-TS-084] instanceof — как работает, ограничения с классами из разных realm.
+[Q-TS-085] Generic constraint: T extends keyof U — пример.
+[Q-TS-058] ReturnType, Parameters, Awaited — зачем?
+[Q-TS-059] Как типизировать generic hook useLocalStorage<T>?
+[Q-TS-060] Branded types / nominal typing — зачем?
+
+React — Middle+ (13)
+[Q-REACT-116] useEffect: deps, cleanup, race condition (AbortController) — полный сценарий.
+[Q-REACT-081] Stale closure в useEffect/setInterval — как воспроизвести и исправить?
+[Q-REACT-082] Почему key={index} ломает state при reorder/filter?
+React.memo + useCallback: когда помогает, когда вредит?
+[Q-REACT-083] Батчинг React 18: что группируется, что нет?
+[Q-REACT-084] Context: почему частые updates ререндерят всё дерево? Как оптимизировать?
+[Q-REACT-117] Controlled vs uncontrolled + когда ref уместнее state.
+[Q-REACT-085] Error Boundary: что ловит, что не ловит?
+React.lazy + Suspense — flow и fallback.
+[Q-REACT-118] Подъём state vs colocation vs global state — критерии выбора.
+[Q-REACT-086] Как бы ты спроектировал cart (reducer): state shape, actions, selectors?
+[Q-REACT-087] Stale props в memoized child — как воспроизвести?
+[Q-REACT-088] Concurrent features: startTransition / useDeferredValue — зачем?
+
+HTTP / Browser lifecycle (10)
+[Q-HTTP-046] Из чего состоит HTTP request и response?
+[Q-HTTP-047] Что происходит после ввода URL (DNS, TCP, TLS, request, parse, render)?
+[Q-HTTP-048] Preflight CORS: кто шлёт OPTIONS, какие headers нужны?
+[Q-HTTP-072] Simple vs non-simple request — примеры.
+[Q-HTTP-049] Cookie attributes: HttpOnly, Secure, SameSite — зачем каждый?
+HTTP/2 vs HTTP/1.1 — что важно фронтендеру?
+[Q-HTTP-073] Cache-Control, ETag — базовая модель кэширования.
+[Q-HTTP-074] REST: идемпотентность методов, типичные status codes.
+[Q-HTTP-050] Где настраивается CORS — фронт или бэк? Почему?
+[Q-HTTP-051] Что такое TTFB, FCP, LCP — одним предложением каждый?
+
+Frontend Security — BigTech bar (12)
+[Q-SEC-028] CORS: механизм, Allow-Origin, preflight headers — без путаницы «кто кому».
+[Q-SEC-023] CSP: default-src, script-src, connect-src, frame-ancestors — что блокируют?
+[Q-SEC-024] XSS: reflected/stored/DOM — как защищаться на фронте и бэке?
+[Q-SEC-029] CSRF: механизм, SameSite, double submit cookie.
+[Q-SEC-030] JWT в localStorage vs HttpOnly cookie — trade-offs.
+[Q-SEC-031] Clickjacking: X-Frame-Options vs CSP frame-ancestors.
+[Q-SEC-025] SRI (Subresource Integrity) — когда нужен?
+[Q-SEC-032] CSP nonce vs hash для inline scripts.
+[Q-SEC-026] Как connect-src ограничивает fetch/WebSocket?
+[Q-SEC-033] OWASP Top 10 для фронта — назови 3 релевантных.
+[Q-SEC-027] Open redirect — что это, как не допустить?
+[Q-SEC-034] Supply chain attack через npm — базовые меры.
+
+WebSocket / Real-time (6)
+[Q-WS-001] Как авторизовать WebSocket из браузера (header/cookie/query/first message)?
+[Q-WS-002] Можно ли Authorization header в WS handshake из browser?
+[Q-WS-003] Как обновить токен при активном WS-соединении?
+[Q-WS-004] WS vs SSE vs long polling — когда что?
+[Q-WS-005] Как масштабировать WS на несколько инстансов (conceptual)?
+[Q-WS-006] Безопасность: утечка токена в query string.
+
+Архитектура / System design lite (8)
+[Q-ARCH-068] Спроектируй autocomplete/search с debounce и cancel.
+[Q-ARCH-069] Спроектируй infinite scroll: state, pagination, race conditions.
+[Q-ARCH-070] FSD: слои, правила импортов, public API слайса.
+[Q-ARCH-051] Когда FSD overkill? Альтернативы.
+[Q-ARCH-071] Feature flags / A/B — как на фронте (conceptual).
+[Q-ARCH-072] Микрофронтенды: Module Federation — плюсы/минусы.
+[Q-ARCH-052] Как организовать API layer (fetch wrapper, errors, retry)?
+[Q-ARCH-073] Offline-first / optimistic UI — базовые принципы.
+
+Браузер / Performance (8)
+[Q-BROWSER-038] Critical Rendering Path: DOM, CSSOM, render tree, layout, paint, composite.
+[Q-BROWSER-036] Reflow vs repaint — что дороже, как минимизировать?
+[Q-BROWSER-037] Core Web Vitals: LCP, INP, CLS — как улучшить на фронте?
+[Q-BROWSER-039] Virtual scrolling — зачем, принцип.
+[Q-BROWSER-040] Code splitting + lazy routes — impact на загрузку.
+[Q-BROWSER-041] will-change, transform/opacity для анимаций.
+[Q-BROWSER-042] Memory leaks на SPA: listeners, intervals, closures — примеры.
+[Q-BROWSER-043] Lighthouse vs RUM — разница.
+
+CSS / Layout — Middle bar (6)
+[Q-CSS-079] Специфичность: посчитать победителя (конфликт селекторов).
+[Q-CSS-080] Flex vs Grid — критерии выбора для page layout.
+[Q-CSS-063] position: sticky — почему ломается overflow:hidden у предка?
+[Q-CSS-081] Центрирование: flex, grid, absolute — 3 способа.
+[Q-CSS-082] Stacking context и z-index — типичная ловушка.
+[Q-CSS-083] Container queries vs media queries.
+
+Тестирование / Quality (5)
+[Q-TEST-021] Unit vs integration vs e2e — что когда на фронте.
+React Testing Library: принцип «test behavior, not implementation».
+[Q-REACT-089] Как тестировать async fetch (MSW)?
+[Q-REACT-090] Что мокать, что не мокать?
+[Q-REACT-119] Snapshot tests — когда полезны, когда вредны.
+
+Опыт / Behavioral (tech-focused) (5)
+[Q-BEHAV-004] Самая сложная техническая задача: проблема → твоё решение → результат.
+[Q-BEHAV-002] Конфликт в code review — как решал?
+[Q-BEHAV-005] Legacy без тестов — стратегия изменений.
+[Q-BEHAV-003] Как оцениваешь задачу, которая «плывёт»?
+[Q-BEHAV-006] Пример, когда сознательно выбрал простое решение вместо «красивого».
+
+Алгоритмы — live coding (условия задач)
+[Q-ALGO-LC-004] Two Sum: массив nums, target — индексы двух чисел с суммой target.
+[Q-ALGO-LC-005] Valid Parentheses: строка ()[]{} — валидны ли скобки.
+[Q-ALGO-LC-006] Longest Substring Without Repeating Characters: длина longest подстроки без повторов.
+[Q-ALGO-LC-007] Merge Intervals: массив [start,end] — объединить пересекающиеся.
+[Q-ALGO-LC-008] Maximum Subarray: максимальная сумма непрерывного подмассива.
+[Q-ALGO-LC-009] Group Anagrams: сгруппировать анаграммы.
+[Q-ALGO-LC-010] Binary Search: найти target в отсортированном массиве.
+[Q-ALGO-LC-011] Number of Islands: сетка 1/0 — количество островов (BFS/DFS).
+[Q-ALGO-LC-012] Reverse Linked List: развернуть односвязный список.
+[Q-ALGO-LC-013] Climbing Stairs: n ступенек, 1 или 2 за шаг — сколько способов.
+[Q-ALGO-LC-014] Product of Array Except Self: произведение всех кроме i без деления.
+[Q-ALGO-LC-015] Top K Frequent Elements: k самых частых элементов.
+[Q-ALGO-LC-016] Meeting Rooms II: минимум комнат для интервалов.
+[Q-ALGO-LC-021] Implement debounce / throttle with cancel.
+[Q-ALGO-LC-022] Flatten nested array — one level / deep, с оценкой сложности.
+
+---
+
+## 16. РАСШИРЕННЫЙ БАНК — УНИКАЛЬНЫЕ ФОРМУЛИРОВКИ (~120)
+
+Назначение: вопросы с другим углом, чем в разделах 1–15. Использовать для снижения повторов между сессиями.
+
+### React — практика и edge cases (25)
+
+[Q-REACT-091] Почему `setState` в `useEffect` без deps может зациклить рендер?
+[Q-REACT-092] Чем опасен `useEffect(() => { setCount(c => c + 1) }, [count])`?
+[Q-REACT-093] Когда `useLayoutEffect` нужен для измерения DOM до paint?
+[Q-REACT-094] Почему `ref.current` не триггерит ререндер?
+[Q-REACT-095] Как передать ref через несколько уровней без prop drilling?
+[Q-REACT-096] Что сломается, если в `memo` child передать inline object `{ a: 1 }`?
+[Q-REACT-097] Почему `useMemo(() => heavy(arr), [arr])` бесполезен при новом массиве каждый рендер?
+[Q-REACT-098] Как разделить context на «данные» и «действия», чтобы реже ререндерить?
+[Q-REACT-099] Когда `useReducer` лучше нескольких `useState` в форме из 10+ полей?
+[Q-REACT-100] Почему нельзя вызывать хуки внутри `if`?
+[Q-REACT-101] Что делает `useId` в SSR и зачем для accessibility?
+[Q-REACT-102] Как `StrictMode` в dev влияет на двойной вызов effects?
+[Q-REACT-103] Почему список с `key={item.id}` всё равно «мигает» при optimistic update?
+[Q-REACT-104] Controlled input: что если `value={undefined}`?
+[Q-REACT-105] Кочему `defaultValue` + `value` одновременно — антипаттерн?
+[Q-REACT-106] Как Error Boundary не ловит ошибки в event handler?
+[Q-REACT-107] Почему `setState` в unmounted компоненте — проблема (React 18)?
+[Q-REACT-108] Что такое hydration mismatch и типичные причины?
+[Q-REACT-109] Когда `flushSync` уместен и чем опасен?
+[Q-REACT-110] `useDeferredValue` vs debounce — разница по UX?
+[Q-REACT-111] `startTransition` — что помечается как низкий приоритет?
+[Q-REACT-112] Почему `children` как prop может ломать memoization?
+[Q-REACT-113] Как тестировать custom hook без обёртки компонента?
+[Q-REACT-114] Чем `forwardRef` отличается от обычного ref prop?
+[Q-REACT-115] Когда портал не решает проблему z-index?
+
+### TypeScript — углубление (20)
+
+[Q-TS-061] Чем `satisfies` отличается от `as const`?
+[Q-TS-062] Когда `enum` хуже union литералов?
+[Q-TS-063] Как типизировать `reduce` с аккумулятором generic?
+[Q-TS-064] Почему `Record<string, unknown>` не заменяет валидацию API?
+[Q-TS-065] Как сделать discriminated union из ответа `{ ok: true } | { ok: false, code }`?
+[Q-TS-066] Что даёт `asserts value is T` в type guard?
+[Q-TS-067] Как типизировать event handler с union target?
+[Q-TS-068] `Parameters<typeof fn>[0]` — практический кейс?
+[Q-TS-069] `Awaited<ReturnType<typeof fetchData>>` — зачем?
+[Q-TS-070] Branded type для UserId vs number — пример?
+[Q-TS-071] Почему `as User` опасен после `JSON.parse`?
+[Q-TS-072] Как типизировать `useRef<HTMLInputElement | null>`?
+[Q-TS-073] `React.ComponentProps<'button'>` — когда использовать?
+[Q-TS-074] Template literal types для route paths?
+[Q-TS-075] Чем `interface` удобнее для declaration merging в `.d.ts`?
+[Q-TS-076] Как типизировать generic `Table<T extends { id: string }>`?
+[Q-TS-077] `Exclude` vs `Omit` — разница на примере?
+[Q-TS-078] `NonNullable<T>` — когда нужен?
+[Q-TS-079] Почему `keyof any` ведёт себя странно?
+[Q-TS-080] Как сузить `unknown` из `catch (e)`?
+
+### JavaScript — runtime (25)
+
+[Q-JS-083] Что выведет: `[] + {}` и `{} + []`? Почему?
+[Q-JS-084] Почему `typeof null === 'object'`?
+[Q-JS-085] Разница `Object.freeze` vs `Object.seal`?
+[Q-JS-086] Как работает `structuredClone` и что не клонирует?
+[Q-JS-087] Почему `JSON.parse(JSON.stringify(obj))` ломает Date/Map?
+[Q-JS-088] Что такое temporal dead zone для `let`?
+[Q-JS-089] Разница `for...in` vs `for...of` для массива?
+[Q-JS-090] Почему `arr.sort()` без compare ломает числа?
+[Q-JS-091] Как `sort((a,b) => a-b)` влияет на stability?
+[Q-JS-092] Что такое optional chaining с вызовом `obj?.fn?.()`?
+[Q-JS-093] Nullish coalescing `??` vs `||` — практический пример?
+[Q-JS-094] Почему `async function` всегда возвращает Promise?
+[Q-JS-095] Что в microtask queue кладёт `queueMicrotask` vs `Promise.resolve()`?
+[Q-JS-096] Как `AbortSignal.timeout(ms)` работает в fetch?
+[Q-JS-097] Почему `addEventListener` с `{ once: true }` полезен?
+[Q-JS-098] Event capture vs bubble — порядок на вложенных div?
+[Q-JS-099] `stopPropagation` vs `preventDefault`?
+[Q-JS-100] Почему `delete obj.prop` не всегда удаляет configurable:false?
+[Q-JS-101] Proxy для валидации объекта — идея?
+[Q-JS-102] Symbol.toStringTag — зачем?
+[Q-JS-103] BigInt — когда нужен на фронте?
+[Q-JS-104] Почему `==` с объектами сравнивает ссылки?
+[Q-JS-105] Как работает `??=` и `&&=`?
+[Q-JS-106] Что такое module namespace object?
+[Q-JS-107] Dynamic `import()` — когда вместо static import?
+
+### HTTP / Security / Browser (20)
+
+[Q-HTTP-052] Чем 301 отличается от 302 для SEO и кэша?
+[Q-HTTP-053] Почему 204 No Content без body?
+[Q-HTTP-054] Что такое 429 и как фронт должен реагировать?
+[Q-HTTP-055] Retry-After header — как использовать?
+[Q-HTTP-056] Чем PUT отличается от PATCH на практике API?
+[Q-HTTP-057] Idempotency-Key — зачем в POST?
+[Q-HTTP-058] Почему preflight не нужен для GET без custom headers?
+[Q-HTTP-059] Что блокирует `connect-src` в CSP для WebSocket?
+[Q-HTTP-060] Разница XSS reflected vs stored — кто исполняет код?
+[Q-HTTP-061] Почему innerHTML опаснее textContent?
+[Q-HTTP-062] HttpOnly cookie — видит ли JS?
+[Q-HTTP-063] SameSite=Lax vs Strict — типичный сценарий?
+[Q-HTTP-064] Почему JWT в memory лучше localStorage, но сложнее?
+[Q-HTTP-065] Refresh token rotation — базовая идея?
+[Q-HTTP-066] Что такое HSTS?
+[Q-HTTP-067] DNS prefetch vs preconnect?
+[Q-HTTP-068] Service Worker cache-first vs network-first?
+[Q-HTTP-069] Почему `document.write` блокирует парсинг?
+[Q-HTTP-070] Что такое render-blocking CSS?
+[Q-HTTP-071] Как `defer` и `async` у script влияют на порядок?
+
+### CSS / Layout (15)
+
+[Q-CSS-064] Почему `height: 100%` не работает без height у родителя?
+[Q-CSS-065] `min-height: 100vh` vs `100dvh` на мобилке?
+[Q-CSS-066] Что ломает `margin collapse`?
+[Q-CSS-067] Почему flex item не сжимается ниже min-content?
+[Q-CSS-068] `flex: 1` shorthand — что внутри?
+[Q-CSS-069] Grid `auto-fit` vs `auto-fill`?
+[Q-CSS-070] `subgrid` — зачем?
+[Q-CSS-071] `clamp()` для fluid typography?
+[Q-CSS-072] `aspect-ratio` без фиксированной высоты?
+[Q-CSS-073] Почему `transform` не вызывает reflow?
+[Q-CSS-074] `contain: layout` — когда помогает?
+[Q-CSS-075] `:is()` и `:where()` — разница для специфичности?
+[Q-CSS-076] `@layer` в CSS — зачем?
+[Q-CSS-077] Dark mode через `prefers-color-scheme` vs class?
+[Q-CSS-078] Почему `z-index` не работает без stacking context?
+
+### Архитектура / SD lite (15)
+
+[Q-ARCH-053] Как спроектировать notification center (read/unread, realtime)?
+[Q-ARCH-054] Как хранить draft формы при уходе со страницы?
+[Q-ARCH-055] Feature toggle на фронте — риски?
+[Q-ARCH-056] Как версионировать API на клиенте (v1/v2)?
+[Q-ARCH-057] Retry с exponential backoff — параметры?
+[Q-ARCH-058] Circuit breaker на фронте — нужен ли?
+[Q-ARCH-059] Как организовать error boundary + global toast?
+[Q-ARCH-060] Pagination cursor vs offset — trade-offs?
+[Q-ARCH-061] Как кэшировать список в memory vs SWR/React Query?
+[Q-ARCH-062] Optimistic delete в списке — rollback при ошибке?
+[Q-ARCH-063] Как разделить UI state и server state?
+[Q-ARCH-064] Когда Redux избыточен для корзины?
+[Q-ARCH-065] Как проектировать модалку с focus trap?
+[Q-ARCH-066] Multi-step wizard state — machine vs useState?
+[Q-ARCH-067] Как логировать ошибки на клиенте (Sentry) без PII?
+
+---
+
+## 17. CODE REVIEW — КОПИРУЕМЫЕ ФРАГМЕНТЫ С БАГАМИ (~25)
+
+Назначение: дать кандидату код для копирования. Формат вопроса: «найди баги, объясни, как исправить».
+
+### React — компоненты (10 кейсов)
+
+**CR-R01. Search с гонкой**
+```jsx
+function Search() {
+  const [q, setQ] = useState('');
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch(`/api/search?q=${q}`).then(r => r.json()).then(setItems);
+  }, [q]);
+
+  return <input value={q} onChange={e => setQ(e.target.value)} />;
+}
+```
+Баги: race, нет cleanup/abort, нет обработки ошибок.
+
+**CR-R02. Список с index key**
+```jsx
+{tasks.map((t, i) => (
+  <TaskRow key={i} task={t} onDone={markDone} />
+))}
+```
+Баг: key=index при reorder/filter.
+
+**CR-R03. useEffect с missing deps**
+```jsx
+useEffect(() => {
+  loadUser(userId);
+}, []);
+```
+Баг: userId не в deps.
+
+**CR-R04. Stale interval**
+```jsx
+useEffect(() => {
+  const id = setInterval(() => setCount(count + 1), 1000);
+  return () => clearInterval(id);
+}, []);
+```
+Баг: stale closure count.
+
+**CR-R05. Context без мемоизации value**
+```jsx
+const value = { user, setUser, theme };
+return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+```
+Баг: новый object каждый рендер.
+
+**CR-R06. memo бесполезен**
+```jsx
+const Child = memo(({ onClick }) => <button onClick={onClick}>ok</button>);
+function Parent() {
+  const [n, setN] = useState(0);
+  return <Child onClick={() => setN(n + 1)} />;
+}
+```
+Баг: inline onClick ломает memo.
+
+**CR-R07. Controlled без onChange**
+```jsx
+<input value={text} />
+```
+Баг: read-only controlled input warning.
+
+**CR-R08. Fetch в render**
+```jsx
+function Profile({ id }) {
+  const [user, setUser] = useState(null);
+  fetch(`/api/users/${id}`).then(r => r.json()).then(setUser);
+  return <div>{user?.name}</div>;
+}
+```
+Баг: side effect в render, бесконечные запросы.
+
+**CR-R09. setState после unmount**
+```jsx
+useEffect(() => {
+  fetchData().then(setData);
+}, []);
+```
+Баг: нет abort/cancelled flag.
+
+**CR-R10. Двойной state для формы**
+```jsx
+const [email, setEmail] = useState('');
+const [form, setForm] = useState({ email: '' });
+// обновляют только email, submit читает form.email
+```
+Баг: рассинхрон state.
+
+### JavaScript — сниппеты (8 кейсов)
+
+**CR-J01.** `const arr = [1,2,3]; arr.sort();` для `[10,2,1]` — что не так?
+
+**CR-J02.** `for (var i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }`
+
+**CR-J03.** `const user = await fetchUser(); console.log(user.name);` без try/catch при 404.
+
+**CR-J04.** `JSON.parse(localStorage.getItem('cart'))` без проверки null.
+
+**CR-J05.** `obj?.items.map(...)` когда items может быть undefined — нужен optional на map?
+
+**CR-J06.** Сравнение объектов `if (prevFilters === filters)` при новом объекте каждый рендер.
+
+**CR-J07.** `Promise.all(promises).catch(...)` — ловит ли reject одного промиса?
+
+**CR-J08.** Debounce без cancel при unmount — утечка вызовов.
+
+### TypeScript — типизация (4 кейса)
+
+**CR-T01.** `const data: any = await res.json();` — риски?
+
+**CR-T02.** `interface Props { id: number; id: string }` — что с merge?
+
+**CR-T03.** `switch (status) { case 'ok': ... }` без default на union из 3 литералов.
+
+**CR-T04.** `as HTMLElement` без проверки на null ref.
+
+### CSS / разметка (3 кейса)
+
+**CR-C01.** `height: 100%` на child без height родителя.
+
+**CR-C02.** `position: sticky` внутри `overflow: hidden` родителя.
+
+**CR-C03.** Кнопка `<div onClick={...}>` без keyboard access.
+
+---
+
+## 18. СЦЕНАРИИ «ЧТО БУДЕТ ЕСЛИ» И TRADE-OFFS (~60)
+
+Назначение: короткие ситуационные вопросы без повторения базовых определений.
+
+### Event Loop / async (10)
+
+[Q-SCEN-ASYNC-001] Что выведет: sync, 2x microtask, 2x setTimeout(0) — порядок?
+[Q-SCEN-ASYNC-002] Если microtask создаёт новый microtask бесконечно — что с macrotasks?
+[Q-SCEN-ASYNC-003] `await Promise.resolve()` — microtask или sync?
+[Q-SCEN-ASYNC-004] `async function f() { return 1 }` — что возвращает вызов f()?
+[Q-SCEN-ASYNC-005] Параллельно 5 fetch — как ограничить concurrency до 2?
+[Q-SCEN-ASYNC-006] Почему `Promise.all` с пустым массивом?
+[Q-SCEN-ASYNC-007] `allSettled` vs `all` при partial failure в dashboard?
+[Q-SCEN-ASYNC-008] `race` для timeout fetch — как отменить сам fetch?
+[Q-SCEN-ASYNC-009] Почему забытый `await` в `if (check())` опасен?
+[Q-SCEN-ASYNC-010] Unhandled rejection — кто ловит?
+
+### React runtime (10)
+
+[Q-SCEN-REACT-001] Два быстрых клика по Submit — двойной POST?
+[Q-SCEN-REACT-002] `key` сменился с 1 на 2 — remount или update?
+[Q-SCEN-REACT-003] Parent unmount во время Suspense loading?
+[Q-SCEN-REACT-004] Context value изменился — кто ререндерится?
+[Q-SCEN-REACT-005] `useState` initializer `useState(expensive())` — когда вызывается?
+[Q-SCEN-REACT-006] Два `useEffect` с одним dep — порядок cleanup?
+[Q-SCEN-REACT-007] `ref` на input + `value` controlled — конфликт?
+[Q-SCEN-REACT-008] `React.memo` на list item 1000 элементов — всегда ли win?
+[Q-SCEN-REACT-009] Portal modal в `document.body` — event bubbling куда?
+[Q-SCEN-REACT-010] StrictMode double mount — почему два fetch в dev?
+
+### Network / security (10)
+
+[Q-SCEN-NET-001] CORS ok, но CSP `connect-src 'self'` — что в консоли?
+[Q-SCEN-NET-002] Cookie Secure без HTTPS на localhost?
+[Q-SCEN-NET-003] JWT expired во время активной сессии — UX?
+[Q-SCEN-NET-004] POST form cross-site без CSRF token?
+[Q-SCEN-NET-005] `target="_blank"` без `rel=noopener` — риск?
+[Q-SCEN-NET-006] Mixed content: HTTPS page, HTTP image?
+[Q-SCEN-NET-007] API 401 — refresh ok, retry original request pattern?
+[Q-SCEN-NET-008] WebSocket reconnect storm — как ограничить?
+[Q-SCEN-NET-009] Rate limit 429 — exponential backoff на клиенте?
+[Q-SCEN-NET-010] Preflight failed — кто виноват, фронт или бэк?
+
+### Performance / UX (10)
+
+[Q-SCEN-PERF-001] LCP плохой из-за hero image 4MB — 3 шага фикса?
+[Q-SCEN-PERF-002] CLS из-за баннера без размеров — fix?
+[Q-SCEN-PERF-003] INP высокий из-за тяжёлого handler на click?
+[Q-SCEN-PERF-004] 1000 DOM nodes в таблице — virtual scroll или pagination?
+[Q-SCEN-PERF-005] Bundle 2MB — как найти виновника?
+[Q-SCEN-PERF-006] Tree shaking не убрал lodash — почему?
+[Q-SCEN-PERF-007] HMR работает, prod build падает — куда смотреть?
+[Q-SCEN-PERF-008] Memory leak: addEventListener без remove — как найти?
+[Q-SCEN-PERF-009] Long task 300ms в main thread — как разбить?
+[Q-SCEN-PERF-010] Prefetch route vs lazy route — trade-off?
+
+### Алгоритмы — устные edge (10)
+
+[Q-SCEN-ALGO-001] Two Sum: дубликаты в массиве — можно ли один индекс дважды?
+[Q-SCEN-ALGO-002] Valid Parentheses: только `(` — false?
+[Q-SCEN-ALGO-003] Binary search: массив с дубликатами — leftmost index?
+[Q-SCEN-ALGO-004] Merge intervals: [[1,4],[2,3]] — результат?
+[Q-SCEN-ALGO-005] Max subarray: все отрицательные — ответ?
+[Q-SCEN-ALGO-006] BFS: цикл в графе — как не зациклить visited?
+[Q-SCEN-ALGO-007] DFS на матрице: выход за границу — guard?
+[Q-SCEN-ALGO-008] Top K frequent: k > unique count?
+[Q-SCEN-ALGO-009] Product except self: нули в массиве?
+[Q-SCEN-ALGO-010] Sliding window: пустая строка — длина?
+
+### Trade-offs выбора (10)
+
+[Q-SCEN-TRADE-001] Redux vs Zustand vs Context для theme only?
+[Q-SCEN-TRADE-002] SSR vs CSR для личного кабинета?
+[Q-SCEN-TRADE-003] CSS Modules vs Tailwind в большой команде?
+[Q-SCEN-TRADE-004] E2E vs integration для checkout?
+[Q-SCEN-TRADE-005] Monorepo vs multirepo для 3 фронтов?
+[Q-SCEN-TRADE-006] REST vs GraphQL для mobile+web одного API?
+[Q-SCEN-TRADE-007] Web Worker для PDF parse — когда да?
+[Q-SCEN-TRADE-008] IndexedDB vs localStorage для offline cart?
+[Q-SCEN-TRADE-009] SWR vs React Query — критерий выбора?
+[Q-SCEN-TRADE-010] Feature-based vs layer-based folder structure?
+

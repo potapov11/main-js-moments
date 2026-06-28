@@ -1,0 +1,27 @@
+﻿---
+description: Loader-карта режимов интервью; контент хранится в .cursor/cursorrules
+alwaysApply: true
+---
+
+# Interview Modes Loader
+
+`.cursor/rules/` — только официальный loader-слой Cursor. Единственный источник содержательных правил и банков вопросов находится в `.cursor/cursorrules/`.
+
+## Источники Правды
+
+- Frontend interview / Q&A: `.cursor/cursorrules/.cursorrules`
+- Банк вопросов: `.cursor/cursorrules/.questions`
+- System Design: `.cursor/cursorrules/system-design-interview.mdc`
+- Coverage вопросов: `interview_voice/question-coverage.md`
+- System Design progress: `system-design/progress.md`
+- Алгоритмы: `roadmap.md`, `weeklySchedule.md`, `tasks/reports/`
+- JS задачи Яндекс: `roadmap.md`, раздел «0. Практические задачи на JavaScript (формат Яндекса)»
+
+## Как Выбирать Режим
+
+- `@interview_voice`, «режим собеседование», «собеседование», «interview» → применяй `.cursor/rules/frontend-interview.mdc`.
+- `@system-design`, «system design», «систем дизайн», «начинаем system design» → применяй `.cursor/rules/system-design-interview.mdc`.
+- «Начинаем сессию», «Дай задачу», «Проверь моё решение» → применяй `.cursor/rules/algo-interview-mode.mdc`.
+- «Напиши условие» для JS-задачи из `roadmap.md` → применяй `.cursor/rules/yandex-js-tasks.mdc`.
+
+Не копируй содержательные правила в `.cursor/rules/`; обновляй их в `.cursor/cursorrules/`.
