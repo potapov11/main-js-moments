@@ -35,6 +35,8 @@ Soft skills (20 вопросов) — раздел 13
 
 18. Сценарии «что будет если» и trade-offs (~60 вопросов)
 
+19. Practical Coding — не алгоритмы (~30 задач)
+
 Роли разделов (важно для интервьюера)
 1–11 — базовый банк по темам (теория, Junior → Middle).
 12 — теория алгоритмов и структур данных (Big O, паттерны). Не live coding.
@@ -44,6 +46,7 @@ Soft skills (20 вопросов) — раздел 13
 При одной сессии не дублируй одну тему из 14 и 15 — выбери один раздел.
 16–18 — приоритет для разнообразия между сессиями; не повторяй одну и ту же формулировку, если тема уже была в `feedbacks/interview-feedback-DD.MM.md` за последние дни.
 17 — давать кандидату код целиком для копирования и исправления.
+19 — практические frontend/JS задачи на написание кода; вставлять одну задачу в каждый второй блок интервью.
 
 1. REACT (80 вопросов)
 Основы React (15)
@@ -1695,4 +1698,72 @@ const [form, setForm] = useState({ email: '' });
 [Q-SCEN-TRADE-008] IndexedDB vs localStorage для offline cart?
 [Q-SCEN-TRADE-009] SWR vs React Query — критерий выбора?
 [Q-SCEN-TRADE-010] Feature-based vs layer-based folder structure?
+
+---
+
+## 19. PRACTICAL CODING — НЕ АЛГОРИТМЫ (~30)
+
+Назначение: практические задачи на написание кода из frontend/JavaScript собеседований. Это **не LeetCode** и не алгоритмические задачи; фокус — API браузера, async, state, утилиты, компоненты, DOM, формы, кэш, события.
+
+Правило использования: в каждом **втором** блоке frontend mock-interview добавляй одну задачу из этого раздела как practical coding slot. Если пользователь просит «с задачей», сначала уточни: алгоритмическая задача или практическая frontend-задача.
+
+[Q-PRACT-001] Реализуй `EventEmitter` с методами `on`, `off`, `emit`, `once`; обработай удаление listener во время `emit`.
+
+[Q-PRACT-002] Реализуй `debounce(fn, delay)` с методами `cancel` и `flush`; объясни, где использовать в React.
+
+[Q-PRACT-003] Реализуй `throttle(fn, delay)` с leading/trailing options и методом `cancel`.
+
+[Q-PRACT-004] Напиши `memoize(fn, { maxSize, ttl })` с кэшированием по аргументам и очисткой устаревших значений.
+
+[Q-PRACT-005] Реализуй `retry(fn, { retries, delay, backoff })` для async-функции; добавь остановку по `AbortSignal`.
+
+[Q-PRACT-006] Реализуй `promisePool(tasks, limit)`: запуск async-задач с ограничением concurrency и сохранением порядка результатов.
+
+[Q-PRACT-007] Реализуй `fetchWithTimeout(url, options, timeoutMs)` через `AbortController`.
+
+[Q-PRACT-008] Напиши маленький API-клиент с refresh-token retry: при `401` один раз обновить токен и повторить исходный запрос.
+
+[Q-PRACT-009] Реализуй in-memory cache для `fetchJson(url)` с дедупликацией одновременных запросов на один URL.
+
+[Q-PRACT-010] Реализуй `createStore(initialState)` с `getState`, `setState`, `subscribe`, shallow merge и unsubscribe.
+
+[Q-PRACT-011] Напиши `useLocalStorageState(key, initialValue)` с lazy init, сериализацией, обработкой битого JSON и синхронизацией между вкладками.
+
+[Q-PRACT-012] Напиши `useDebouncedValue(value, delay)` и покажи, как избежать stale closure.
+
+[Q-PRACT-013] Напиши `usePrevious(value)` и пример, где он полезен.
+
+[Q-PRACT-014] Напиши `useOnClickOutside(ref, handler)` с корректной подпиской и cleanup.
+
+[Q-PRACT-015] Напиши `useIntersectionObserver(ref, options)` для lazy loading / infinite scroll.
+
+[Q-PRACT-016] Реализуй React-компонент `Modal` с portal, закрытием по Escape, backdrop click и focus trap на базовом уровне.
+
+[Q-PRACT-017] Реализуй `Tabs` компонент с keyboard navigation: ArrowLeft/ArrowRight, Home/End, ARIA roles.
+
+[Q-PRACT-018] Реализуй controlled `Autocomplete` с debounce, отменой старого запроса и состояниями loading/error/empty.
+
+[Q-PRACT-019] Реализуй `ToastProvider`: очередь уведомлений, auto-dismiss, ручное закрытие, лимит видимых toast.
+
+[Q-PRACT-020] Реализуй `VirtualList` для фиксированной высоты строк: расчёт видимого диапазона и spacer elements.
+
+[Q-PRACT-021] Напиши форму логина с валидацией полей, disabled submit, отображением server error и защитой от double submit.
+
+[Q-PRACT-022] Реализуй upload одного файла с preview, проверкой размера/типа и отменой загрузки через `AbortController`.
+
+[Q-PRACT-023] Напиши `serializeQuery(obj)` и `parseQuery(search)` с массивами, boolean/null и encode/decode.
+
+[Q-PRACT-024] Реализуй `deepMerge` для plain objects без мутации входных объектов; проговори ограничения.
+
+[Q-PRACT-025] Реализуй `classnames(...args)` как в `clsx`: строки, массивы, объекты, falsy values.
+
+[Q-PRACT-026] Реализуй `getByPath(obj, path, defaultValue)` и `setByPath(obj, path, value)` без мутации.
+
+[Q-PRACT-027] Реализуй маленький `Router` для SPA: `push`, `replace`, обработка `popstate`, подписка на изменение route.
+
+[Q-PRACT-028] Реализуй drag-and-drop сортировку списка на уровне состояния: `onDragStart`, `onDragOver`, `onDrop`, сохранение порядка.
+
+[Q-PRACT-029] Реализуй `copyToClipboard(text)` с fallback и отображением статуса success/error.
+
+[Q-PRACT-030] Дай большой React-компонент с несколькими багами state/effect/memoization и попроси переписать его на более устойчивую структуру.
 

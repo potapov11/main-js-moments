@@ -13,6 +13,8 @@ alwaysApply: true
 - Банк вопросов: `.cursor/cursorrules/.questions`
 - System Design: `.cursor/cursorrules/system-design-interview.mdc`
 - Coverage вопросов: `interview_voice/question-coverage.md`
+- Daily feedback: `feedbacks/interview-feedback-DD.MM.md` (шаблон: `feedbacks/README.md`)
+- Файлы сессий: `interview_voice/NN-*.md` (обновлять при паузе)
 - System Design progress: `system-design/progress.md`
 - Алгоритмы: `roadmap.md`, `weeklySchedule.md`, `tasks/reports/`
 - JS задачи Яндекс: `roadmap.md`, раздел «0. Практические задачи на JavaScript (формат Яндекса)»

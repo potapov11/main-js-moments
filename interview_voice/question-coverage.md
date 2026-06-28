@@ -92,7 +92,7 @@
 | Q-TS-002 | Чем отличается TypeScript от JavaScript? | — | new | — |
 | Q-TS-003 | Как TypeScript компилируется? Что такое tsconfig.json? | — | new | — |
 | Q-TS-004 | Базовые типы: string, number, boolean, null, undefined, void, never? | — | new | — |
-| Q-TS-005 | Что такое union (\|) и intersection (&) типы? | — | new | — |
+| Q-TS-005 | Что такое union (\|) и intersection (&) типы? | ) и intersection (&) типы? | — | new |
 | Q-TS-006 | Как работают литеральные типы? | — | new | — |
 | Q-TS-007 | Что такое any, unknown, never? В чем разница? | — | new | — |
 | Q-TS-008 | Что такое void? Когда возвращается? | — | new | — |
@@ -696,14 +696,14 @@
 | Q-TS-062 | Когда `enum` хуже union литералов? | — | new | — |
 | Q-TS-063 | Как типизировать `reduce` с аккумулятором generic? | — | new | — |
 | Q-TS-064 | Почему `Record<string, unknown>` не заменяет валидацию API? | — | new | — |
-| Q-TS-065 | Как сделать discriminated union из ответа `{ ok: true } \| { ok: false, code }`? | — | new | — |
+| Q-TS-065 | Как сделать discriminated union из ответа `{ ok: true } \| { ok: false, code }`? | { ok: false, code }`? | — | new |
 | Q-TS-066 | Что даёт `asserts value is T` в type guard? | — | new | — |
 | Q-TS-067 | Как типизировать event handler с union target? | — | new | — |
 | Q-TS-068 | `Parameters<typeof fn>[0]` — практический кейс? | — | new | — |
 | Q-TS-069 | `Awaited<ReturnType<typeof fetchData>>` — зачем? | — | new | — |
 | Q-TS-070 | Branded type для UserId vs number — пример? | — | new | — |
 | Q-TS-071 | Почему `as User` опасен после `JSON.parse`? | — | new | — |
-| Q-TS-072 | Как типизировать `useRef<HTMLInputElement \| null>`? | — | new | — |
+| Q-TS-072 | Как типизировать `useRef<HTMLInputElement \| null>`? | null>`? | — | new |
 | Q-TS-073 | `React.ComponentProps<'button'>` — когда использовать? | — | new | — |
 | Q-TS-074 | Template literal types для route paths? | — | new | — |
 | Q-TS-075 | Чем `interface` удобнее для declaration merging в `.d.ts`? | — | new | — |
@@ -722,7 +722,7 @@
 | Q-JS-090 | Почему `arr.sort()` без compare ломает числа? | — | new | — |
 | Q-JS-091 | Как `sort((a,b) => a-b)` влияет на stability? | — | new | — |
 | Q-JS-092 | Что такое optional chaining с вызовом `obj?.fn?.()`? | — | new | — |
-| Q-JS-093 | Nullish coalescing `??` vs `\|\|` — практический пример? | — | new | — |
+| Q-JS-093 | Nullish coalescing `??` vs `\|\|` — практический пример? | \ | ` — практический пример? | — |
 | Q-JS-094 | Почему `async function` всегда возвращает Promise? | — | new | — |
 | Q-JS-095 | Что в microtask queue кладёт `queueMicrotask` vs `Promise.resolve()`? | — | new | — |
 | Q-JS-096 | Как `AbortSignal.timeout(ms)` работает в fetch? | — | new | — |
@@ -857,3 +857,33 @@
 | Q-SCEN-TRADE-008 | IndexedDB vs localStorage для offline cart? | — | new | — |
 | Q-SCEN-TRADE-009 | SWR vs React Query — критерий выбора? | — | new | — |
 | Q-SCEN-TRADE-010 | Feature-based vs layer-based folder structure? | — | new | — |
+| Q-PRACT-001 | Реализуй `EventEmitter` с методами `on`, `off`, `emit`, `once`; обработай удаление listener во время `emit`. | — | new | — |
+| Q-PRACT-002 | Реализуй `debounce(fn, delay)` с методами `cancel` и `flush`; объясни, где использовать в React. | — | new | — |
+| Q-PRACT-003 | Реализуй `throttle(fn, delay)` с leading/trailing options и методом `cancel`. | — | new | — |
+| Q-PRACT-004 | Напиши `memoize(fn, { maxSize, ttl })` с кэшированием по аргументам и очисткой устаревших значений. | — | new | — |
+| Q-PRACT-005 | Реализуй `retry(fn, { retries, delay, backoff })` для async-функции; добавь остановку по `AbortSignal`. | — | new | — |
+| Q-PRACT-006 | Реализуй `promisePool(tasks, limit)`: запуск async-задач с ограничением concurrency и сохранением порядка результатов. | — | new | — |
+| Q-PRACT-007 | Реализуй `fetchWithTimeout(url, options, timeoutMs)` через `AbortController`. | — | new | — |
+| Q-PRACT-008 | Напиши маленький API-клиент с refresh-token retry: при `401` один раз обновить токен и повторить исходный запрос. | — | new | — |
+| Q-PRACT-009 | Реализуй in-memory cache для `fetchJson(url)` с дедупликацией одновременных запросов на один URL. | — | new | — |
+| Q-PRACT-010 | Реализуй `createStore(initialState)` с `getState`, `setState`, `subscribe`, shallow merge и unsubscribe. | — | new | — |
+| Q-PRACT-011 | Напиши `useLocalStorageState(key, initialValue)` с lazy init, сериализацией, обработкой битого JSON и синхронизацией между вкладками. | — | new | — |
+| Q-PRACT-012 | Напиши `useDebouncedValue(value, delay)` и покажи, как избежать stale closure. | — | new | — |
+| Q-PRACT-013 | Напиши `usePrevious(value)` и пример, где он полезен. | — | new | — |
+| Q-PRACT-014 | Напиши `useOnClickOutside(ref, handler)` с корректной подпиской и cleanup. | — | new | — |
+| Q-PRACT-015 | Напиши `useIntersectionObserver(ref, options)` для lazy loading / infinite scroll. | — | new | — |
+| Q-PRACT-016 | Реализуй React-компонент `Modal` с portal, закрытием по Escape, backdrop click и focus trap на базовом уровне. | — | new | — |
+| Q-PRACT-017 | Реализуй `Tabs` компонент с keyboard navigation: ArrowLeft/ArrowRight, Home/End, ARIA roles. | — | new | — |
+| Q-PRACT-018 | Реализуй controlled `Autocomplete` с debounce, отменой старого запроса и состояниями loading/error/empty. | — | new | — |
+| Q-PRACT-019 | Реализуй `ToastProvider`: очередь уведомлений, auto-dismiss, ручное закрытие, лимит видимых toast. | — | new | — |
+| Q-PRACT-020 | Реализуй `VirtualList` для фиксированной высоты строк: расчёт видимого диапазона и spacer elements. | — | new | — |
+| Q-PRACT-021 | Напиши форму логина с валидацией полей, disabled submit, отображением server error и защитой от double submit. | — | new | — |
+| Q-PRACT-022 | Реализуй upload одного файла с preview, проверкой размера/типа и отменой загрузки через `AbortController`. | — | new | — |
+| Q-PRACT-023 | Напиши `serializeQuery(obj)` и `parseQuery(search)` с массивами, boolean/null и encode/decode. | — | new | — |
+| Q-PRACT-024 | Реализуй `deepMerge` для plain objects без мутации входных объектов; проговори ограничения. | — | new | — |
+| Q-PRACT-025 | Реализуй `classnames(...args)` как в `clsx`: строки, массивы, объекты, falsy values. | — | new | — |
+| Q-PRACT-026 | Реализуй `getByPath(obj, path, defaultValue)` и `setByPath(obj, path, value)` без мутации. | — | new | — |
+| Q-PRACT-027 | Реализуй маленький `Router` для SPA: `push`, `replace`, обработка `popstate`, подписка на изменение route. | — | new | — |
+| Q-PRACT-028 | Реализуй drag-and-drop сортировку списка на уровне состояния: `onDragStart`, `onDragOver`, `onDrop`, сохранение порядка. | — | new | — |
+| Q-PRACT-029 | Реализуй `copyToClipboard(text)` с fallback и отображением статуса success/error. | — | new | — |
+| Q-PRACT-030 | Дай большой React-компонент с несколькими багами state/effect/memoization и попроси переписать его на более устойчивую структуру. | — | new | — |
