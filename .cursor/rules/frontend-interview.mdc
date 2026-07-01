@@ -1,12 +1,13 @@
 ---
-description: Loader для frontend mock-interview; использует банк вопросов и coverage
-globs: interview_voice/**
+description: Frontend mock-interview — банк .questions, coverage, feedback; активируется при любом запросе на собеседование
 alwaysApply: false
 ---
 
 # Frontend Interview Loader
 
-Это тонкий loader. Перед frontend mock-interview обязательно читай содержательные источники:
+**Активация:** любой запрос на frontend/mock-собеседование (см. `.cursor/rules/interview-modes.mdc` — список триггеров). Не зависит от `@interview_voice` и открытой папки.
+
+Это тонкий loader. Перед frontend mock-interview **обязательно** читай содержательные источники:
 
 1. `.cursor/cursorrules/.cursorrules` — правила роли, дожима, фидбека и формата.
 2. `.cursor/cursorrules/.questions` — основной банк вопросов с ID.

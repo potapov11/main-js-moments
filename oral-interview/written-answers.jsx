@@ -1,79 +1,46 @@
-/**
- * Письменные ответы на устные вопросы (режим собеседования).
- *
- * Как пользоваться:
- * 1. Читай вопрос и блок «Сценарий» ниже.
- * 2. Пиши ответ в секции «Мой ответ» — текст + код.
- * 3. Не удаляй условие — только дополняй своими блоками.
- *
- * Сессия: 17.06.2026
- */
+function TodoList() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: "Learn React" },
+    { id: 2, text: "Pass interview" },
+  ]);
 
-// =============================================================================
-// Вопрос 1 — React: оптимизация списка при поиске
-// Статус: частично (memo + useCallback; не хватало debounce и virtualization)
-// =============================================================================
+  const addTodo = () => {
+    const newTodo = { id: Date.now(), text: "New task" };
+    //Мутация так нельзя
+    // todos.push(newTodo);
+    // setTodos(todos);
 
-/**
- * Сценарий:
- * Родитель с полем поиска и ~100 ListItem перерисовывается на каждый ввод.
- */
+    setTodos((prev) => [...prev, newTodo]);
+  };
 
-// function Parent() {
-//   const [query, setQuery] = useState('');
-//   const handleClick = (id) => { /* ... */ };
-//
-//   return (
-//     <>
-//       <input value={query} onChange={(e) => setQuery(e.target.value)} />
-//       {items.map((item) => (
-//         <ListItem key={item.id} item={item} onClick={handleClick} />
-//       ))}
-//     </>
-//   );
-// }
-// const ListItem = React.memo(/* ... */);
+  const toggleTodo = (id) => {
+    // const todo = todos.find((t) => t.id === id);
+    //Тоже мутация
+    // todo.done = !todo.done;
+    // setTodos(todos);
 
-/** Мой ответ (текст): */
-// React.memo на дочерние компоненты, useCallback для функций из родителя.
+    const mappedTodos = todos.map((todo, index) => {
+      if (id === todo.id) {
+        return {
+          ...todo,
+          done: !todo.done,
+        };
+      }
 
-/** Мой ответ (код — допиши исправленный вариант): */
+      return todo;
+    });
 
-// =============================================================================
-// Вопрос 2 — React: useEffect, гонка запросов, AbortController
-// Статус: зачёт после дожима
-// =============================================================================
+    setTodos(mappedTodos);
+  };
 
-/**
- * Сценарий:
- * При быстрой смене userId в UI могут появиться данные не того пользователя.
- */
-
-// function UserProfile({ userId }) {
-//   const [user, setUser] = useState(null);
-//
-//   useEffect(() => {
-//     fetch(`/api/users/${userId}`)
-//       .then((res) => res.json())
-//       .then((data) => setUser(data));
-//   }, [userId]);
-//
-//   if (!user) return <div>Loading...</div>;
-//   return <div>{user.name}</div>;
-// }
-
-/** Мой ответ (текст): */
-// При смене userId useEffect срабатывает заново.
-// Сначала React вызывает cleanup от предыдущего эффекта — там abort() отменяет старый fetch,
-// чтобы его ответ не перезаписал state после более нового запроса.
-
-/** Мой ответ (код — исправь UserProfile): */
-
-/** Мой ответ (текст): */
-// sync → 1, 4; microtask (Promise.then) → 3; macrotask (setTimeout) → 2
-// Порядок: 1, 4, 3, 2
-
-// =============================================================================
-// Вопрос 4+ — см. written-answer.tsx (TypeScript)
-// =============================================================================
-
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id} onClick={() => toggleTodo(todo.id)}>
+          {todo.text}
+        </li>
+      ))}
+      <button onClick={addTodo}>Add</button>
+    </ul>
+  );
+}

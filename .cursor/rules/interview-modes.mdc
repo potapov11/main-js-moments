@@ -21,9 +21,32 @@ alwaysApply: true
 
 ## Как Выбирать Режим
 
-- `@interview_voice`, «режим собеседование», «собеседование», «interview» → применяй `.cursor/rules/frontend-interview.mdc`.
+### Frontend mock-interview — **всегда по полным правилам**
+
+Независимо от формулировки запроса кандидата, если речь о **frontend / middle / junior собеседовании** (устные вопросы, mock-interview, code review на React/JS) — **обязательно** применяй полный протокол из `.cursor/rules/frontend-interview.mdc` + `.cursor/cursorrules/.cursorrules` (раздел «Режим: собеседование»).
+
+**Триггеры (любой из списка = frontend mock-interview):**
+- `@interview_voice`, папка `interview_voice/`, «из interview voice»
+- «собеседование», «mock-собес», «mock interview», «интервью», «interview»
+- «проведи собеседование», «продолжаем собеседование», «режим собеседование»
+- «frontend собес», «middle frontend», «устные вопросы на собес»
+- «10 вопросов», «полноценное собеседование» (если контекст — frontend, не алгоритмы)
+
+**Не важно:** есть ли `@`, открыт ли файл из `interview_voice/`, новый чат или продолжение — **всегда** перед первым вопросом:
+1. Прочитай `.cursor/cursorrules/.questions`
+2. Прочитай `interview_voice/question-coverage.md`
+3. Прочитай `feedbacks/interview-feedback-*.md` за 2–3 дня
+4. Проверь активную сессию `interview_voice/NN-*.md`
+5. Бери вопросы **по ID из банка**; не придумывай с головы
+6. После каждого вопроса обновляй `question-coverage.md` и daily feedback
+
+**Исключение (не frontend mock):** явный запрос на **алгоритмическое** собеседование («дай задачу», «алго-сессия», LeetCode) → `algo-interview-mode.mdc`. **System design** → `system-design-interview.mdc`.
+
+---
+
+- `@interview_voice`, «режим собеседование», «собеседование», «interview» → применяй `.cursor/rules/frontend-interview.mdc` (см. блок выше).
 - `@system-design`, «system design», «систем дизайн», «начинаем system design» → применяй `.cursor/rules/system-design-interview.mdc`.
-- «Начинаем сессию», «Дай задачу», «Проверь моё решение» → применяй `.cursor/rules/algo-interview-mode.mdc`.
+- «Начинаем сессию», «Дай задачу», «Проверь моё решение» (без слова «собеседование») → применяй `.cursor/rules/algo-interview-mode.mdc`.
 - «Напиши условие» для JS-задачи из `roadmap.md` → применяй `.cursor/rules/yandex-js-tasks.mdc`.
 
 Не копируй содержательные правила в `.cursor/rules/`; обновляй их в `.cursor/cursorrules/`.

@@ -35,7 +35,7 @@
 | Q-REACT-025 | Что такое "мерцание" (flash) при SSR и как его избежать? | — | new | — |
 | Q-REACT-026 | Какие правила использования хуков? Почему они важны? | — | new | — |
 | Q-REACT-027 | Как работает useState? Что возвращает? | — | new | — |
-| Q-REACT-028 | Что такое useEffect? Массив зависимостей: как работает? | — | new | — |
+| Q-REACT-028 | Что такое useEffect? Массив зависимостей: как работает? | 2026-06-25 | passed | fetch: deps, race, isCanceled/async |
 | Q-REACT-029 | Как useEffect определяет изменения зависимостей? Object.is? | — | new | — |
 | Q-REACT-030 | Что такое useLayoutEffect? Чем отличается от useEffect? | — | new | — |
 | Q-REACT-031 | Когда использовать useLayoutEffect вместо useEffect? | — | new | — |
@@ -65,9 +65,9 @@
 | Q-REACT-055 | Как управлять состоянием форм? React Hook Form, Formik? | — | new | — |
 | Q-REACT-056 | Какие инструменты для измерения производительности React? | — | new | — |
 | Q-REACT-057 | Что такое "рендер" в React? Когда происходит? | — | new | — |
-| Q-REACT-058 | Как избежать лишних рендеров? | — | new | — |
+| Q-REACT-058 | Как избежать лишних рендеров? | 2026-06-25 | weak | memo ok; useMemo syntax wrong; no debounce/virtualize |
 | Q-REACT-059 | Что такое "bailing out of update"? | — | new | — |
-| Q-REACT-060 | Как работает батчинг обновлений в React 18? | — | new | — |
+| Q-REACT-060 | Как работает батчинг обновлений в React 18? | 2026-06-25 | passed | functional setState prev+1×3 |
 | Q-REACT-061 | Что такое виртуализация списков? react-window, react-virtualized? | — | new | — |
 | Q-REACT-062 | Как лениво загружать компоненты? React.lazy + Suspense? | — | new | — |
 | Q-REACT-063 | Как оптимизировать контекст от частых обновлений? | — | new | — |
@@ -86,7 +86,7 @@
 | Q-REACT-076 | Как работает React Router v6? Чем отличается от v5? | — | new | — |
 | Q-REACT-077 | Что такое SPA (Single Page Application)? Плюсы и минусы? | — | new | — |
 | Q-REACT-078 | Как работает BrowserRouter vs HashRouter? | — | new | — |
-| Q-REACT-079 | Как защитить маршруты (PrivateRoute)? | — | new | — |
+| Q-REACT-079 | Как защитить маршруты (PrivateRoute)? | 2026-06-25 | weak | UI check ≠ security; backend enforcement |
 | Q-REACT-080 | Что такое loaders и actions в React Router v6? | — | new | — |
 | Q-TS-001 | Что такое TypeScript? Зачем нужен? | — | new | — |
 | Q-TS-002 | Чем отличается TypeScript от JavaScript? | — | new | — |
@@ -142,23 +142,23 @@
 | Q-JS-002 | Что такое hoisting? | — | new | — |
 | Q-JS-003 | Что такое Temporal Dead Zone (TDZ)? | — | new | — |
 | Q-JS-004 | Какие типы данных в JavaScript? | — | new | — |
-| Q-JS-005 | Разница между == и ===? Когда использовать? | — | new | — |
+| Q-JS-005 | Разница между == и ===? Когда использовать? | 2026-06-25 | weak | null/undefined/NaN ok; []==![] unclear; Object.is gap |
 | Q-JS-006 | Что такое приведение типов (type coercion)? Примеры? | — | new | — |
 | Q-JS-007 | Что такое замыкания (closures)? Пример использования? | — | new | — |
 | Q-JS-008 | Что такое область видимости (scope)? Глобальная, функциональная, блочная? | — | new | — |
 | Q-JS-009 | Что такое контекст выполнения (execution context)? | — | new | — |
 | Q-JS-010 | Что такое лексическое окружение (lexical environment)? | — | new | — |
-| Q-JS-011 | Как работает this? Правила определения? | — | new | — |
+| Q-JS-011 | Как работает this? Правила определения? | 2026-06-25 | weak | arrow vs function callback; confused getName() |
 | Q-JS-012 | Как явно привязать this? call, apply, bind? | — | new | — |
 | Q-JS-013 | Разница между стрелочной и обычной функцией? | — | new | — |
 | Q-JS-014 | Что такое spread оператор (...)? Rest параметры? | — | new | — |
 | Q-JS-015 | Что такое деструктуризация (destructuring)? | — | new | — |
 | Q-JS-016 | Что такое функции высшего порядка? | — | new | — |
 | Q-JS-017 | Что такое чистая функция? | — | new | — |
-| Q-JS-018 | Что такое иммутабельность (immutability)? | — | new | — |
+| Q-JS-018 | Что такое иммутабельность (immutability)? | 2026-06-25 | passed | TodoList: spread, map, key=id |
 | Q-JS-019 | Как работает new оператор? | — | new | — |
 | Q-JS-020 | Что такое прототипное наследование? | — | new | — |
-| Q-JS-021 | Что такое Event Loop? Call Stack, Task Queue, Microtask Queue? | — | new | — |
+| Q-JS-021 | Что такое Event Loop? Call Stack, Task Queue, Microtask Queue? | 2026-06-25 | passed | A,D,G,C,E,B,F — sync/micro/macro |
 | Q-JS-022 | Разница между микро- и макрозадачами? (microtasks vs macrotasks) | — | new | — |
 | Q-JS-023 | Что такое промисы (Promises)? Состояния? | — | new | — |
 | Q-JS-024 | Что такое callback hell? Как избежать? | — | new | — |
@@ -292,7 +292,7 @@
 | Q-HTTP-037 | Что такое WebRTC? Когда использовать? | — | new | — |
 | Q-HTTP-038 | Что такое MQTT? Для IoT? | — | new | — |
 | Q-HTTP-039 | Что такое QUIC протокол? | — | new | — |
-| Q-CSS-001 | Что такое специфичность? Как считать селекторы? | — | new | — |
+| Q-CSS-001 | Что такое специфичность? Как считать селекторы? | 2026-06-25 | passed | !important green; без — red #text |
 | Q-CSS-002 | Каскадность CSS: как применяются стили? | — | new | — |
 | Q-CSS-003 | Что такое блочная модель (box model)? box-sizing? | — | new | — |
 | Q-CSS-004 | Разница между display: block, inline, inline-block, none? | — | new | — |
@@ -595,7 +595,7 @@
 | Q-REACT-087 | Stale props в memoized child — как воспроизвести? | — | new | — |
 | Q-REACT-088 | Concurrent features: startTransition / useDeferredValue — зачем? | — | new | — |
 | Q-HTTP-046 | Из чего состоит HTTP request и response? | — | new | — |
-| Q-HTTP-047 | Что происходит после ввода URL (DNS, TCP, TLS, request, parse, render)? | — | new | — |
+| Q-HTTP-047 | Что происходит после ввода URL (DNS, TCP, TLS, request, parse, render)? | 2026-06-25 | weak | DNS only; GET/POST shallow; CORS imprecise |
 | Q-HTTP-048 | Preflight CORS: кто шлёт OPTIONS, какие headers нужны? | — | new | — |
 | Q-HTTP-072 | Simple vs non-simple request — примеры. | — | new | — |
 | Q-HTTP-049 | Cookie attributes: HttpOnly, Secure, SameSite — зачем каждый? | — | new | — |
@@ -652,7 +652,7 @@
 | Q-BEHAV-005 | Legacy без тестов — стратегия изменений. | — | new | — |
 | Q-BEHAV-003 | Как оцениваешь задачу, которая «плывёт»? | — | new | — |
 | Q-BEHAV-006 | Пример, когда сознательно выбрал простое решение вместо «красивого». | — | new | — |
-| Q-ALGO-LC-004 | Two Sum: массив nums, target — индексы двух чисел с суммой target. | — | new | — |
+| Q-ALGO-LC-004 | Two Sum: массив nums, target — индексы двух чисел с суммой target. | 2026-06-25 | passed | Map O(n) time/space |
 | Q-ALGO-LC-005 | Valid Parentheses: строка ()[]{} — валидны ли скобки. | — | new | — |
 | Q-ALGO-LC-006 | Longest Substring Without Repeating Characters: длина longest подстроки без повторов. | — | new | — |
 | Q-ALGO-LC-007 | Merge Intervals: массив [start,end] — объединить пересекающиеся. | — | new | — |
@@ -858,7 +858,7 @@
 | Q-SCEN-TRADE-009 | SWR vs React Query — критерий выбора? | — | new | — |
 | Q-SCEN-TRADE-010 | Feature-based vs layer-based folder structure? | — | new | — |
 | Q-PRACT-001 | Реализуй `EventEmitter` с методами `on`, `off`, `emit`, `once`; обработай удаление listener во время `emit`. | — | new | — |
-| Q-PRACT-002 | Реализуй `debounce(fn, delay)` с методами `cancel` и `flush`; объясни, где использовать в React. | — | new | — |
+| Q-PRACT-002 | Реализуй `debounce(fn, delay)` с методами `cancel` и `flush`; объясни, где использовать в React. | 2026-06-25 | seen | отложено; debounce уже решал в tasks/ |
 | Q-PRACT-003 | Реализуй `throttle(fn, delay)` с leading/trailing options и методом `cancel`. | — | new | — |
 | Q-PRACT-004 | Напиши `memoize(fn, { maxSize, ttl })` с кэшированием по аргументам и очисткой устаревших значений. | — | new | — |
 | Q-PRACT-005 | Реализуй `retry(fn, { retries, delay, backoff })` для async-функции; добавь остановку по `AbortSignal`. | — | new | — |

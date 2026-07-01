@@ -1,44 +1,18 @@
-/**
- * Письменные ответы на TypeScript-вопросы (режим собеседования).
- *
- * Проверка типов: npm run typecheck (из папки oral-interview)
- *
- * Сессия: 17.06.2026
- */
-
-// =============================================================================
-// Вопрос 4 — TypeScript: discriminated union, сужение типов
-// =============================================================================
-
-type ApiResponse = {
-  status: 'ok' | 'error';
-  data?: { id: number; name: string };
-  message?: string;
+type User = {
+  id: number;
+  name: string;
+  role: "admin" | "user";
 };
 
-function handleResponse(res: ApiResponse) {
-  if (res.status === 'ok') {
-    // Ошибка TS: 'res.data' is possibly 'undefined'
-    console.log(res.data.name);
-  } else {
-    console.log(res.message);
+type AdminPanelProps = {
+  user: User;
+  onDelete: (id: number) => void;
+};
+
+function AdminPanel({ user, onDelete }: AdminPanelProps) {
+  if (user.role !== "admin") {
+    return <p>Access denied</p>;
   }
+
+  return <button onClick={() => onDelete(user.id)}>Delete all users</button>;
 }
-
-/** Мой ответ (текст): */
-// Проверка только status === 'ok' не гарантирует, что data есть — поле optional (data?).
-// Нужна доп. проверка res.data или discriminated union.
-
-/** Мой ответ (код — исправь без as и без !): */
-
-
-
-// =============================================================================
-// Вопрос 5 — (ожидает вопроса от интервьюера)
-// =============================================================================
-
-/** Сценарий: */
-
-/** Мой ответ (текст): */
-
-/** Мой ответ (код): */
