@@ -858,7 +858,7 @@
 | Q-SCEN-TRADE-009 | SWR vs React Query — критерий выбора? | — | new | — |
 | Q-SCEN-TRADE-010 | Feature-based vs layer-based folder structure? | — | new | — |
 | Q-PRACT-001 | Реализуй `EventEmitter` с методами `on`, `off`, `emit`, `once`; обработай удаление listener во время `emit`. | — | new | — |
-| Q-PRACT-002 | Реализуй `debounce(fn, delay)` с методами `cancel` и `flush`; объясни, где использовать в React. | 2026-06-25 | seen | отложено; debounce уже решал в tasks/ |
+| Q-PRACT-002 | Реализуй `debounce(fn, delay)` с методами `cancel` и `flush`; объясни, где использовать в React. | 2026-07-03 | passed | useDebounce hook: setTimeout+cleanup; App+useEffect |
 | Q-PRACT-003 | Реализуй `throttle(fn, delay)` с leading/trailing options и методом `cancel`. | — | new | — |
 | Q-PRACT-004 | Напиши `memoize(fn, { maxSize, ttl })` с кэшированием по аргументам и очисткой устаревших значений. | — | new | — |
 | Q-PRACT-005 | Реализуй `retry(fn, { retries, delay, backoff })` для async-функции; добавь остановку по `AbortSignal`. | — | new | — |

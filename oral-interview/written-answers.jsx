@@ -1,46 +1,22 @@
-function TodoList() {
-  const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React" },
-    { id: 2, text: "Pass interview" },
-  ]);
+import { useState } from "react";
+import "./App.css";
 
-  const addTodo = () => {
-    const newTodo = { id: Date.now(), text: "New task" };
-    //Мутация так нельзя
-    // todos.push(newTodo);
-    // setTodos(todos);
+function App() {
+  const [searchTerm, setSearchTerm] = useState("");
 
-    setTodos((prev) => [...prev, newTodo]);
-  };
-
-  const toggleTodo = (id) => {
-    // const todo = todos.find((t) => t.id === id);
-    //Тоже мутация
-    // todo.done = !todo.done;
-    // setTodos(todos);
-
-    const mappedTodos = todos.map((todo, index) => {
-      if (id === todo.id) {
-        return {
-          ...todo,
-          done: !todo.done,
-        };
-      }
-
-      return todo;
-    });
-
-    setTodos(mappedTodos);
-  };
+  // То есть при создании хука useDebaunce я делаю так - в хук передаю значение которое хочу дебаунсить,
+  // и delay. Описание хука - принимает значение и delay, val, и setVal, в useEffect ставит timerId = в нее 
+  // записываем функцию setTimeOut, в функции setim значение в val
+  // при cleanUp функции  ощищаем timer, всегда возвращаем значение val, useEffect реагирует на delay и val
 
   return (
-    <ul>
-      {todos.map((todo) => (
-        <li key={todo.id} onClick={() => toggleTodo(todo.id)}>
-          {todo.text}
-        </li>
-      ))}
-      <button onClick={addTodo}>Add</button>
-    </ul>
+    <div className="App">
+      <div>
+        <label htmlFor="search-input">Search Unsplash images</label>
+        <input type="search" id="search-input" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+      </div>
+    </div>
   );
 }
+
+export default App;

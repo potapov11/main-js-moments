@@ -1,10 +1,11 @@
 # Собеседование — mock Middle Frontend
 
-**Статус:** на паузе (Q-PRACT-002 useDebounce не закрыт)  
-**Дата:** 2026-06-25  
-**Блок:** 10 (+ algo; practical отложен)  
-**Тема:** Middle Frontend mock (устные + Two Sum)  
-**Пауза:** useDebounce отложен кандидатом
+**Статус:** завершено  
+**Дата начала:** 2026-06-25  
+**Дата закрытия:** 2026-07-03  
+**Блок:** 10 (+ algo + practical)  
+**Тема:** Middle Frontend mock (устные + Two Sum + useDebounce)  
+**Пауза:** —
 
 ---
 
@@ -23,28 +24,28 @@
 | 9 | Q-JS-018 | иммутабельность | passed |
 | 10 | Q-REACT-079 | admin / PrivateRoute security | weak |
 | + | Q-ALGO-LC-004 | Two Sum | passed |
-| + | Q-PRACT-002 | useDebounce hook | seen (отложено) |
+| + | Q-PRACT-002 | useDebounce hook | passed |
 
 ## Текущий вопрос
 
-**Q-PRACT-002** — реализовать `useDebounce(value, delay)` + пример с поиском.
+— (сессия закрыта)
 
-## Ответ кандидата
+## Ответ кандидата (Q-PRACT-002)
 
-— (не начат)
+`useDebounce(value, delay)`: `useState` + `useEffect` с `setTimeout` → `setDebouncedVal(value)`, cleanup `clearTimeout`, deps `[value, delay]`. В `App`: `useDebounce(searchTerm, 1000)` + `useEffect` на `debauncedSearch`.
 
 ## Прогресс блока
 
 | # | ID | Статус | Заметка |
 |---|-----|--------|---------|
-| 1–10 | см. план | см. план | устный блок закрыт |
+| 1–10 | см. план | см. план | устный блок закрыт 2026-06-25 |
 | algo | Q-ALGO-LC-004 | passed | Map O(n) |
-| practical | Q-PRACT-002 | seen | отложено |
+| practical | Q-PRACT-002 | passed | hook + cleanup; 2026-07-03 |
 
 ## Критерий «зачёт» practical
 
-Хук с cleanup; debounced value; пример фильтрации списка.
+Хук с cleanup; debounced value; пример — ✅
 
 ## Заметки интервьюера
 
-Сессия шла в общем чате без loader `frontend-interview.mdc`; coverage обновлён ретроспективно 2026-06-25.
+Сессия #2 полностью закрыта 2026-07-03.

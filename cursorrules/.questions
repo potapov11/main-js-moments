@@ -1,0 +1,1698 @@
+Оглавление
+React (80 вопросов)
+
+TypeScript (50 вопросов)
+
+JavaScript (70 вопросов)
+
+Архитектура и паттерны (45 вопросов)
+
+HTTP и сеть (40 вопросов)
+
+CSS и верстка (60 вопросов)
+
+Браузер и производительность (35 вопросов)
+
+Webpack/Vite и сборка (25 вопросов)
+
+Тестирование (20 вопросов)
+
+Базы данных и бэкенд (15 вопросов)
+
+Git и DevOps (20 вопросов)
+
+Алгоритмы и структуры данных (20 вопросов)
+
+Soft skills (20 вопросов) — раздел 13
+
+14. Вопросы с реальных собеседований (~50 вопросов)
+
+15. BigTech Middle — Frontend (~90 пунктов, Middle+)
+
+16. Расширенный банк — уникальные формулировки (~120 вопросов)
+
+17. Code Review — копируемые фрагменты с багами (~25 кейсов)
+
+18. Сценарии «что будет если» и trade-offs (~60 вопросов)
+
+Роли разделов (важно для интервьюера)
+1–11 — базовый банк по темам (теория, Junior → Middle).
+12 — теория алгоритмов и структур данных (Big O, паттерны). Не live coding.
+13 — soft skills (коммуникация, процессы).
+14 — вопросы с реальных собесов (продуктовые команды). Приоритет для Middle+.
+15 — BigTech Middle: дожим, trade-offs, system design lite, список medium-задач. Перекрывается с 14, но планка выше.
+При одной сессии не дублируй одну тему из 14 и 15 — выбери один раздел.
+16–18 — приоритет для разнообразия между сессиями; не повторяй одну и ту же формулировку, если тема уже была в `feedbacks/interview-feedback-DD.MM.md` за последние дни.
+17 — давать кандидату код целиком для копирования и исправления.
+
+1. REACT (80 вопросов)
+Основы React (15)
+Что такое React и его основные принципы?
+
+Что такое JSX? Как он транспилируется?
+
+В чем разница между элементами (elements) и компонентами (components)?
+
+Что такое Virtual DOM? Как он сравнивается с реальным DOM?
+
+Как работает алгоритм согласования (reconciliation)?
+
+Что такое ключи (keys) в React? Почему нельзя использовать index?
+
+Что такое "подъем состояния" (lifting state up)?
+
+Как передать данные от ребенка к родителю?
+
+Управляемые (controlled) vs неконтролируемые (uncontrolled) компоненты?
+
+Что такое refs? Когда использовать? createRef vs useRef?
+
+Как работать с формами в React?
+
+Что такое Fragment? Зачем нужен?
+
+Что такое порталы (Portals)? Реальный кейс использования?
+
+Как обрабатывать ошибки в React? Error Boundaries?
+
+Что такое StrictMode? Какие проверки выполняет?
+
+Компоненты и жизненный цикл (10)
+Функциональные vs классовые компоненты: плюсы и минусы?
+
+Какие методы жизненного цикла были в классовых компонентах?
+
+Как useEffect эмулирует методы жизненного цикла?
+
+Что такое чистая функция компонента? Почему React компоненты должны быть чистыми?
+
+Что такое React.memo? Когда использовать?
+
+Что такое PureComponent? Чем отличается от React.memo?
+
+Как работает shouldComponentUpdate?
+
+Что происходит при монтировании/обновлении/размонтировании?
+
+Как правильно размонтировать компонент и очистить подписки?
+
+Что такое "мерцание" (flash) при SSR и как его избежать?
+
+Хуки (Hooks) (20)
+Какие правила использования хуков? Почему они важны?
+
+Как работает useState? Что возвращает?
+
+Что такое useEffect? Массив зависимостей: как работает?
+
+Как useEffect определяет изменения зависимостей? Object.is?
+
+Что такое useLayoutEffect? Чем отличается от useEffect?
+
+Когда использовать useLayoutEffect вместо useEffect?
+
+Что такое useContext? Как оптимизировать контекст?
+
+Что такое useReducer? Когда лучше useState?
+
+useCallback vs useMemo: в чем разница? Примеры использования?
+
+Что такое useRef? Чем отличается от useState?
+
+Что такое useImperativeHandle? Когда использовать?
+
+Что такое useDebugValue? Зачем нужен?
+
+Как создать свой хук (custom hook)? Пример?
+
+Что такое useId? Зачем нужен?
+
+Что такое useTransition и useDeferredValue?
+
+Как работает useSyncExternalStore? Когда нужен?
+
+Что такое useInsertionEffect? (React 18)
+
+Как работают хуки под капотом? Почему порядок важен?
+
+Как отлаживать хуки? React DevTools?
+
+В чем проблема с "замыканиями" в useEffect?
+
+Управление состоянием (State Management) (10)
+Что такое локальный, глобальный и серверный state?
+
+Когда использовать Context API vs Redux?
+
+Как работает Redux? Flux паттерн?
+
+Что такое Redux Thunk vs Redux Saga?
+
+Что такое Redux Toolkit? Зачем нужен?
+
+Что такое Zustand? Чем отличается от Redux?
+
+Что такое MobX? Реактивное программирование?
+
+Что такое Recoil? Атомы и селекторы?
+
+Что такое Jotai? Когда использовать?
+
+Как управлять состоянием форм? React Hook Form, Formik?
+
+Производительность (Performance) (10)
+Какие инструменты для измерения производительности React?
+
+Что такое "рендер" в React? Когда происходит?
+
+Как избежать лишних рендеров?
+
+Что такое "bailing out of update"?
+
+Как работает батчинг обновлений в React 18?
+
+Что такое виртуализация списков? react-window, react-virtualized?
+
+Как лениво загружать компоненты? React.lazy + Suspense?
+
+Как оптимизировать контекст от частых обновлений?
+
+Что такое Code Splitting? Как реализовать?
+
+Как работает tree shaking в React?
+
+React 18+ и современные фичи (10)
+Что нового в React 18?
+
+Что такое Concurrent Rendering?
+
+Как работает автоматическое батчирование (automatic batching)?
+
+Что такое startTransition? Когда использовать?
+
+Что такое Suspense для данных?
+
+Что такое Server Components? Как работают?
+
+Что такое React Server Components vs Client Components?
+
+Что такое "use server" директива?
+
+Что такое "use client" директива?
+
+Что такое React Compiler (React Forget)?
+
+Роутинг (5)
+Как работает React Router v6? Чем отличается от v5?
+
+Что такое SPA (Single Page Application)? Плюсы и минусы?
+
+Как работает BrowserRouter vs HashRouter?
+
+Как защитить маршруты (PrivateRoute)?
+
+Что такое loaders и actions в React Router v6?
+
+2. TYPESCRIPT (50 вопросов)
+Основы (15)
+Что такое TypeScript? Зачем нужен?
+
+Чем отличается TypeScript от JavaScript?
+
+Как TypeScript компилируется? Что такое tsconfig.json?
+
+Базовые типы: string, number, boolean, null, undefined, void, never?
+
+Что такое union (|) и intersection (&) типы?
+
+Как работают литеральные типы?
+
+Что такое any, unknown, never? В чем разница?
+
+Что такое void? Когда возвращается?
+
+Что такое null и undefined в TypeScript?
+
+Как работает type inference?
+
+Что такое type annotation?
+
+Как типизировать массивы и кортежи (tuples)?
+
+Что такое enum? Когда использовать?
+
+Проблемы с enum? Альтернативы?
+
+Как типизировать функции? Overloads?
+
+Интерфейсы и типы (10)
+interface vs type: в чем разница? Когда что использовать?
+
+Как расширять интерфейсы? (extends)
+
+Как объединять типы? (intersection &)
+
+Что такое declaration merging?
+
+Как работает implements vs extends?
+
+Как типизировать объекты с динамическими ключами? (index signature)
+
+Как сделать свойства опциональными? (optional, Partial)
+
+Как сделать свойства только для чтения? (readonly)
+
+Что такое utility types: Partial, Required, Readonly?
+
+Что такое Record, Pick, Omit, Exclude, Extract?
+
+Generics (10)
+Что такое дженерики (generics)? Зачем нужны?
+
+Как написать generic функцию?
+
+Что такое generic constraints? extends keyof?
+
+Как работает keyof оператор?
+
+Что такое typeof в TS?
+
+Как работает infer?
+
+Что такое conditional types? T extends U ? X : Y
+
+Что такое mapped types? { [P in K]: T[P] }
+
+Что такое template literal types?
+
+Как работают рекурсивные типы?
+
+Продвинутые типы (10)
+Что такое unknown? Как с ним работать? type narrowing?
+
+Что такое type guards? typeof, instanceof, in, пользовательские guards?
+
+Что такое assertion functions? asserts value is Type
+
+Что такое satisfies оператор? (TS 4.9)
+
+Что такое as const утверждение?
+
+Как работает NonNullable?
+
+Что такое ReturnType, Parameters?
+
+Что такое Awaited?
+
+Как работать с модулями? пространства имен?
+
+Как типизировать декораторы?
+
+React + TypeScript (5)
+Как типизировать функциональный компонент? React.FC vs обычная функция?
+
+Как типизировать пропсы? PropsWithChildren?
+
+Как типизировать хуки: useState, useEffect, useReducer, useContext?
+
+Как типизировать события: SyntheticEvent, MouseEvent, FormEvent?
+
+Как типизировать refs? RefObject, MutableRefObject?
+
+3. JAVASCRIPT (70 вопросов)
+Основы и синтаксис (20)
+В чем разница между var, let, const? (hoisting, TDZ)
+
+Что такое hoisting?
+
+Что такое Temporal Dead Zone (TDZ)?
+
+Какие типы данных в JavaScript?
+
+Разница между == и ===? Когда использовать?
+
+Что такое приведение типов (type coercion)? Примеры?
+
+Что такое замыкания (closures)? Пример использования?
+
+Что такое область видимости (scope)? Глобальная, функциональная, блочная?
+
+Что такое контекст выполнения (execution context)?
+
+Что такое лексическое окружение (lexical environment)?
+
+Как работает this? Правила определения?
+
+Как явно привязать this? call, apply, bind?
+
+Разница между стрелочной и обычной функцией?
+
+Что такое spread оператор (...)? Rest параметры?
+
+Что такое деструктуризация (destructuring)?
+
+Что такое функции высшего порядка?
+
+Что такое чистая функция?
+
+Что такое иммутабельность (immutability)?
+
+Как работает new оператор?
+
+Что такое прототипное наследование?
+
+Асинхронность (15)
+Что такое Event Loop? Call Stack, Task Queue, Microtask Queue?
+
+Разница между микро- и макрозадачами? (microtasks vs macrotasks)
+
+Что такое промисы (Promises)? Состояния?
+
+Что такое callback hell? Как избежать?
+
+Разница между Promise.all, allSettled, race, any?
+
+Что такое async/await? Как работает под капотом?
+
+Как обрабатывать ошибки в async/await? try/catch vs .catch?
+
+Что такое генераторы? function*, yield?
+
+Что такое async-генераторы?
+
+Что такое setTimeout, setInterval, requestAnimationFrame?
+
+Как работает queueMicrotask?
+
+Что такое process.nextTick в Node.js?
+
+Что такое отложенные вычисления? (thunk)
+
+Что такое "гонка состояний"? Как избежать?
+
+Как отменить промис? AbortController?
+
+Функции и объекты (10)
+Что такое методы: map, filter, reduce, forEach?
+
+Что такое call, apply, bind? Отличия?
+
+Что такое каррирование (currying)? Пример?
+
+Что такое частичное применение функций?
+
+Что такое мемоизация (memoization)? Как реализовать?
+
+Как клонировать объект? shallow vs deep?
+
+Что такое WeakMap, WeakSet? Чем отличаются от Map, Set?
+
+Что такое Object.create? Прототипное наследование?
+
+Что такое Object.freeze, Object.seal?
+
+Что такое геттеры и сеттеры? get, set?
+
+Классы и ООП (10)
+Что такое классы в ES6?
+
+Как работает наследование? extends, super?
+
+Что такое статические методы и свойства? static?
+
+Что такое приватные поля? #privateField?
+
+Что такое абстрактные классы в JS?
+
+Что такое миксины (mixins)?
+
+Что такое композиция vs наследование?
+
+Что такое полиморфизм в JS?
+
+Что такое инкапсуляция?
+
+Как эмулировали классы до ES6?
+
+Модули и сборка (10)
+Что такое ES modules? import/export?
+
+Разница между default и named export?
+
+Что такое CommonJS? require/module.exports?
+
+Разница между ES modules и CommonJS?
+
+Что такое динамический импорт? import()
+
+Что такое Tree Shaking?
+
+Что такое Module Federation?
+
+Что такое UMD, AMD?
+
+Как работает циклическая зависимость?
+
+Что такое "звездный импорт" import * as? Проблемы?
+
+Продвинутые темы (5)
+Что такое Reflection API? Reflect, Proxy?
+
+Что такое метапрограммирование? Symbol?
+
+Что такое тайпизированные массивы? TypedArray, ArrayBuffer?
+
+Что такое Web Workers? Shared Workers?
+
+Как работает Atomics? SharedArrayBuffer?
+
+4. АРХИТЕКТУРА И ПАТТЕРНЫ (45 вопросов)
+SOLID и принципы (10)
+Что такое SOLID? Каждый принцип с примером?
+
+Single Responsibility Principle (SRP) во фронтенде?
+
+Open-Closed Principle (OCP)?
+
+Liskov Substitution Principle (LSP)?
+
+Interface Segregation Principle (ISP)?
+
+Dependency Inversion Principle (DIP)?
+
+DRY (Don't Repeat Yourself) - где границы?
+
+KISS (Keep It Simple, Stupid)?
+
+YAGNI (You Aren't Gonna Need It)?
+
+Composition over Inheritance? Почему?
+
+Паттерны проектирования (15)
+Какие паттерны из GoF используете?
+
+Паттерн Singleton? Проблемы в JS?
+
+Паттерн Factory? Когда использовать?
+
+Паттерн Builder? Пример?
+
+Паттерн Observer? EventEmitter?
+
+Паттерн Pub/Sub? Чем отличается от Observer?
+
+Паттерн Strategy? Пример в React?
+
+Паттерн Decorator? HOC в React?
+
+Паттерн Adapter? Адаптер для API?
+
+Паттерн Proxy? Пример в JS?
+
+Паттерн Command? Redux actions?
+
+Паттерн State? Конечные автоматы?
+
+Паттерн Template Method?
+
+Паттерн Visitor? Когда нужен?
+
+Паттерн Middleware? Express, Redux?
+
+Архитектурные подходы (10)
+Что такое Feature-Sliced Design (FSD)? Слои?
+
+Что такое Component-Driven Development?
+
+Что такое Atomic Design? Атомы, молекулы, организмы?
+
+Что такое Container/Presentational паттерн?
+
+Что такое Clean Architecture во фронтенде?
+
+Что такое Hexagonal Architecture (Ports & Adapters)?
+
+Что такое MVC, MVVM, MVP во фронтенде?
+
+Что такое Flux? Однонаправленный поток данных?
+
+Что такое CQRS? Command Query Responsibility Segregation?
+
+Что такое Event Sourcing?
+
+Микрофронтенды (5)
+Что такое Micro Frontends? Когда нужны?
+
+Какие подходы к интеграции? IFrame, Web Components, Module Federation?
+
+Как разделять состояние между микрофронтендами?
+
+Как реализовать навигацию между приложениями?
+
+Как организовать shared-библиотеки?
+
+API и коммуникация (5)
+REST vs GraphQL? Когда что выбрать?
+
+Что такое GraphQL? Плюсы и минусы?
+
+Что такое gRPC-Web?
+
+Что такое WebSocket? SSE? Когда что использовать?
+
+Как реализовать long polling?
+
+5. HTTP И СЕТЬ (40 вопросов)
+Основы HTTP (15)
+Как работает HTTP запрос? Структура?
+
+HTTP методы: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS?
+
+Идемпотентность методов? Какие методы идемпотентны?
+
+Что такое HTTP статусы? Все группы и примеры?
+
+1xx (Informational), 2xx (Success), 3xx (Redirection), 4xx (Client Error), 5xx (Server Error)?
+
+Что такое заголовки? Основные: Content-Type, Authorization, Cache-Control?
+
+Content-Type: application/json vs multipart/form-data?
+
+Что такое cookie? Как работают? Атрибуты: HttpOnly, Secure, SameSite?
+
+Что такое CORS? Preflight запрос? Как решить?
+
+Что такое CSRF? Как защититься?
+
+Что такое XSS? Как защититься?
+
+Что такое HTTPS? Как работает TLS?
+
+Что такое HTTP/2.0? Отличия от HTTP/1.1?
+
+Что такое HTTP/3.0? QUIC протокол?
+
+Что такое gzip, Brotli сжатие?
+
+REST API (10)
+Что такое REST? Принципы REST?
+
+Что такое ресурс (resource) в REST?
+
+Как правильно именовать endpoints?
+
+Что такое версионирование API? Стратегии?
+
+Что такое HATEOAS?
+
+Пагинация в REST: offset/limit vs cursor?
+
+Фильтрация, сортировка, поиск в REST?
+
+Что такое idempotency key?
+
+Что такое rate limiting? Как реализовать на фронте?
+
+Как документировать REST API? OpenAPI, Swagger?
+
+Аутентификация (8)
+JWT токен: структура, как работает?
+
+Где хранить JWT? localStorage vs cookies? Безопасность?
+
+Refresh token механизм? Как работает?
+
+OAuth 2.0 и OpenID Connect?
+
+Basic Auth vs Bearer Auth?
+
+Что такое Session-based auth?
+
+Что такое SSO (Single Sign-On)?
+
+Как реализовать "запомнить меня"?
+
+Сетевые технологии (7)
+DNS: как работает? Что такое A, CNAME записи?
+
+CDN: что это? Как ускоряет загрузку?
+
+Что такое WebSocket? Как работает handshake?
+
+Что такое Server-Sent Events (SSE)?
+
+Что такое WebRTC? Когда использовать?
+
+Что такое MQTT? Для IoT?
+
+Что такое QUIC протокол?
+
+6. CSS И ВЕРСТКА (60 вопросов)
+Основы CSS (20)
+Что такое специфичность? Как считать селекторы?
+
+Каскадность CSS: как применяются стили?
+
+Что такое блочная модель (box model)? box-sizing?
+
+Разница между display: block, inline, inline-block, none?
+
+Разница между visibility: hidden и display: none?
+
+Позиционирование: static, relative, absolute, fixed, sticky?
+
+Что такое z-index? Контекст наложения (stacking context)?
+
+Единицы измерения: px, em, rem, vw, vh, %, fr?
+
+Работа с цветом: hex, rgb, hsl, rgba?
+
+Что такое псевдоклассы? Примеры: :hover, :first-child, :nth-of-type?
+
+Что такое псевдоэлементы? ::before, ::after, ::first-line?
+
+Что такое CSS-переменные (custom properties)? Преимущества?
+
+Как работает наследование в CSS?
+
+Что такое сброс стилей (reset)? normalize.css?
+
+Что такое вендорные префиксы? Autoprefixer?
+
+Что такое @import? Плюсы и минусы?
+
+Что такое @media? Адаптивная верстка?
+
+Breakpoints для мобильных, планшетов, десктопов?
+
+Что такое @keyframes? CSS-анимация?
+
+Что такое transition? Разница с анимацией?
+
+Flexbox (10)
+Что такое Flexbox? Когда использовать?
+
+Flex-контейнер и flex-элементы?
+
+Свойства контейнера: flex-direction, flex-wrap, justify-content, align-items, align-content?
+
+Свойства элементов: order, flex-grow, flex-shrink, flex-basis, align-self?
+
+Как центрировать элемент с помощью Flexbox?
+
+Как сделать "липкий" футер с Flexbox?
+
+Как сделать колонки одинаковой высоты?
+
+Flexbox vs Grid: когда что выбрать?
+
+Как работает автоматический margin в Flexbox?
+
+Что такое gap в Flexbox?
+
+CSS Grid (10)
+Что такое CSS Grid? Для чего?
+
+Grid-контейнер и grid-элементы?
+
+Свойства контейнера: grid-template-columns, grid-template-rows, gap?
+
+Что такое fr единица?
+
+Что такое grid-template-areas?
+
+Функции: repeat(), minmax(), fit-content()?
+
+Свойства элементов: grid-column, grid-row, grid-area?
+
+Как сделать адаптивную сетку с помощью Grid?
+
+Grid vs Flexbox для layout страницы?
+
+Что такое subgrid?
+
+Адаптивность и отзывчивость (10)
+Mobile First vs Desktop First подходы?
+
+Что такое viewport meta tag?
+
+Что такое responsive images? srcset, picture, sizes?
+
+Что такое Retina дисплеи? Как подготовить изображения?
+
+Что такое object-fit и object-position?
+
+Что такое aspect-ratio?
+
+Как работать с адаптивными шрифтами? clamp(), calc(), vw?
+
+Что такое container queries?
+
+Что такое CSS логические свойства? margin-inline-start?
+
+Как тестировать адаптивность в браузере?
+
+CSS-in-JS и препроцессоры (5)
+Препроцессоры: Sass, LESS? Плюсы и минусы?
+
+Что такое CSS Modules? Как работает?
+
+styled-components? Как работает под капотом?
+
+Emotion, Stitches, Panda CSS?
+
+Tailwind CSS? Utility-first подход?
+
+Анимации и графика (5)
+CSS transitions: свойства, easing functions?
+
+CSS animations: @keyframes, animation-* свойства?
+
+transform vs position для анимации? Производительность?
+
+Что такое will-change?
+
+Что такое Canvas, SVG, WebGL? Когда что использовать?
+
+7. БРАУЗЕР И ПРОИЗВОДИТЕЛЬНОСТЬ (35 вопросов)
+Браузерные технологии (15)
+Как браузер рендерит страницу? Critical Rendering Path?
+
+DOM (Document Object Model) vs CSSOM?
+
+Render Tree? Layout, Paint, Composite?
+
+Что такое reflow (layout) и repaint? Что дороже?
+
+Что такое compositing? Какие слои?
+
+Что такое event bubbling и capturing? Как остановить?
+
+Что такое event delegation? Пример использования?
+
+Что такое requestAnimationFrame? Когда использовать?
+
+Что такое requestIdleCallback?
+
+Что такое Web Workers? Когда нужны?
+
+Что такое Service Workers? Кэширование, PWA?
+
+Что такое IndexedDB? Когда использовать?
+
+Что такое localStorage, sessionStorage? Лимиты?
+
+Что такое Session Storage vs Local Storage vs Cookies?
+
+Что такое BroadcastChannel, SharedWorker?
+
+Производительность (20)
+Какие метрики Core Web Vitals? LCP, FID, CLS, INP?
+
+Что такое First Paint (FP) и First Contentful Paint (FCP)?
+
+Что такое Largest Contentful Paint (LCP)? Как оптимизировать?
+
+Что такое First Input Delay (FID) и Interaction to Next Paint (INP)?
+
+Что такое Cumulative Layout Shift (CLS)? Как избежать?
+
+Что такое Time to Interactive (TTI)?
+
+Что такое Total Blocking Time (TBT)?
+
+Как измерить производительность? Lighthouse, Web Vitals?
+
+Как оптимизировать загрузку изображений? lazy loading, webp?
+
+Как оптимизировать шрифты? font-display: swap?
+
+Как работает Critical CSS? Inline critical стили?
+
+Что такое код-сплиттинг (code splitting)?
+
+Что такое предзагрузка? preload, prefetch, preconnect, dns-prefetch?
+
+Разница между preload и prefetch?
+
+Как оптимизировать JavaScript? Remove dead code, minify?
+
+Что такое Web Workers для тяжелых вычислений?
+
+Как оптимизировать работу с DOM? DocumentFragment?
+
+Что такое Virtual Scrolling? Когда нужен?
+
+Как оптимизировать анимации? transform, opacity?
+
+Инструменты профилирования: Chrome DevTools Performance tab?
+
+8. WEBPACK/VITE И СБОРКА (25 вопросов)
+Webpack (15)
+Что такое Webpack? Зачем нужен?
+
+entry, output, loaders, plugins?
+
+Что такое code splitting? Как настроить?
+
+Разница между chunk и bundle?
+
+Что такое Tree Shaking? Как работает?
+
+Как работает hot module replacement (HMR)?
+
+Что такое source maps? Типы? Pros/cons?
+
+Как оптимизировать размер бандла?
+
+Что такое webpack-dev-server? Как работает?
+
+Что такое Module Federation? (Webpack 5)
+
+Что такое asset modules? (file-loader, url-loader)
+
+Что такое babel-loader? Зачем нужен Babel?
+
+Что такое CSS extraction? MiniCssExtractPlugin?
+
+Как работает кэширование в Webpack? contenthash?
+
+Что такое webpack-merge? Зачем нужен?
+
+Vite (5)
+Что такое Vite? Отличия от Webpack?
+
+Как работает Vite? no-bundle dev server?
+
+Что такое esbuild? Почему Vite его использует?
+
+Что такое pre-bundling dependencies?
+
+Как работает HMR в Vite?
+
+Другие инструменты (5)
+Что такое Rollup? Когда использовать?
+
+Что такое Parcel?
+
+Что такое SWC? vs Babel?
+
+Что такое Turbopack?
+
+Что такое esbuild? Почему быстрый?
+
+9. ТЕСТИРОВАНИЕ (20 вопросов)
+Типы тестов (5)
+Unit тесты vs Integration тесты vs E2E?
+
+Что такое Snapshot тестирование?
+
+Что такое TDD (Test-Driven Development)?
+
+Что такое BDD (Behavior-Driven Development)?
+
+Что такое тестовое покрытие (coverage)? Какой процент нужен?
+
+Инструменты (10)
+Jest vs Vitest? Что выбрать?
+
+Как тестировать React компоненты? React Testing Library?
+
+Почему Testing Library, а не Enzyme?
+
+Как тестировать хуки? renderHook?
+
+Как тестировать асинхронный код?
+
+Как мокать модули? jest.mock?
+
+Как тестировать API запросы? MSW (Mock Service Worker)?
+
+Что такое Cypress? vs Selenium?
+
+Что такое Playwright? vs Puppeteer?
+
+Что такое Storybook? Как использовать для тестов?
+
+Best practices (5)
+Что тестировать в первую очередь?
+
+Как тестировать пользовательские сценарии?
+
+Как тестировать ошибки и граничные случаи?
+
+Как организовать тестовые данные? factories, fixtures?
+
+Как интегрировать тесты в CI/CD?
+
+10. БАЗЫ ДАННЫХ И БЭКЕНД (15 вопросов)
+Основы (8)
+Что такое SQL vs NoSQL? Когда что выбрать?
+
+Что такое ORM? Примеры для JS (Prisma, TypeORM, Sequelize)?
+
+Что такое миграции (migrations)?
+
+Что такое индексы? Зачем нужны?
+
+Что такое транзакции? ACID?
+
+Что такое нормализация и денормализация?
+
+Что такое JOIN? Типы: INNER, LEFT, RIGHT, FULL?
+
+Что такое агрегации? GROUP BY, HAVING?
+
+NoSQL (4)
+Что такое MongoDB? Документо-ориентированная БД?
+
+Что такое Redis? Кэширование, сессии?
+
+Что такое ElasticSearch? Поиск и аналитика?
+
+Что такое Firebase? Realtime Database, Firestore?
+
+Безопасность (3)
+SQL инъекции? Как защититься?
+
+Что такое prepared statements?
+
+Что такое шифрование данных? bcrypt?
+
+11. GIT И DEVOPS (20 вопросов)
+Git (12)
+Git flow? Стратегии ветвления?
+
+Что такое rebase vs merge?
+
+Что такое squash commits? Когда использовать?
+
+Что такое cherry-pick?
+
+Как отменить коммит? revert vs reset?
+
+Что такое stash? Когда использовать?
+
+Что такое interactive rebase? git rebase -i?
+
+Как работать с субмодулями (submodules)?
+
+Что такое git bisect? Как найти баг?
+
+Что такое git hooks? pre-commit, pre-push?
+
+Как разрешать конфликты? Стратегии?
+
+Что такое Git LFS? Для больших файлов?
+
+CI/CD (5)
+Что такое CI/CD? GitLab CI, GitHub Actions, Jenkins?
+
+Что такое пайплайн (pipeline)? Этапы?
+
+Что такое артефакты (artifacts)?
+
+Как автоматизировать деплой?
+
+Как настроить окружения: dev, staging, production?
+
+Docker (3)
+Что такое Docker? Контейнеризация?
+
+Docker vs Virtual Machine?
+
+Что такое Docker Compose?
+
+12. АЛГОРИТМЫ И СТРУКТУРЫ ДАННЫХ (20 вопросов)
+Назначение: теория (Big O, структуры, паттерны). Live coding — раздел 15 (список задач + условия ниже).
+Структуры данных (10)
+Массивы: методы, сложность операций?
+
+Связные списки (Linked Lists): односвязные, двусвязные?
+
+Стек (Stack) и очередь (Queue): реализация?
+
+Хеш-таблицы (Hash Tables): как работают? Коллизии?
+
+Деревья (Trees): бинарные деревья, BST?
+
+Графы (Graphs): представление, обход?
+
+Set vs Map? Когда использовать?
+
+Что такое WeakMap, WeakSet?
+
+Что такое бинарная куча (Binary Heap)?
+
+Что такое очередь с приоритетом?
+
+Алгоритмы (10)
+Сортировка: пузырьком, быстрая, слиянием? Сложность?
+
+Поиск: бинарный поиск? Линейный?
+
+Рекурсия: что такое стек вызовов? Переполнение?
+
+Динамическое программирование? Пример?
+
+Жадные алгоритмы (Greedy)?
+
+Обход графа: DFS, BFS? Разница?
+
+Что такое Big O нотация? Примеры O(1), O(n), O(n²), O(log n)?
+
+Как оценивать сложность алгоритмов?
+
+Что такое мемоизация? Кэширование результатов?
+
+Что такое двух указателей (two pointers)?
+
+13. SOFT SKILLS (20 вопросов)
+Коммуникация (8)
+Как объяснить сложную техническую проблему нетехническому человеку?
+
+Как вы проводите код-ревью? На что смотрите?
+
+Как даете обратную связь коллегам?
+
+Как решаете конфликт в команде?
+
+Как эскалируете проблему?
+
+Как работаете с legacy кодом?
+
+Как оцениваете время на задачу?
+
+Как документируете код и решения?
+
+Работа в команде (6)
+Что такое Agile, Scrum, Kanban?
+
+Как проводятся daily, planning, retro?
+
+Что такое story points? Оценка задач?
+
+Как работаете с требованиями? Что делать, если требования нечеткие?
+
+Как приоритизируете задачи?
+
+Как делитесь знаниями в команде?
+
+Карьерный рост (6)
+Куда развиваетесь дальше? Tech lead, Architect, Manager?
+
+Как следите за новыми технологиями?
+
+Как выбираете, что учить дальше?
+
+Что такое технический долг? Как с ним работать?
+
+Как ведете технический блог/выступаете на конференциях?
+
+Самый сложный баг в карьере? Как нашли и исправили?
+
+14. ВОПРОСЫ С РЕАЛЬНЫХ СОБЕСЕДОВАНИЙ (~51 вопрос)
+Назначение: продуктовые/bigtech собесы, Middle+. Для дожима и BigTech bar — раздел 15.
+
+Опыт и проекты (2)
+Расскажи о себе (технический фокус: стек, роль, вклад).
+Какая была самая интересная техническая задача? Что именно делал и какой результат?
+
+WebSocket / авторизация / security (10)
+Как обеспечить безопасность WebSocket-соединения?
+Как понять, что пользователь авторизован в REST API?
+Как передавать авторизацию в WebSocket?
+Можно ли передать Authorization header из браузера в WebSocket?
+Какие альтернативы header: cookie, query params, первое сообщение после подключения?
+Плюсы и минусы передачи токена через query string в WebSocket URL?
+Как защититься от утечки токена в логах/Referer при WebSocket auth?
+Чем отличается аутентификация REST-запроса от WebSocket handshake?
+Когда использовать cookie-based auth для WebSocket, а когда token в первом сообщении?
+Как обработать истечение токена во время активного WebSocket-соединения?
+
+Архитектура / FSD (5)
+Что именно строил с нуля в проекте (архитектура, модули, инфра)?
+Какое мнение про Feature-Sliced Design? Где уместен, где нет?
+Что не понравилось в FSD на практике?
+Какие проблемы были при внедрении FSD в команде?
+Как онбордили разработчиков на FSD-структуру?
+
+HTML / CSS — практика (4)
+Как центрировать квадрат (несколько способов: flex, grid, absolute)?
+Чем отличается display: none от visibility: hidden?
+Flex vs Grid: в чём разница и когда что использовать?
+Когда Flex, когда Grid для layout страницы?
+
+HTTP / Browser lifecycle (6)
+Из чего состоит HTTP-запрос (method, URL, headers, cookies, body)?
+Что приходит в HTTP response (status, headers, body)?
+Что происходит после ввода URL в браузере (пошагово)?
+На каком этапе появляются headers, cookies и body?
+Чем отличается request headers от response headers на практике?
+Что делает браузер до отправки HTTP-запроса (DNS, TCP/TLS, redirect)?
+
+Frontend Security — углублённо (12)
+Что такое CSP (Content Security Policy) и зачем нужен?
+Как CSP ограничивает выполнение inline-скриптов и внешние источники?
+Какие основные CSP directives знаешь (default-src, script-src, connect-src, frame-ancestors)?
+Как CORS связан с безопасностью фронтенда?
+Как запретить запросы на нежелательные домены (CSP connect-src, network policy)?
+Что такое hash/nonce в CSP для inline-скриптов?
+Что такое SRI (Subresource Integrity) и когда применять?
+Какие клиентские уязвимости знаешь (XSS, CSRF, clickjacking, open redirect)?
+Как защититься от XSS на фронте и бэке?
+Чем frame-ancestors отличается от X-Frame-Options?
+Как безопасно хранить JWT на клиенте?
+Что такое SameSite cookie и как это помогает от CSRF?
+
+Event Emitter (3)
+Как работает Event Emitter (pub/sub на клиенте)?
+Чем Event Emitter отличается от нативных DOM events?
+Когда Event Emitter уместен во фронтенде, а когда лучше Context/Redux?
+
+Event Loop — углублённо (4)
+Как работает Event Loop (call stack, Web APIs, microtasks, macrotasks)?
+Что такое microtask starvation и когда возникает?
+Чем microtask queue отличается от macrotask queue?
+Почему Promise.then выполняется раньше setTimeout(..., 0)?
+
+TypeScript / Runtime (5)
+Как работает instanceof в JavaScript/TypeScript?
+Почему interface нельзя проверить в runtime?
+В чём разница между type/interface и class/object при runtime-проверках?
+Какие runtime type guards возможны (typeof, instanceof, in, Array.isArray)?
+Как типизировать и проверять данные с API, если TS исчезает после компиляции?
+
+15. BIGTECH MIDDLE — FRONTEND (~90 пунктов)
+Назначение: подготовка и проверка на Middle в BigTech. Теория с дожимом + medium live coding. Частично пересекается с разделом 14 — не повторяй ту же тему в одной сессии.
+
+Критерий зачёта на Middle (BigTech: Яндекс, VK, Ozon, Avito, Meta, Google и аналоги)
+Ответ с первого раза: механизм + edge case + пример (не определение из Wikipedia).
+Алгоритм: рабочий код + time/space complexity без подсказки.
+Продуктовый блок (HTTP, security, browser) — обязателен, не опционален.
+Trade-offs: «почему так, а не иначе» без подсказки.
+
+Алгоритмы — must know (Middle)
+Two Sum, Valid Parentheses, Best Time Buy/Sell Stock, Contains Duplicate
+Longest Substring Without Repeating (sliding window), Merge Intervals, Maximum Subarray (Kadane)
+Group Anagrams, Binary Search, Product of Array Except Self
+BFS/DFS (граф/матрица), Number of Islands, Clone Graph (базово)
+Linked List: reverse, cycle detection, merge two lists
+Tree: max depth, validate BST, level order traversal
+DP easy: Climbing Stairs, House Robber
+Для каждой: решение + O(time) + O(space) + почему подход выбран.
+
+JavaScript — глубина (11)
+Объясни Event Loop: call stack → microtasks → macrotasks. Приведи порядок вывода.
+Что такое microtask starvation? Когда возникает и как проявляется?
+Разница Promise.all / allSettled / race / any — когда что на фронте?
+Как работает this в strict vs sloppy mode? Оторванный метод объекта.
+Prototype chain: как JS ищет свойство? __proto__ vs prototype.
+Shallow vs deep copy: способы и ловушки (structuredClone, JSON.parse).
+Как работает debounce vs throttle? Реализуй throttle словами.
+Почему 0.1 + 0.2 !== 0.3? Как решать денежные расчёты?
+Event delegation: зачем, как работает, минусы.
+WeakMap/WeakSet — зачем на фронте?
+Как отменить fetch? AbortController + cleanup в React.
+
+TypeScript — Middle+ (10)
+unknown vs any: runtime-баг и type guard.
+Discriminated union + exhaustiveness (never в default).
+Pick/Omit/Partial/Record — практические кейсы на API/types.
+satisfies vs аннотация : Type — когда что?
+Почему interface не существует в runtime? Как валидировать API?
+instanceof — как работает, ограничения с классами из разных realm.
+Generic constraint: T extends keyof U — пример.
+ReturnType, Parameters, Awaited — зачем?
+Как типизировать generic hook useLocalStorage<T>?
+Branded types / nominal typing — зачем?
+
+React — Middle+ (13)
+useEffect: deps, cleanup, race condition (AbortController) — полный сценарий.
+Stale closure в useEffect/setInterval — как воспроизвести и исправить?
+Почему key={index} ломает state при reorder/filter?
+React.memo + useCallback: когда помогает, когда вредит?
+Батчинг React 18: что группируется, что нет?
+Context: почему частые updates ререндерят всё дерево? Как оптимизировать?
+Controlled vs uncontrolled + когда ref уместнее state.
+Error Boundary: что ловит, что не ловит?
+React.lazy + Suspense — flow и fallback.
+Подъём state vs colocation vs global state — критерии выбора.
+Как бы ты спроектировал cart (reducer): state shape, actions, selectors?
+Stale props в memoized child — как воспроизвести?
+Concurrent features: startTransition / useDeferredValue — зачем?
+
+HTTP / Browser lifecycle (10)
+Из чего состоит HTTP request и response?
+Что происходит после ввода URL (DNS, TCP, TLS, request, parse, render)?
+Preflight CORS: кто шлёт OPTIONS, какие headers нужны?
+Simple vs non-simple request — примеры.
+Cookie attributes: HttpOnly, Secure, SameSite — зачем каждый?
+HTTP/2 vs HTTP/1.1 — что важно фронтендеру?
+Cache-Control, ETag — базовая модель кэширования.
+REST: идемпотентность методов, типичные status codes.
+Где настраивается CORS — фронт или бэк? Почему?
+Что такое TTFB, FCP, LCP — одним предложением каждый?
+
+Frontend Security — BigTech bar (12)
+CORS: механизм, Allow-Origin, preflight headers — без путаницы «кто кому».
+CSP: default-src, script-src, connect-src, frame-ancestors — что блокируют?
+XSS: reflected/stored/DOM — как защищаться на фронте и бэке?
+CSRF: механизм, SameSite, double submit cookie.
+JWT в localStorage vs HttpOnly cookie — trade-offs.
+Clickjacking: X-Frame-Options vs CSP frame-ancestors.
+SRI (Subresource Integrity) — когда нужен?
+CSP nonce vs hash для inline scripts.
+Как connect-src ограничивает fetch/WebSocket?
+OWASP Top 10 для фронта — назови 3 релевантных.
+Open redirect — что это, как не допустить?
+Supply chain attack через npm — базовые меры.
+
+WebSocket / Real-time (6)
+Как авторизовать WebSocket из браузера (header/cookie/query/first message)?
+Можно ли Authorization header в WS handshake из browser?
+Как обновить токен при активном WS-соединении?
+WS vs SSE vs long polling — когда что?
+Как масштабировать WS на несколько инстансов (conceptual)?
+Безопасность: утечка токена в query string.
+
+Архитектура / System design lite (8)
+Спроектируй autocomplete/search с debounce и cancel.
+Спроектируй infinite scroll: state, pagination, race conditions.
+FSD: слои, правила импортов, public API слайса.
+Когда FSD overkill? Альтернативы.
+Feature flags / A/B — как на фронте (conceptual).
+Микрофронтенды: Module Federation — плюсы/минусы.
+Как организовать API layer (fetch wrapper, errors, retry)?
+Offline-first / optimistic UI — базовые принципы.
+
+Браузер / Performance (8)
+Critical Rendering Path: DOM, CSSOM, render tree, layout, paint, composite.
+Reflow vs repaint — что дороже, как минимизировать?
+Core Web Vitals: LCP, INP, CLS — как улучшить на фронте?
+Virtual scrolling — зачем, принцип.
+Code splitting + lazy routes — impact на загрузку.
+will-change, transform/opacity для анимаций.
+Memory leaks на SPA: listeners, intervals, closures — примеры.
+Lighthouse vs RUM — разница.
+
+CSS / Layout — Middle bar (6)
+Специфичность: посчитать победителя (конфликт селекторов).
+Flex vs Grid — критерии выбора для page layout.
+position: sticky — почему ломается overflow:hidden у предка?
+Центрирование: flex, grid, absolute — 3 способа.
+Stacking context и z-index — типичная ловушка.
+Container queries vs media queries.
+
+Тестирование / Quality (5)
+Unit vs integration vs e2e — что когда на фронте.
+React Testing Library: принцип «test behavior, not implementation».
+Как тестировать async fetch (MSW)?
+Что мокать, что не мокать?
+Snapshot tests — когда полезны, когда вредны.
+
+Опыт / Behavioral (tech-focused) (5)
+Самая сложная техническая задача: проблема → твоё решение → результат.
+Конфликт в code review — как решал?
+Legacy без тестов — стратегия изменений.
+Как оцениваешь задачу, которая «плывёт»?
+Пример, когда сознательно выбрал простое решение вместо «красивого».
+
+Алгоритмы — live coding (условия задач)
+Two Sum: массив nums, target — индексы двух чисел с суммой target.
+Valid Parentheses: строка ()[]{} — валидны ли скобки.
+Longest Substring Without Repeating Characters: длина longest подстроки без повторов.
+Merge Intervals: массив [start,end] — объединить пересекающиеся.
+Maximum Subarray: максимальная сумма непрерывного подмассива.
+Group Anagrams: сгруппировать анаграммы.
+Binary Search: найти target в отсортированном массиве.
+Number of Islands: сетка 1/0 — количество островов (BFS/DFS).
+Reverse Linked List: развернуть односвязный список.
+Climbing Stairs: n ступенек, 1 или 2 за шаг — сколько способов.
+Product of Array Except Self: произведение всех кроме i без деления.
+Top K Frequent Elements: k самых частых элементов.
+Meeting Rooms II: минимум комнат для интервалов.
+Implement debounce / throttle with cancel.
+Flatten nested array — one level / deep, с оценкой сложности.
+
+---
+
+## 16. РАСШИРЕННЫЙ БАНК — УНИКАЛЬНЫЕ ФОРМУЛИРОВКИ (~120)
+
+Назначение: вопросы с другим углом, чем в разделах 1–15. Использовать для снижения повторов между сессиями.
+
+### React — практика и edge cases (25)
+
+Почему `setState` в `useEffect` без deps может зациклить рендер?
+Чем опасен `useEffect(() => { setCount(c => c + 1) }, [count])`?
+Когда `useLayoutEffect` нужен для измерения DOM до paint?
+Почему `ref.current` не триггерит ререндер?
+Как передать ref через несколько уровней без prop drilling?
+Что сломается, если в `memo` child передать inline object `{ a: 1 }`?
+Почему `useMemo(() => heavy(arr), [arr])` бесполезен при новом массиве каждый рендер?
+Как разделить context на «данные» и «действия», чтобы реже ререндерить?
+Когда `useReducer` лучше нескольких `useState` в форме из 10+ полей?
+Почему нельзя вызывать хуки внутри `if`?
+Что делает `useId` в SSR и зачем для accessibility?
+Как `StrictMode` в dev влияет на двойной вызов effects?
+Почему список с `key={item.id}` всё равно «мигает» при optimistic update?
+Controlled input: что если `value={undefined}`?
+Кочему `defaultValue` + `value` одновременно — антипаттерн?
+Как Error Boundary не ловит ошибки в event handler?
+Почему `setState` в unmounted компоненте — проблема (React 18)?
+Что такое hydration mismatch и типичные причины?
+Когда `flushSync` уместен и чем опасен?
+`useDeferredValue` vs debounce — разница по UX?
+`startTransition` — что помечается как низкий приоритет?
+Почему `children` как prop может ломать memoization?
+Как тестировать custom hook без обёртки компонента?
+Чем `forwardRef` отличается от обычного ref prop?
+Когда портал не решает проблему z-index?
+
+### TypeScript — углубление (20)
+
+Чем `satisfies` отличается от `as const`?
+Когда `enum` хуже union литералов?
+Как типизировать `reduce` с аккумулятором generic?
+Почему `Record<string, unknown>` не заменяет валидацию API?
+Как сделать discriminated union из ответа `{ ok: true } | { ok: false, code }`?
+Что даёт `asserts value is T` в type guard?
+Как типизировать event handler с union target?
+`Parameters<typeof fn>[0]` — практический кейс?
+`Awaited<ReturnType<typeof fetchData>>` — зачем?
+Branded type для UserId vs number — пример?
+Почему `as User` опасен после `JSON.parse`?
+Как типизировать `useRef<HTMLInputElement | null>`?
+`React.ComponentProps<'button'>` — когда использовать?
+Template literal types для route paths?
+Чем `interface` удобнее для declaration merging в `.d.ts`?
+Как типизировать generic `Table<T extends { id: string }>`?
+`Exclude` vs `Omit` — разница на примере?
+`NonNullable<T>` — когда нужен?
+Почему `keyof any` ведёт себя странно?
+Как сузить `unknown` из `catch (e)`?
+
+### JavaScript — runtime (25)
+
+Что выведет: `[] + {}` и `{} + []`? Почему?
+Почему `typeof null === 'object'`?
+Разница `Object.freeze` vs `Object.seal`?
+Как работает `structuredClone` и что не клонирует?
+Почему `JSON.parse(JSON.stringify(obj))` ломает Date/Map?
+Что такое temporal dead zone для `let`?
+Разница `for...in` vs `for...of` для массива?
+Почему `arr.sort()` без compare ломает числа?
+Как `sort((a,b) => a-b)` влияет на stability?
+Что такое optional chaining с вызовом `obj?.fn?.()`?
+Nullish coalescing `??` vs `||` — практический пример?
+Почему `async function` всегда возвращает Promise?
+Что в microtask queue кладёт `queueMicrotask` vs `Promise.resolve()`?
+Как `AbortSignal.timeout(ms)` работает в fetch?
+Почему `addEventListener` с `{ once: true }` полезен?
+Event capture vs bubble — порядок на вложенных div?
+`stopPropagation` vs `preventDefault`?
+Почему `delete obj.prop` не всегда удаляет configurable:false?
+Proxy для валидации объекта — идея?
+Symbol.toStringTag — зачем?
+BigInt — когда нужен на фронте?
+Почему `==` с объектами сравнивает ссылки?
+Как работает `??=` и `&&=`?
+Что такое module namespace object?
+Dynamic `import()` — когда вместо static import?
+
+### HTTP / Security / Browser (20)
+
+Чем 301 отличается от 302 для SEO и кэша?
+Почему 204 No Content без body?
+Что такое 429 и как фронт должен реагировать?
+Retry-After header — как использовать?
+Чем PUT отличается от PATCH на практике API?
+Idempotency-Key — зачем в POST?
+Почему preflight не нужен для GET без custom headers?
+Что блокирует `connect-src` в CSP для WebSocket?
+Разница XSS reflected vs stored — кто исполняет код?
+Почему innerHTML опаснее textContent?
+HttpOnly cookie — видит ли JS?
+SameSite=Lax vs Strict — типичный сценарий?
+Почему JWT в memory лучше localStorage, но сложнее?
+Refresh token rotation — базовая идея?
+Что такое HSTS?
+DNS prefetch vs preconnect?
+Service Worker cache-first vs network-first?
+Почему `document.write` блокирует парсинг?
+Что такое render-blocking CSS?
+Как `defer` и `async` у script влияют на порядок?
+
+### CSS / Layout (15)
+
+Почему `height: 100%` не работает без height у родителя?
+`min-height: 100vh` vs `100dvh` на мобилке?
+Что ломает `margin collapse`?
+Почему flex item не сжимается ниже min-content?
+`flex: 1` shorthand — что внутри?
+Grid `auto-fit` vs `auto-fill`?
+`subgrid` — зачем?
+`clamp()` для fluid typography?
+`aspect-ratio` без фиксированной высоты?
+Почему `transform` не вызывает reflow?
+`contain: layout` — когда помогает?
+`:is()` и `:where()` — разница для специфичности?
+`@layer` в CSS — зачем?
+Dark mode через `prefers-color-scheme` vs class?
+Почему `z-index` не работает без stacking context?
+
+### Архитектура / SD lite (15)
+
+Как спроектировать notification center (read/unread, realtime)?
+Как хранить draft формы при уходе со страницы?
+Feature toggle на фронте — риски?
+Как версионировать API на клиенте (v1/v2)?
+Retry с exponential backoff — параметры?
+Circuit breaker на фронте — нужен ли?
+Как организовать error boundary + global toast?
+Pagination cursor vs offset — trade-offs?
+Как кэшировать список в memory vs SWR/React Query?
+Optimistic delete в списке — rollback при ошибке?
+Как разделить UI state и server state?
+Когда Redux избыточен для корзины?
+Как проектировать модалку с focus trap?
+Multi-step wizard state — machine vs useState?
+Как логировать ошибки на клиенте (Sentry) без PII?
+
+---
+
+## 17. CODE REVIEW — КОПИРУЕМЫЕ ФРАГМЕНТЫ С БАГАМИ (~25)
+
+Назначение: дать кандидату код для копирования. Формат вопроса: «найди баги, объясни, как исправить».
+
+### React — компоненты (10 кейсов)
+
+**CR-R01. Search с гонкой**
+```jsx
+function Search() {
+  const [q, setQ] = useState('');
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch(`/api/search?q=${q}`).then(r => r.json()).then(setItems);
+  }, [q]);
+
+  return <input value={q} onChange={e => setQ(e.target.value)} />;
+}
+```
+Баги: race, нет cleanup/abort, нет обработки ошибок.
+
+**CR-R02. Список с index key**
+```jsx
+{tasks.map((t, i) => (
+  <TaskRow key={i} task={t} onDone={markDone} />
+))}
+```
+Баг: key=index при reorder/filter.
+
+**CR-R03. useEffect с missing deps**
+```jsx
+useEffect(() => {
+  loadUser(userId);
+}, []);
+```
+Баг: userId не в deps.
+
+**CR-R04. Stale interval**
+```jsx
+useEffect(() => {
+  const id = setInterval(() => setCount(count + 1), 1000);
+  return () => clearInterval(id);
+}, []);
+```
+Баг: stale closure count.
+
+**CR-R05. Context без мемоизации value**
+```jsx
+const value = { user, setUser, theme };
+return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+```
+Баг: новый object каждый рендер.
+
+**CR-R06. memo бесполезен**
+```jsx
+const Child = memo(({ onClick }) => <button onClick={onClick}>ok</button>);
+function Parent() {
+  const [n, setN] = useState(0);
+  return <Child onClick={() => setN(n + 1)} />;
+}
+```
+Баг: inline onClick ломает memo.
+
+**CR-R07. Controlled без onChange**
+```jsx
+<input value={text} />
+```
+Баг: read-only controlled input warning.
+
+**CR-R08. Fetch в render**
+```jsx
+function Profile({ id }) {
+  const [user, setUser] = useState(null);
+  fetch(`/api/users/${id}`).then(r => r.json()).then(setUser);
+  return <div>{user?.name}</div>;
+}
+```
+Баг: side effect в render, бесконечные запросы.
+
+**CR-R09. setState после unmount**
+```jsx
+useEffect(() => {
+  fetchData().then(setData);
+}, []);
+```
+Баг: нет abort/cancelled flag.
+
+**CR-R10. Двойной state для формы**
+```jsx
+const [email, setEmail] = useState('');
+const [form, setForm] = useState({ email: '' });
+// обновляют только email, submit читает form.email
+```
+Баг: рассинхрон state.
+
+### JavaScript — сниппеты (8 кейсов)
+
+**CR-J01.** `const arr = [1,2,3]; arr.sort();` для `[10,2,1]` — что не так?
+
+**CR-J02.** `for (var i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }`
+
+**CR-J03.** `const user = await fetchUser(); console.log(user.name);` без try/catch при 404.
+
+**CR-J04.** `JSON.parse(localStorage.getItem('cart'))` без проверки null.
+
+**CR-J05.** `obj?.items.map(...)` когда items может быть undefined — нужен optional на map?
+
+**CR-J06.** Сравнение объектов `if (prevFilters === filters)` при новом объекте каждый рендер.
+
+**CR-J07.** `Promise.all(promises).catch(...)` — ловит ли reject одного промиса?
+
+**CR-J08.** Debounce без cancel при unmount — утечка вызовов.
+
+### TypeScript — типизация (4 кейса)
+
+**CR-T01.** `const data: any = await res.json();` — риски?
+
+**CR-T02.** `interface Props { id: number; id: string }` — что с merge?
+
+**CR-T03.** `switch (status) { case 'ok': ... }` без default на union из 3 литералов.
+
+**CR-T04.** `as HTMLElement` без проверки на null ref.
+
+### CSS / разметка (3 кейса)
+
+**CR-C01.** `height: 100%` на child без height родителя.
+
+**CR-C02.** `position: sticky` внутри `overflow: hidden` родителя.
+
+**CR-C03.** Кнопка `<div onClick={...}>` без keyboard access.
+
+---
+
+## 18. СЦЕНАРИИ «ЧТО БУДЕТ ЕСЛИ» И TRADE-OFFS (~60)
+
+Назначение: короткие ситуационные вопросы без повторения базовых определений.
+
+### Event Loop / async (10)
+
+Что выведет: sync, 2x microtask, 2x setTimeout(0) — порядок?
+Если microtask создаёт новый microtask бесконечно — что с macrotasks?
+`await Promise.resolve()` — microtask или sync?
+`async function f() { return 1 }` — что возвращает вызов f()?
+Параллельно 5 fetch — как ограничить concurrency до 2?
+Почему `Promise.all` с пустым массивом?
+`allSettled` vs `all` при partial failure в dashboard?
+`race` для timeout fetch — как отменить сам fetch?
+Почему забытый `await` в `if (check())` опасен?
+Unhandled rejection — кто ловит?
+
+### React runtime (10)
+
+Два быстрых клика по Submit — двойной POST?
+`key` сменился с 1 на 2 — remount или update?
+Parent unmount во время Suspense loading?
+Context value изменился — кто ререндерится?
+`useState` initializer `useState(expensive())` — когда вызывается?
+Два `useEffect` с одним dep — порядок cleanup?
+`ref` на input + `value` controlled — конфликт?
+`React.memo` на list item 1000 элементов — всегда ли win?
+Portal modal в `document.body` — event bubbling куда?
+StrictMode double mount — почему два fetch в dev?
+
+### Network / security (10)
+
+CORS ok, но CSP `connect-src 'self'` — что в консоли?
+Cookie Secure без HTTPS на localhost?
+JWT expired во время активной сессии — UX?
+POST form cross-site без CSRF token?
+`target="_blank"` без `rel=noopener` — риск?
+Mixed content: HTTPS page, HTTP image?
+API 401 — refresh ok, retry original request pattern?
+WebSocket reconnect storm — как ограничить?
+Rate limit 429 — exponential backoff на клиенте?
+Preflight failed — кто виноват, фронт или бэк?
+
+### Performance / UX (10)
+
+LCP плохой из-за hero image 4MB — 3 шага фикса?
+CLS из-за баннера без размеров — fix?
+INP высокий из-за тяжёлого handler на click?
+1000 DOM nodes в таблице — virtual scroll или pagination?
+Bundle 2MB — как найти виновника?
+Tree shaking не убрал lodash — почему?
+HMR работает, prod build падает — куда смотреть?
+Memory leak: addEventListener без remove — как найти?
+Long task 300ms в main thread — как разбить?
+Prefetch route vs lazy route — trade-off?
+
+### Алгоритмы — устные edge (10)
+
+Two Sum: дубликаты в массиве — можно ли один индекс дважды?
+Valid Parentheses: только `(` — false?
+Binary search: массив с дубликатами — leftmost index?
+Merge intervals: [[1,4],[2,3]] — результат?
+Max subarray: все отрицательные — ответ?
+BFS: цикл в графе — как не зациклить visited?
+DFS на матрице: выход за границу — guard?
+Top K frequent: k > unique count?
+Product except self: нули в массиве?
+Sliding window: пустая строка — длина?
+
+### Trade-offs выбора (10)
+
+Redux vs Zustand vs Context для theme only?
+SSR vs CSR для личного кабинета?
+CSS Modules vs Tailwind в большой команде?
+E2E vs integration для checkout?
+Monorepo vs multirepo для 3 фронтов?
+REST vs GraphQL для mobile+web одного API?
+Web Worker для PDF parse — когда да?
+IndexedDB vs localStorage для offline cart?
+SWR vs React Query — критерий выбора?
+Feature-based vs layer-based folder structure?
+
