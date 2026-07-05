@@ -112,11 +112,35 @@ nav:
 
           - Подсчёт сложности: articles/algorithms/complexity.md
 
+          - Хеш-таблицы: articles/algorithms/hash-tables.md
+
+          - Префиксные суммы: articles/algorithms/prefix-sum.md
+
+          - Битовые манипуляции: articles/algorithms/bit-manipulation.md
+
           - Два указателя: articles/algorithms/two-pointers.md
+
+          - Скользящее окно: articles/algorithms/sliding-window.md
+
+          - Бинарный поиск: articles/algorithms/binary-search.md
+
+          - Сортировки: articles/algorithms/sorting.md
+
+          - Интервалы: articles/algorithms/intervals.md
 
           - Матрицы: articles/algorithms/matrices.md
 
           - Связные списки: articles/algorithms/linked-lists.md
+
+          - Деревья: articles/algorithms/trees.md
+
+          - Стеки и очереди: articles/algorithms/stacks-queues.md
+
+          - Поиск с возвратом: articles/algorithms/backtracking.md
+
+          - Графы: articles/algorithms/graphs.md
+
+          - Динамическое программирование: articles/algorithms/dynamic-programming.md
 
       - Браузер:
 

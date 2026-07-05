@@ -3,7 +3,58 @@
 !!! info "Практика в репозитории"
     Решения задач: папка `LinkedList/` (например, `206. Reverse Linked List.js`).
 
-## 📚 Что такое связный список?
+!!! tip "Задачи roadmap (8)"
+    - [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list?envType=problem-list-v2&envId=linked-list) (easy)
+    - [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle?envType=problem-list-v2&envId=linked-list) (easy)
+    - [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/description/?envType=problem-list-v2&envId=linked-list) (easy)
+    - [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/?envType=problem-list-v2&envId=linked-list) (easy)
+    - [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list?envType=problem-list-v2&envId=linked-list) (easy)
+    - [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/description/?envType=problem-list-v2&envId=linked-list) (easy)
+    - [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list?envType=problem-list-v2&envId=linked-list) (medium)
+    - [Sort List](https://leetcode.com/problems/sort-list/description/?envType=problem-list-v2&envId=linked-list) (medium)
+
+---
+
+## Синтаксис JavaScript: ListNode
+
+```javascript
+// LeetCode
+function ListNode(val, next) {
+  this.val = val === undefined ? 0 : val;
+  this.next = next === undefined ? null : next;
+}
+
+// Обход
+let cur = head;
+while (cur !== null) {
+  console.log(cur.val);
+  cur = cur.next;
+}
+
+// Dummy node — упрощает вставку/удаление у головы
+const dummy = new ListNode(0);
+dummy.next = head;
+// в конце: return dummy.next;
+
+// Разворот
+let prev = null, cur = head;
+while (cur) {
+  const next = cur.next;
+  cur.next = prev;
+  prev = cur;
+  cur = next;
+}
+return prev;  // новый head
+
+// Fast / slow
+let slow = head, fast = head;
+while (fast && fast.next) {
+  slow = slow.next;
+  fast = fast.next.next;
+}
+```
+
+---
 
 Связный список — это линейная структура данных, состоящая из узлов (nodes), где каждый узел содержит:
 
