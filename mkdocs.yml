@@ -156,6 +156,18 @@ nav:
 
           - compose: articles/mini-tasks/compose.md
 
+          - debounce: articles/mini-tasks/debounce.md
+
+          - throttle: articles/mini-tasks/throttle.md
+
+          - EventEmitter: articles/mini-tasks/event-emitter.md
+
+      - React-задачи:
+
+          - articles/react-tasks/index.md
+
+          - useDebouncedValue (useDebounce): articles/react-tasks/use-debounced-value.md
+
 
 
 extra:

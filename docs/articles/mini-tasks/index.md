@@ -10,6 +10,9 @@
 |---|------|--------|---------------|
 | — | Каррирование и функция `carried` | [currying-and-carried.md](currying-and-carried.md) | `interestedTasks/repeat_task_2.js`, `carry_func.js` |
 | 1 | `compose` — склейка функций справа налево | [compose.md](compose.md) | `interestedTasks/repeatMinStack.js` |
+| 2 | `debounce(fn, delay)` — отложенный вызов после паузы | [debounce.md](debounce.md) | — |
+| 3 | `throttle(fn, delay)` — ограничение частоты вызовов | [throttle.md](throttle.md) | — |
+| 4 | `EventEmitter` — события `on/off/once/emit` | [event-emitter.md](event-emitter.md) | — |
 
 ## В очереди
 
