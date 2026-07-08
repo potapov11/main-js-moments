@@ -3,12 +3,49 @@
 !!! info "Зачем эта тема"
     **Матрица** в задачах LeetCode — это обычный **двумерный массив**: массив массивов. Та же индексация и циклы, что у одномерного массива, но появляется **вторая координата** (строка и столбец). Большинство задач сводится к 3–4 паттернам обхода.
 
-!!! tip "Практика в roadmap"
-    Типичный блок: Matrix Diagonal Sum, Transpose Matrix, Valid Sudoku, Rotate Image, Spiral Matrix.
+!!! tip "Задачи roadmap (5)"
+    - [Matrix Diagonal Sum](https://leetcode.com/problems/matrix-diagonal-sum/description/) (easy)
+    - [Transpose Matrix](https://leetcode.com/problems/transpose-matrix/description/?envType=problem-list-v2&envId=matrix) (easy)
+    - [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/?envType=problem-list-v2&envId=matrix) (medium)
+    - [Rotate Image](https://leetcode.com/problems/rotate-image/description/?envType=problem-list-v2&envId=matrix) (medium)
+    - [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/description/?envType=problem-list-v2&envId=matrix) (medium)
+
+    Практика: `BalunRodmap/Matrix/`.
 
 ---
 
-## Что такое матрица
+## Синтаксис JavaScript: матрицы
+
+```javascript
+const matrix = [[1, 2], [3, 4]];
+const m = matrix.length;           // число строк
+const n = matrix[0].length;        // число столбцов
+const val = matrix[row][col];      // row = i, col = j
+
+// Двойной цикл — стандартный обход
+for (let i = 0; i < m; i++) {
+  for (let j = 0; j < n; j++) {
+    // matrix[i][j]
+  }
+}
+
+// Создать m×n из нулей
+const grid = Array.from({ length: m }, () => Array(n).fill(0));
+
+// Копия (не shallow!)
+const copy = matrix.map(row => [...row]);
+
+// 4 соседа
+const dirs = [[0,1],[0,-1],[1,0],[-1,0]];
+for (const [dr, dc] of dirs) {
+  const r = i + dr, c = j + dc;
+  if (r >= 0 && c >= 0 && r < m && c < n) { /* ... */ }
+}
+
+// Транспонирование: result[j][i] = matrix[i][j]
+```
+
+---
 
 Матрица размера **m × n** — это **m строк** и **n столбцов** чисел (или символов).
 

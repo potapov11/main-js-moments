@@ -1,17 +1,31 @@
 function debounce(fn, delay) {
-	// Объявляем функцию debounce, принимающую функцию fn и задержку delay
-	let timeout; // Инициализируем переменную timeout для хранения идентификатора таймера
+	let timerId = null;
 
-	return (...args) => {
-		// Возвращаем анонимную стрелочную функцию, принимающую любое количество аргументов
-		clearTimeout(timeout); // Очищаем предыдущий таймер, если он существует, чтобы предотвратить преждевременный вызов fn
-		// Устанавливаем новый таймер, который вызовет функцию fn с переданными аргументами через delay миллисекунд
-		timeout = setTimeout(() => fn(...args), delay);
+	const debounced = function (...args) {
+		const context = this;
+
+		clearTimeout(timerId);
+
+		timerId = setTimeout(() => {
+			fn.apply(context, args);
+		}, delay);
 	};
+
+	debounced.cancel = function () {
+		console.log('отмена');
+		clearTimeout(timerId);
+		timerId = null;
+	};
+
+	return debounced;
 }
 
-const search = debounce((value) => {
-	console.log('Запрос на сервер:', value);
-}, 500);
+function consoleLog(arg) {
+	console.log(arg, 'вызов arg');
+}
 
-input.addEventListener('input', (e) => search(e.target.value));
+const debouncedConsole = debounce(consoleLog, 10000);
+debouncedConsole('Привет1');
+setTimeout(() => {
+	debouncedConsole.cancel(); // через 5 сек — таймер ещё не сработал (10 сек), вызов отменится
+}, 5000);
