@@ -1,8 +1,10 @@
-# `EventEmitter` — теория и реализация
+# `EventEmitter` (pub/sub) — понятная теория и реализация
 
-Задача: реализовать мини‑систему событий, как в Node.js: подписка, отписка, одноразовая подписка и эмит событий.
+`EventEmitter` — это мини‑шина событий (**pub/sub**): один код **излучает** событие, другой код **подписывается** и реагирует.
 
-Это популярная practical‑задача на **структуры данных**, **замыкания/функции**, и аккуратные edge‑cases.
+Да, это часто показывают «как в Node.js», потому что там есть известный `EventEmitter`, но сам паттерн — **обычный JavaScript** и встречается в браузере и на фронтенде постоянно.
+
+Это популярная practical‑задача на **структуры данных**, **функции/замыкания** и аккуратные edge‑cases.
 
 ---
 
@@ -14,6 +16,70 @@
 - `off(event, listener)` — отписаться
 - `once(event, listener)` — подписаться на 1 срабатывание
 - `emit(event, ...args)` — вызвать всех слушателей
+
+---
+
+## Пример из «классической» разработки (фронтенд)
+
+### 1) Service → UI: события загрузки
+
+Например, есть сервис загрузки файла. UI хочет показывать прогресс и “готово”.
+
+```javascript
+const uploaderEvents = new EventEmitter();
+
+// UI
+const unsubscribe = uploaderEvents.on('progress', (percent) => {
+  // setState(percent) / обновить прогрессбар
+  console.log('progress:', percent);
+});
+
+uploaderEvents.once('done', (url) => {
+  console.log('uploaded:', url);
+});
+
+// Service (где-то внутри upload)
+uploaderEvents.emit('progress', 10);
+uploaderEvents.emit('progress', 50);
+uploaderEvents.emit('done', 'https://cdn.example.com/file.png');
+
+unsubscribe(); // можно отписаться при unmount
+```
+
+### 2) WebSocket / SSE: события входящих сообщений
+
+```javascript
+const wsEvents = new EventEmitter();
+
+wsEvents.on('message', (msg) => console.log('message:', msg));
+wsEvents.on('connected', () => console.log('connected'));
+
+// внутри слоя транспорта:
+wsEvents.emit('connected');
+wsEvents.emit('message', { type: 'ping' });
+```
+
+### 3) Мини‑store: уведомления об изменении
+
+```javascript
+function createStore(initialState) {
+  const events = new EventEmitter();
+  let state = initialState;
+
+  return {
+    getState() {
+      return state;
+    },
+    setState(patch) {
+      state = { ...state, ...patch };
+      events.emit('change', state);
+    },
+    subscribe(listener) {
+      return events.on('change', listener);
+    },
+  };
+}
+```
 
 ---
 
@@ -71,6 +137,17 @@ class EventEmitter {
 }
 ```
 
+## Почему я упоминал Node.js
+
+Потому что **название** `EventEmitter` и методы `on/off/once/emit` — это “де-факто стандарт” из экосистемы Node.js, и интервьюеры часто ожидают именно такой интерфейс.
+
+Но на фронтенде та же идея встречается под названиями:
+
+- `Emitter`, `PubSub`, `Bus`, `EventBus`
+- или вообще как `subscribe/unsubscribe/notify`
+
+В браузере ещё есть `EventTarget`/`CustomEvent`, но на собеседовании чаще просят написать **свой** emitter, чтобы проверить базовые навыки.
+
 ### Почему `Set`, а не `Array`
 
 - проще и быстрее удалять (`delete`)
@@ -104,6 +181,19 @@ ee.once('tick', (x) => console.log('once', x));
 ee.emit('tick', 3); // once 3
 ee.emit('tick', 4); // once уже нет
 ```
+
+---
+
+## Мини‑практика (задачи)
+
+1) Добавь `listenerCount(event)` и `removeAllListeners(event?)`.
+
+2) Сделай режим “один глобальный канал”:
+- `on(listener)` / `emit(payload)` без `event` имени.
+
+3) Добавь `emit` так, чтобы ошибки внутри listener:
+- либо не ломали остальных (try/catch и логирование),
+- либо собирались в массив ошибок (обсудить trade‑off).
 
 ---
 
