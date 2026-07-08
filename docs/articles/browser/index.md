@@ -7,6 +7,7 @@
 | Тема | Статья |
 |------|--------|
 | Клик → навигация → отрисовка новой страницы | [click-to-navigation.md](click-to-navigation.md) |
+| Каррирование: замыкание и «функция-ожидалка» (`carried`) | [currying-and-carried.md](currying-and-carried.md) |
 
 ## Планируется
 

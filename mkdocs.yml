@@ -124,6 +124,8 @@ nav:
 
           - Клик и переход на другую страницу: articles/browser/click-to-navigation.md
 
+          - Каррирование и функция carried: articles/browser/currying-and-carried.md
+
 
 
 extra:
