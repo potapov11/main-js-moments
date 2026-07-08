@@ -229,4 +229,3 @@ curry(sum3)(1, 2, 3, 99);
 
 - Файл с попыткой: `interestedTasks/repeat_task_2.js`
 - Файл с рабочим вариантом: `interestedTasks/carry_func.js`
-
