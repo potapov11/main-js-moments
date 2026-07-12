@@ -1,29 +1,14 @@
-// Часть 2 — алгоритмическая задача
-// Условие
+//на вход даны данные '-', '1', '2', '3', '4', '5'
+//необходимо написать функцию разделитель чтобы итог был
+//'1-2-3-4-5'
 
-// Дан массив целых чисел nums и число k. Вернуть индексы двух чисел, сумма которых равна k. 
-// Ровно одно решение, каждый элемент — один раз. Порядок индексов в ответе не важен.
+function dividestring(...args) {
+	if (!args.length || args.length === 0) return;
 
-// twoSum([2, 7, 11, 15], 9)  // → [0, 1]
-// twoSum([3, 2, 4], 6)   
+	const divider = args[0];
+	const rest = args.slice(1);
 
-function twoSum(arr, target) {
-  const map = new Map();
-  const result = [];
-
-  for(let i = 0; i < arr.length; i++) {
-    const diff = target - arr[i];
-
-    if(map.has(diff)) {
-      result.push(map.get(diff), i)
-    }
-
-    map.set(arr[i], i)
-  }
-
-  return result
+	return rest.join(divider);
 }
 
-console.log(twoSum([3, 2, 4], 6))
-
-
+console.log(dividestring('-', '1', '2', '3', '4', '5'));
