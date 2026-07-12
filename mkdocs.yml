@@ -148,6 +148,26 @@ nav:
 
           - Клик и переход на другую страницу: articles/browser/click-to-navigation.md
 
+      - Интересные мини-задачи:
+
+          - articles/mini-tasks/index.md
+
+          - Каррирование и функция carried: articles/mini-tasks/currying-and-carried.md
+
+          - compose: articles/mini-tasks/compose.md
+
+          - debounce: articles/mini-tasks/debounce.md
+
+          - throttle: articles/mini-tasks/throttle.md
+
+          - EventEmitter: articles/mini-tasks/event-emitter.md
+
+      - React-задачи:
+
+          - articles/react-tasks/index.md
+
+          - useDebouncedValue (useDebounce): articles/react-tasks/use-debounced-value.md
+
 
 
 extra:

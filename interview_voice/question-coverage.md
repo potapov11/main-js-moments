@@ -887,3 +887,4 @@
 | Q-PRACT-028 | Реализуй drag-and-drop сортировку списка на уровне состояния: `onDragStart`, `onDragOver`, `onDrop`, сохранение порядка. | — | new | — |
 | Q-PRACT-029 | Реализуй `copyToClipboard(text)` с fallback и отображением статуса success/error. | — | new | — |
 | Q-PRACT-030 | Дай большой React-компонент с несколькими багами state/effect/memoization и попроси переписать его на более устойчивую структуру. | — | new | — |
+| Q-PRACT-031 | Реализуй `curry(fn)` для функций с фиксированной arity: `curry(sum)(1, 2, 3)`, `curry(sum)(1)(2)(3)` и `curry(sum)(1, 2)(3)`; rest/spread, `fn.length`, замыкание. | 2026-07-07 | in_progress | carry_func.js; блоки 4–6 на 08.07 |
