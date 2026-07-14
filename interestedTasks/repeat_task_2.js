@@ -1,27 +1,25 @@
-const multiply = (a,b,c,d) => a * b * c * d;
-const sum = (x, z) => x + z;
+// Задача 9. «Поиск максимального числа в массиве»
+// Дан массив целых чисел. Найди максимальное число.
 
-// carry(multiply)(1)(2)(3)(4) // 24
-// carry(sum)(3)(4) // 7
+// Примеры:
 
-function carry(fn) {
-	return function carried(...args) {
-		console.log('[carried] аргументы args:', args)
+// javascript
 
-		if (args.length >= fn.length) {
-			const result = fn(...args) 
-			console.log('[carried] аргументов достаточно → результат:', result)
-			return result
-		}
+function findMax(arr) {
+  if(!arr.length) return null;
 
-		console.log('[carried] аргументов мало → возвращаем funcWaitMore')
-		return (...next) => {
-			console.log('[funcWaitMore] следующая порция next:', next)
-			return carried(...args, ...next)
-		}
-	}
+  let max = arr[0];
+
+  for(let i = 1; i < arr.length; i++) {
+    if(arr[i] > max) {
+      max = arr[i]
+    }
+  }
+
+  return max
 }
 
-
-console.log(carry(sum)(3)(4))
-console.log(carry(multiply)(1)(2)(3)(4))
+console.log(findMax([1, 5, 3, 9, 2])); // 9
+console.log(findMax([-10, -5, -3, -1])); // -1
+console.log(findMax([7])); // 7
+console.log(findMax([])); // null (или undefined)

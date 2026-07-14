@@ -148,6 +148,8 @@ nav:
 
           - Клик и переход на другую страницу: articles/browser/click-to-navigation.md
 
+          - async/await: articles/browser/async-await.md
+
       - Интересные мини-задачи:
 
           - articles/mini-tasks/index.md
