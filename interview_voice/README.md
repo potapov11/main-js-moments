@@ -44,6 +44,7 @@
 |---|------|------|--------|
 | 1 | [01-react-memo-rerenders.md](./01-react-memo-rerenders.md) | React.memo, ререндеры | на паузе |
 | 2 | [02-mock-middle-frontend.md](./02-mock-middle-frontend.md) | Mock Middle Frontend (10+Q) | завершено |
+| 3 | [03-async-narrow-mock.md](./03-async-narrow-mock.md) | Узкий блок: async/Promise | завершено |
 
 Coverage по всем вопросам: [question-coverage.md](./question-coverage.md).
 

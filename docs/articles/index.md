@@ -9,9 +9,10 @@
 | [Браузер](browser/index.md) | Навигация, сеть, CORS, DOM, storage |
 | [Интересные мини-задачи](mini-tasks/index.md) | Замыкания, curry, partial, compose и похожие JS-утилиты |
 | [React-задачи](react-tasks/index.md) | Хуки и practical coding: debounce, эффекты, stale closure |
+| [React теория](react-theory/index.md) | Virtual DOM, Fiber, Render/Commit, шпаргалка к собесу |
 
 Общий план задач по алгоритмам — в `roadmap.md` в корне репозитория.
 
 ## Шаблон новой статьи
 
-[\_template.md](_template.md) — скопируйте в `algorithms/`, `async/`, `browser/`, `mini-tasks/` или `react-tasks/` и заполните.
+[\_template.md](_template.md) — скопируйте в `algorithms/`, `async/`, `browser/`, `mini-tasks/`, `react-tasks/` или `react-theory/` и заполните.

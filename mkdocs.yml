@@ -180,6 +180,18 @@ nav:
 
           - useDebouncedValue (useDebounce): articles/react-tasks/use-debounced-value.md
 
+      - React теория:
+
+          - articles/react-theory/index.md
+
+          - Virtual DOM и reconciliation: articles/react-theory/virtual-dom.md
+
+          - Fiber: articles/react-theory/fiber.md
+
+          - Рендеринг (Render / Commit): articles/react-theory/rendering.md
+
+          - Шпаргалка для собеса: articles/react-theory/interview-cheatsheet.md
+
 
 
 extra:

@@ -13,7 +13,7 @@
 | Q-REACT-003 | В чем разница между элементами (elements) и компонентами (components)? | — | new | — |
 | Q-REACT-004 | Что такое Virtual DOM? Как он сравнивается с реальным DOM? | — | new | — |
 | Q-REACT-005 | Как работает алгоритм согласования (reconciliation)? | — | new | — |
-| Q-REACT-006 | Что такое ключи (keys) в React? Почему нельзя использовать index? | — | new | — |
+| Q-REACT-006 | Что такое ключи (keys) в React? Почему нельзя использовать index? | 2026-07-14 | passed | stable id; index→съехавший state при delete |
 | Q-REACT-007 | Что такое "подъем состояния" (lifting state up)? | — | new | — |
 | Q-REACT-008 | Как передать данные от ребенка к родителю? | — | new | — |
 | Q-REACT-009 | Управляемые (controlled) vs неконтролируемые (uncontrolled) компоненты? | — | new | — |
@@ -94,7 +94,7 @@
 | Q-TS-004 | Базовые типы: string, number, boolean, null, undefined, void, never? | — | new | — |
 | Q-TS-005 | Что такое union (\|) и intersection (&) типы? | ) и intersection (&) типы? | — | new |
 | Q-TS-006 | Как работают литеральные типы? | — | new | — |
-| Q-TS-007 | Что такое any, unknown, never? В чем разница? | — | new | — |
+| Q-TS-007 | Что такое any, unknown, never? В чем разница? | 2026-07-14 | passed | any vs unknown guards; never=throw/не return |
 | Q-TS-008 | Что такое void? Когда возвращается? | — | new | — |
 | Q-TS-009 | Что такое null и undefined в TypeScript? | — | new | — |
 | Q-TS-010 | Как работает type inference? | — | new | — |
@@ -162,8 +162,8 @@
 | Q-JS-022 | Разница между микро- и макрозадачами? (microtasks vs macrotasks) | — | new | — |
 | Q-JS-023 | Что такое промисы (Promises)? Состояния? | — | new | — |
 | Q-JS-024 | Что такое callback hell? Как избежать? | — | new | — |
-| Q-JS-025 | Разница между Promise.all, allSettled, race, any? | — | new | — |
-| Q-JS-026 | Что такое async/await? Как работает под капотом? | — | new | — |
+| Q-JS-025 | Разница между Promise.all, allSettled, race, any? | 2026-07-14 | passed | all ок; allSettled/race дожали |
+| Q-JS-026 | Что такое async/await? Как работает под капотом? | 2026-07-14 | passed | sugar; return/throw; await+reject→catch |
 | Q-JS-027 | Как обрабатывать ошибки в async/await? try/catch vs .catch? | — | new | — |
 | Q-JS-028 | Что такое генераторы? function*, yield? | — | new | — |
 | Q-JS-029 | Что такое async-генераторы? | — | new | — |
@@ -172,7 +172,7 @@
 | Q-JS-032 | Что такое process.nextTick в Node.js? | — | new | — |
 | Q-JS-033 | Что такое отложенные вычисления? (thunk) | — | new | — |
 | Q-JS-034 | Что такое "гонка состояний"? Как избежать? | — | new | — |
-| Q-JS-035 | Как отменить промис? AbortController? | — | new | — |
+| Q-JS-035 | Как отменить промис? AbortController? | 2026-07-14 | passed | reject + AbortError (после подсказки) |
 | Q-JS-036 | Что такое методы: map, filter, reduce, forEach? | — | new | — |
 | Q-JS-037 | Что такое call, apply, bind? Отличия? | — | new | — |
 | Q-JS-038 | Что такое каррирование (currying)? Пример? | — | new | — |
@@ -260,9 +260,9 @@
 | Q-HTTP-005 | Что такое заголовки? Основные: Content-Type, Authorization, Cache-Control? | — | new | — |
 | Q-HTTP-006 | Content-Type: application/json vs multipart/form-data? | — | new | — |
 | Q-HTTP-007 | Что такое cookie? Как работают? Атрибуты: HttpOnly, Secure, SameSite? | — | new | — |
-| Q-HTTP-008 | Что такое CORS? Preflight запрос? Как решить? | — | new | — |
+| Q-HTTP-008 | Что такое CORS? Preflight запрос? Как решить? | 2026-07-14 | weak | идея CORS + OPTIONS; цель preflight дожали, restatement skip |
 | Q-HTTP-009 | Что такое CSRF? Как защититься? | — | new | — |
-| Q-HTTP-010 | Что такое XSS? Как защититься? | — | new | — |
+| Q-HTTP-010 | Что такое XSS? Как защититься? | 2026-07-14 | passed | browser; theft; JSX escape; dSIH дыра |
 | Q-HTTP-011 | Что такое HTTPS? Как работает TLS? | — | new | — |
 | Q-HTTP-012 | Что такое HTTP/2.0? Отличия от HTTP/1.1? | — | new | — |
 | Q-HTTP-013 | Что такое HTTP/3.0? QUIC протокол? | — | new | — |
@@ -787,7 +787,7 @@
 | Q-ARCH-065 | Как проектировать модалку с focus trap? | — | new | — |
 | Q-ARCH-066 | Multi-step wizard state — machine vs useState? | — | new | — |
 | Q-ARCH-067 | Как логировать ошибки на клиенте (Sentry) без PII? | — | new | — |
-| CR-R01 | Search с гонкой | — | new | — |
+| CR-R01 | Search с гонкой | 2026-07-14 | passed | race+abort; .catch; debounce как UX |
 | CR-R02 | Список с index key | — | new | — |
 | CR-R03 | useEffect с missing deps | — | new | — |
 | CR-R04 | Stale interval | — | new | — |
@@ -804,7 +804,7 @@
 | Q-SCEN-ASYNC-005 | Параллельно 5 fetch — как ограничить concurrency до 2? | — | new | — |
 | Q-SCEN-ASYNC-006 | Почему `Promise.all` с пустым массивом? | — | new | — |
 | Q-SCEN-ASYNC-007 | `allSettled` vs `all` при partial failure в dashboard? | — | new | — |
-| Q-SCEN-ASYNC-008 | `race` для timeout fetch — как отменить сам fetch? | — | new | — |
+| Q-SCEN-ASYNC-008 | `race` для timeout fetch — как отменить сам fetch? | 2026-07-14 | passed | race≠cancel; signal+abort()+clearTimeout дожали |
 | Q-SCEN-ASYNC-009 | Почему забытый `await` в `if (check())` опасен? | — | new | — |
 | Q-SCEN-ASYNC-010 | Unhandled rejection — кто ловит? | — | new | — |
 | Q-SCEN-REACT-001 | Два быстрых клика по Submit — двойной POST? | — | new | — |
@@ -847,7 +847,7 @@
 | Q-SCEN-ALGO-008 | Top K frequent: k > unique count? | — | new | — |
 | Q-SCEN-ALGO-009 | Product except self: нули в массиве? | — | new | — |
 | Q-SCEN-ALGO-010 | Sliding window: пустая строка — длина? | — | new | — |
-| Q-SCEN-TRADE-001 | Redux vs Zustand vs Context для theme only? | — | new | — |
+| Q-SCEN-TRADE-001 | Redux vs Zustand vs Context для theme only? | 2026-07-14 | passed | Context; Redux overkill unless already present |
 | Q-SCEN-TRADE-002 | SSR vs CSR для личного кабинета? | — | new | — |
 | Q-SCEN-TRADE-003 | CSS Modules vs Tailwind в большой команде? | — | new | — |
 | Q-SCEN-TRADE-004 | E2E vs integration для checkout? | — | new | — |
@@ -863,7 +863,7 @@
 | Q-PRACT-004 | Напиши `memoize(fn, { maxSize, ttl })` с кэшированием по аргументам и очисткой устаревших значений. | — | new | — |
 | Q-PRACT-005 | Реализуй `retry(fn, { retries, delay, backoff })` для async-функции; добавь остановку по `AbortSignal`. | — | new | — |
 | Q-PRACT-006 | Реализуй `promisePool(tasks, limit)`: запуск async-задач с ограничением concurrency и сохранением порядка результатов. | — | new | — |
-| Q-PRACT-007 | Реализуй `fetchWithTimeout(url, options, timeoutMs)` через `AbortController`. | — | new | — |
+| Q-PRACT-007 | Реализуй `fetchWithTimeout(url, options, timeoutMs)` через `AbortController`. | 2026-07-14 | weak | незачёт по запросу кандидата (самостоятельно не закрыл) |
 | Q-PRACT-008 | Напиши маленький API-клиент с refresh-token retry: при `401` один раз обновить токен и повторить исходный запрос. | — | new | — |
 | Q-PRACT-009 | Реализуй in-memory cache для `fetchJson(url)` с дедупликацией одновременных запросов на один URL. | — | new | — |
 | Q-PRACT-010 | Реализуй `createStore(initialState)` с `getState`, `setState`, `subscribe`, shallow merge и unsubscribe. | — | new | — |

@@ -1,18 +1,15 @@
-type User = {
-  id: number;
-  name: string;
-  role: "admin" | "user";
-};
+import { useState, useEffect } from "react";
 
-type AdminPanelProps = {
-  user: User;
-  onDelete: (id: number) => void;
-};
+function Search() {
+  const [q, setQ] = useState("");
+  const [items, setItems] = useState([]);
 
-function AdminPanel({ user, onDelete }: AdminPanelProps) {
-  if (user.role !== "admin") {
-    return <p>Access denied</p>;
-  }
+  //использовать debaunce
+  useEffect(() => {
+    fetch(`/api/search?q=${q}`)
+      .then((r) => r.json())
+      .then((data) => setItems(data));
+  }, [q]);
 
-  return <button onClick={() => onDelete(user.id)}>Delete all users</button>;
+  return <input value={q} onChange={(e) => setQ(e.target.value)} />;
 }
