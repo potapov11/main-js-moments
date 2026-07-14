@@ -142,13 +142,23 @@ nav:
 
           - Динамическое программирование: articles/algorithms/dynamic-programming.md
 
+      - Асинхронное программирование:
+
+          - articles/async/index.md
+
+          - Event Loop: articles/async/event-loop.md
+
+          - Promise и Promise API: articles/async/promises.md
+
+          - async/await: articles/async/async-await.md
+
+          - Паттерны (timeout, retry, abort): articles/async/async-patterns.md
+
       - Браузер:
 
           - articles/browser/index.md
 
           - Клик и переход на другую страницу: articles/browser/click-to-navigation.md
-
-          - async/await: articles/browser/async-await.md
 
       - Интересные мини-задачи:
 

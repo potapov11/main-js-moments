@@ -2,7 +2,7 @@
 
 `async`/`await` — синтаксический сахар над **Promise**. На собеседовании ждут не только «как писать», но и: что возвращает `async`-функция, куда уходит ошибка, чем `await` отличается от `.then`, как не сломать параллелизм и как это связано с Event Loop.
 
-Связанные темы (пока в плане или рядом): Event Loop, Promise API (`all` / `race` / `allSettled` / `any`) — см. [оглавление раздела «Браузер»](index.md). Практика: `async_tasks/` в корне репозитория (например, retry + timeout).
+Связанные темы раздела: [Event Loop](event-loop.md), [Promise API](promises.md), [паттерны](async-patterns.md). Практика: `async_tasks/` (например, retry + timeout).
 
 ---
 
@@ -133,7 +133,7 @@ async function demo() {
   → либо return (resolve внешнего промиса), либо throw (reject)
 ```
 
-Детали очередей — в будущей статье про Event Loop; куски уже есть в [click-to-navigation.md](click-to-navigation.md) (раздел про microtasks).
+Детали очередей — в [Event Loop](event-loop.md); клик как макротаска — в [click-to-navigation](../browser/click-to-navigation.md) (§ microtasks).
 
 ---
 
@@ -229,7 +229,7 @@ async function parallelAll() {
 
 ## 6. Полезные паттерны с Promise API
 
-`async`/`await` часто комбинируют с:
+Полный разбор комбинаторов — в [promises.md](promises.md). Кратко:
 
 | API | Смысл |
 |-----|--------|
@@ -237,6 +237,8 @@ async function parallelAll() {
 | `Promise.allSettled` | дождаться всех; у каждого свой status |
 | `Promise.race` | кто первый settle (успех или ошибка) |
 | `Promise.any` | первая **успешная**; все reject → AggregateError |
+
+Retry, AbortController и пул — в [async-patterns.md](async-patterns.md).
 
 ### Таймаут через `Promise.race` (как в задаче retry + timeout)
 

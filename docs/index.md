@@ -23,9 +23,9 @@ mkdocs build
 
 ## Как добавить статью
 
-1. Выберите раздел: `docs/articles/algorithms/`, `docs/articles/browser/`, `docs/articles/mini-tasks/` или `docs/articles/react-tasks/`.
+1. Выберите раздел: `docs/articles/algorithms/`, `docs/articles/async/`, `docs/articles/browser/`, `docs/articles/mini-tasks/` или `docs/articles/react-tasks/`.
 2. Создайте файл `имя-статьи.md` (Markdown).
-3. Добавьте пункт в `nav` → **Статьи → Алгоритмы**, **Браузер**, **Интересные мини-задачи** или **React-задачи** в `mkdocs.yml`.
-4. Обновите [оглавление раздела](articles/algorithms/index.md), [браузера](articles/browser/index.md), [мини-задач](articles/mini-tasks/index.md) или [React-задач](articles/react-tasks/index.md).
+3. Добавьте пункт в `nav` → **Статьи → Алгоритмы**, **Асинхронное программирование**, **Браузер**, **Интересные мини-задачи** или **React-задачи** в `mkdocs.yml`.
+4. Обновите оглавление раздела: [algorithms](articles/algorithms/index.md), [async](articles/async/index.md), [browser](articles/browser/index.md), [mini-tasks](articles/mini-tasks/index.md) или [react-tasks](articles/react-tasks/index.md).
 
 Шаблон: [articles/_template.md](articles/_template.md).

@@ -1,25 +1,32 @@
-// Задача 9. «Поиск максимального числа в массиве»
-// Дан массив целых чисел. Найди максимальное число.
+// Задача 11. «Композиция функций (pipe)»
+// Напиши функцию pipe, которая принимает массив функций и возвращает новую функцию. 
+// Эта новая функция должна применить переданные функции последовательно (слева направо), передавая результат каждой следующей.
 
-// Примеры:
+// Пример:
+
+// Требования:
+
+// Функции могут быть любыми (синхронными).
+
+// Если массив функций пуст — возвращай функцию, которая возвращает переданный аргумент (identity).
 
 // javascript
+const addOne = x => x + 1;
+const double = x => x * 2;
+const square = x => x * x;
 
-function findMax(arr) {
-  if(!arr.length) return null;
+function pipe(...fns) {
+  return function (x) {
+    let result = x;
 
-  let max = arr[0];
-
-  for(let i = 1; i < arr.length; i++) {
-    if(arr[i] > max) {
-      max = arr[i]
+    for (let i = 0; i < fns.length; i++) {
+      result = fns[i](result);
     }
-  }
 
-  return max
+    return result;
+  };
 }
 
-console.log(findMax([1, 5, 3, 9, 2])); // 9
-console.log(findMax([-10, -5, -3, -1])); // -1
-console.log(findMax([7])); // 7
-console.log(findMax([])); // null (или undefined)
+const compute = pipe(addOne, double, square);
+console.log(compute(2)); // (2 + 1) * 2 = 6; 6^2 = 36 → 36
+
