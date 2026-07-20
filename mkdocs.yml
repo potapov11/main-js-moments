@@ -148,6 +148,18 @@ nav:
 
           - Клик и переход на другую страницу: articles/browser/click-to-navigation.md
 
+      - Асинхронный JavaScript:
+
+          - articles/async-javascript/index.md
+
+          - Основы Promise: articles/async-javascript/promises.md
+
+          - async / await и ошибки: articles/async-javascript/async-await.md
+
+          - Методы Promise: articles/async-javascript/promise-combinators.md
+
+          - Асинхронные паттерны: articles/async-javascript/async-patterns.md
+
       - Интересные мини-задачи:
 
           - articles/mini-tasks/index.md
