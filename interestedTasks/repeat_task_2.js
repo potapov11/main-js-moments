@@ -1,27 +1,32 @@
-const multiply = (a,b,c,d) => a * b * c * d;
-const sum = (x, z) => x + z;
+// Задача 11. «Композиция функций (pipe)»
+// Напиши функцию pipe, которая принимает массив функций и возвращает новую функцию. 
+// Эта новая функция должна применить переданные функции последовательно (слева направо), передавая результат каждой следующей.
 
-// carry(multiply)(1)(2)(3)(4) // 24
-// carry(sum)(3)(4) // 7
+// Пример:
 
-function carry(fn) {
-	return function carried(...args) {
-		console.log('[carried] аргументы args:', args)
+// Требования:
 
-		if (args.length >= fn.length) {
-			const result = fn(...args) 
-			console.log('[carried] аргументов достаточно → результат:', result)
-			return result
-		}
+// Функции могут быть любыми (синхронными).
 
-		console.log('[carried] аргументов мало → возвращаем funcWaitMore')
-		return (...next) => {
-			console.log('[funcWaitMore] следующая порция next:', next)
-			return carried(...args, ...next)
-		}
-	}
+// Если массив функций пуст — возвращай функцию, которая возвращает переданный аргумент (identity).
+
+// javascript
+const addOne = x => x + 1;
+const double = x => x * 2;
+const square = x => x * x;
+
+function pipe(...fns) {
+  return function (x) {
+    let result = x;
+
+    for (let i = 0; i < fns.length; i++) {
+      result = fns[i](result);
+    }
+
+    return result;
+  };
 }
 
+const compute = pipe(addOne, double, square);
+console.log(compute(2)); // (2 + 1) * 2 = 6; 6^2 = 36 → 36
 
-console.log(carry(sum)(3)(4))
-console.log(carry(multiply)(1)(2)(3)(4))
