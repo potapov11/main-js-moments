@@ -37,4 +37,4 @@ function example() {
 - Фраза, которую можно сказать вслух интервьюеру
 
 !!! tip "После публикации"
-    Положите файл в `algorithms/`, `async/`, `browser/`, `mini-tasks/`, `react-tasks/` или `react-theory/`, добавьте страницу в `nav` в `mkdocs.yml` и строку в `index.md` соответствующего раздела.
+    Положите файл в `algorithms/`, `async/`, `browser/`, `mini-tasks/`, `async-tasks/`, `react-tasks/` или `react-theory/`, добавьте страницу в `nav` в `mkdocs.yml` и строку в `index.md` соответствующего раздела.

@@ -186,6 +186,12 @@ nav:
 
           - EventEmitter: articles/mini-tasks/event-emitter.md
 
+      - Задачи асинхронность:
+
+          - articles/async-tasks/index.md
+
+          - retry с экспоненциальной задержкой: articles/async-tasks/retry-exponential-backoff.md
+
       - React-задачи:
 
           - articles/react-tasks/index.md

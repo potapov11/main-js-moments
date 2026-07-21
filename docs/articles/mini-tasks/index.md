@@ -20,11 +20,10 @@
 - `once(fn)`
 - `pipe` (compose слева направо)
 - `memoize(fn)` (простая версия)
-- `retry(fn, { retries, delay, backoff })` для async
-- `promisePool(tasks, limit)` (concurrency limit)
-- `fetchWithTimeout(url, timeoutMs)` через `AbortController`
 - `classnames(...args)` как `clsx`
 - `getByPath(obj, path)` / `setByPath(obj, path)` (без мутаций)
+
+Async‑задачи (`retry`, `promisePool`, timeout) — в разделе [Задачи асинхронность](../async-tasks/index.md).
 
 ## Как добавить задачу
 

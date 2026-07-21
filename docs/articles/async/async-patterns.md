@@ -79,6 +79,8 @@ async function retry(fn, { retries = 3, delayMs = 0 } = {}) {
 
 С таймаутом на попытку: `fn = () => withTimeout(fetchData(url), 1000)`.
 
+Экспоненциальный backoff как отдельная задача: [retry с экспоненциальной задержкой](../async-tasks/retry-exponential-backoff.md).
+
 ---
 
 ## 4. AbortController
