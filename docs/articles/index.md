@@ -1,20 +1,34 @@
 # Статьи
 
-Материалы разбиты по подтемам:
+Документация собрана как база повторения для **Middle+/Senior Frontend**, а не как энциклопедия всего frontend.
 
-| Раздел | Описание |
-|--------|----------|
-| [Алгоритмы](algorithms/index.md) | 16 тем: Map, prefix sum, BS, DP, графы, деревья и др. |
-| [Асинхронное программирование](async/index.md) | Event Loop, Promise API, async/await, паттерны |
-| [Браузер](browser/index.md) | Навигация, сеть, CORS, DOM, storage |
-| [Асинхронный JavaScript](async-javascript/index.md) | Promise, `async` / `await`, методы Promise, обработка ошибок и паттерны запросов |
-| [Интересные мини-задачи](mini-tasks/index.md) | Замыкания, curry, partial, compose и похожие JS-утилиты |
-| [Задачи асинхронность](async-tasks/index.md) | Retry, timeout, concurrency и practical async‑задачи |
-| [React-задачи](react-tasks/index.md) | Хуки и practical coding: debounce, эффекты, stale closure |
-| [React теория](react-theory/index.md) | Virtual DOM, Fiber, Render/Commit, шпаргалка к собесу |
+## Основные разделы
 
-Общий план задач по алгоритмам — в `roadmap.md` в корне репозитория.
+| Раздел | Зачем читать |
+|---|---|
+| [JavaScript Core](javascript-core/index.md) | Execution context, closures, `this`, references, equality, mutation |
+| [Асинхронное программирование](async/index.md) | Event Loop, Promise, `async/await`, timeout/retry/abort/concurrency |
+| [Браузер](browser/index.md) | Browser lifecycle, навигация, сеть, DOM и runtime-модель |
+| [React теория](react-theory/index.md) | Reconciliation, Fiber, Render/Commit, state ownership, Effects |
+| [React-задачи](react-tasks/index.md) | Practical coding по hooks/effects/debounce/stale closure |
+| [Мини-задачи](mini-tasks/index.md) | Debounce, throttle, curry, compose, EventEmitter |
+| [Алгоритмы](algorithms/index.md) | Complexity и основные паттерны для coding interview |
+| [Async-задачи](async-tasks/index.md) | Retry, timeout и практические задачи на управление асинхронностью |
 
-## Шаблон новой статьи
+## Что изменено в структуре
 
-[\_template.md](_template.md) — скопируйте в `algorithms/`, `async/`, `browser/`, `async-javascript/`, `mini-tasks/`, `async-tasks/`, `react-tasks/` или `react-theory/` и заполните.
+Раньше существовали два параллельных теоретических раздела — `async/` и `async-javascript/` — с пересекающимися материалами про Promise и `async/await`.
+
+Основным разделом теперь считается **[Асинхронное программирование](async/index.md)**. Старый `async-javascript/` оставлен в репозитории как legacy-материал, чтобы не ломать историю и ссылки, но в основную навигацию не включается.
+
+## Как читать
+
+Не нужно читать всё подряд. Для повторения темы используй цикл:
+
+1. прочитать mental model;
+2. закрыть статью и объяснить своими словами;
+3. решить одну мини-задачу без запуска;
+4. назвать 1–2 production failure mode;
+5. сформулировать ответ для интервью за 30–60 секунд.
+
+Если статья не помогает сделать хотя бы один из этих пунктов, её ценность для этой базы сомнительна.
