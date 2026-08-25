@@ -1,169 +1,197 @@
 # Рендеринг: Render phase и Commit phase
 
-«Рендер» в React ≠ обязательно «отрисовка в браузере». Часто имеют в виду **вычисление UI** (вызов функции компонента). Реальные изменения DOM происходят отдельно, в **commit**.
+«Рендер» в React ≠ обязательно изменение DOM. Чаще это **вычисление следующего UI**. Реальные изменения host environment происходят отдельно, в commit phase.
 
-Связано: [Virtual DOM](virtual-dom.md), [Fiber](fiber.md).
+Связано: [Virtual DOM](virtual-dom.md), [Fiber](fiber.md), [Effects](effects-and-synchronization.md).
 
 ---
 
 ## Ключевые идеи
 
-- Обновление = **Render (может прерываться)** → **Commit (синхронный, видимый)**.
-- Render phase: вызвать компоненты, построить workInProgress Fiber tree, найти diff. **Без** (почти) мутаций DOM.
-- Commit phase: применить мутации к DOM, вызвать layout-эффекты, потом passive effects (`useEffect`).
-- Компонент **рендерится** чаще, чем «что-то изменилось на экране»: родитель обновился → дети по умолчанию тоже пересчитываются (если нет memo/bailout).
+- Обновление можно мыслить как **Render → Commit**.
+- Render phase вычисляет следующее дерево и может быть прервана/отброшена в concurrent rendering.
+- Commit phase применяет подготовленные изменения к DOM и запускает commit-related effects.
+- Компонент может рендериться, даже если DOM в итоге не изменился.
+- Render должен быть чистым: один и тот же набор inputs должен давать один и тот же UI без внешних side effects.
 
 ---
 
-## 1. Триггеры обновления
+## 1. Что запускает render
 
-Что обычно запускает ре-рендер:
+Типичные причины:
 
 | Триггер | Пример |
-|---------|--------|
-| `setState` / `useState` setter | клик → `setCount(c => c + 1)` |
-| `useReducer` dispatch | то же по смыслу |
-| Обновление родителя | props «проехали» вниз |
-| Контекст (`useContext`) | изменился value Provider’а |
-| Подписка на внешний store | Redux/Zustand с selector’ом (зависит от библиотеки) |
+|---|---|
+| `setState` / `useState` setter | `setCount(c => c + 1)` |
+| `useReducer` dispatch | изменение reducer state |
+| Render родителя | ребёнок по умолчанию вызывается снова |
+| Context update | изменился `value` Provider |
+| External store subscription | Redux/Zustand selector сообщил об изменении |
 
-Первый монтирование — тоже Render + Commit, только без «предыдущего» дерева.
+Первый mount — тоже render + commit.
 
 ---
 
-## 2. Render phase (фаза рендера / reconciliation)
+## 2. Render phase
 
-Упрощённый ход:
+Упрощённо React:
 
-```
-1. Запланировали обновление (scheduler / lanes)
-2. Берём root, строим/обновляем workInProgress
-3. Для каждого Fiber unit of work:
-   - вызываем function component (или class render)
-   - сравниваем children (reconciliation)
-   - помечаем flags: Update, Placement, Deletion…
-4. Повторяем, пока работа не закончена
-   (в concurrent — можно прервать и продолжить позже)
+```text
+schedule update
+→ пройти нужную часть Fiber tree
+→ вызвать function components
+→ получить следующее описание children
+→ выполнить reconciliation
+→ подготовить изменения
 ```
 
-Важно для собеса:
-
-- В Render phase **нельзя** полагаться на побочные эффекты в теле компонента (подписки, мутации DOM, `Math.random` как источник истины) — в Strict Mode React специально **двойно** вызывает render в dev, чтобы ловить чистоту.
-- Render phase в concurrent режиме **может быть отброшена** и пересчитана заново (если прервали ради более срочного обновления).
+Важная мысль: вызов function component — это **не lifecycle event**, в который безопасно помещать side effects.
 
 ```jsx
 function Profile({ userId }) {
-  // ✅ вычисление из props/state
   const label = userId ? `User ${userId}` : 'Guest';
 
-  // ❌ side effect в теле — плохо для Render phase
+  // Плохо: внешний side effect во время render
   // document.title = label;
 
   return <h1>{label}</h1>;
 }
 ```
 
-Side effects — в `useEffect` / `useLayoutEffect` / event handlers.
+Render может выполняться повторно, а в concurrent rendering незавершённая работа может быть отброшена. Поэтому тело компонента должно оставаться чистым.
 
 ---
 
-## 3. Commit phase (фаза коммита)
+## 3. Reconciliation и identity
 
-Когда дерево workInProgress готово, React **синхронно**:
+Во время render React сопоставляет предыдущих и следующих children. На сохранение state компонента влияют прежде всего:
 
-1. **Before mutation / mutation** — применять изменения к DOM (вставка, обновление атрибутов, удаление).
-2. **Layout** — `useLayoutEffect` (и `componentDidMount` / `DidUpdate`): код видит обновлённый DOM, до paint браузера. Блокирует отрисовку — держать коротким.
-3. Переключить текущее дерево: workInProgress → current.
-4. **Passive effects** — `useEffect`: уже после paint (асинхронно относительно кадра).
+- type;
+- позиция в дереве;
+- `key`.
 
-```
-Render (interruptible, no DOM) 
-   → Commit mutations (sync DOM)
-   → useLayoutEffect (sync, before paint)
-   → browser paint
-   → useEffect (after paint)
-```
+`key` — это не просто подсказка «для производительности», а часть identity элемента среди siblings.
 
-| API | Когда относительно paint | Типичный кейс |
-|-----|--------------------------|---------------|
-| `useLayoutEffect` | до paint | измерить DOM, синхронно поправить scroll/focus |
-| `useEffect` | после paint | fetch, подписки, логирование |
+Подробнее: [Virtual DOM и reconciliation](virtual-dom.md).
 
 ---
 
-## 4. Батчинг (batching)
+## 4. Commit phase
 
-Несколько `setState` в одном обработчике → **один** ре-рендер:
+После того как следующее дерево готово, React применяет изменения к DOM.
 
-```javascript
+Полезная модель:
+
+```text
+Render
+  ↓
+Commit DOM mutations
+  ↓
+layout effects
+  ↓
+browser gets opportunity to paint
+  ↓
+passive effects are scheduled
+```
+
+`useLayoutEffect` подходит для редких случаев, когда нужно синхронно измерить/исправить layout до того, как пользователь увидит кадр. Он может блокировать paint, поэтому его нужно держать коротким.
+
+`useEffect` предназначен для синхронизации с внешними системами и обычно не должен использоваться для visual correction, требующей синхронного layout timing.
+
+!!! note "Про timing useEffect"
+    Нельзя учить правило «`useEffect` всегда строго после paint». React может выполнить Effect до paint для некоторых interaction-driven обновлений. Для архитектуры важнее назначение API: `useLayoutEffect` — синхронная layout-синхронизация, `useEffect` — обычные внешние side effects.
+
+---
+
+## 5. Батчинг
+
+Несколько state updates могут быть объединены в один render/commit cycle.
+
+```js
 function handleClick() {
   setA(1);
   setB(2);
-  setC(3); // один commit, не три
+  setC(3);
 }
 ```
 
-Начиная с React 18 автоматический батчинг шире: и в промисах, и в `setTimeout` (раньше в async часто было иначе).
+В современном React automatic batching работает шире, чем только внутри React event handlers.
+
+Важно: батчинг не означает, что setters «ничего не сделали». Они поставили обновления в очередь, а React обработал их совместно.
 
 ---
 
-## 5. Что такое «лишний» ре-рендер
+## 6. State snapshot
 
-Рендер функции компонента ≠ обязательно тяжёлый DOM commit.
+Каждый render function component видит **snapshot** state для конкретного render.
 
-Но:
+```jsx
+function Counter() {
+  const [count, setCount] = useState(0);
 
-- пересчёт большого JSX + reconciliation всё же стоит CPU;
-- если props/children изменились по ссылке — memo не спасёт;
-- Context value новый объект каждый раз → все consumers ре-рендерятся.
-
-Инструменты контроля (для устного ответа «как оптимизировать»):
-
-- `React.memo` / `useMemo` / `useCallback` — когда профиль показал проблему;
-- разбиение context;
-- `startTransition` для несрочных обновлений UI;
-- виртуализация длинных списков (не «магия React», а паттерн).
-
-!!! warning "Не начинайте с memo"
-    Сначала корректность и простота. Оптимизации — после измерения (Profiler / slow interaction).
-
----
-
-## 6. Strict Mode и «двойной» вызов
-
-В development Strict Mode:
-
-- компоненты могут рендериться дважды;
-- effects: mount → cleanup → mount снова.
-
-Цель — найти impure render и эффекты без правильного cleanup. В production двойного вызова нет.
-
----
-
-## Схема на одном экране
-
-```
-setState / props / context
-        │
-        ▼
-┌───────────────────┐
-│   RENDER PHASE    │  вызвать компоненты, diff, Fiber flags
-│  (может yield)    │  DOM ещё не трогаем
-└─────────┬─────────┘
-          │ готово
-          ▼
-┌───────────────────┐
-│   COMMIT PHASE    │  мутации DOM → layout effects → paint → useEffect
-│  (синхронно DOM)  │
-└───────────────────┘
+  function handleClick() {
+    setCount(count + 1);
+    console.log(count);
+  }
+}
 ```
 
+`console.log` не обязан увидеть следующее значение. Handler был создан render'ом, в котором `count` имел текущее значение.
+
+Когда новое состояние зависит от предыдущего, функциональная форма setter обычно выражает намерение точнее:
+
+```js
+setCount(prev => prev + 1);
+```
+
+Эта модель напрямую связана со stale closures.
+
 ---
 
-## Шпаргалка
+## 7. «Лишний render» не равен DOM update
 
-- Render = вычислить UI (чистая функция от state/props).
-- Commit = применить к DOM + эффекты.
-- `useLayoutEffect` до paint, `useEffect` после.
-- Батчинг склеивает несколько setState в один проход.
-- Лишний ре-рендер ≠ баг сам по себе; проблема — когда дорого.
+Если родитель рендерится, child function обычно вызывается снова. Но это не означает обязательную DOM mutation.
+
+Стоимость может быть в:
+
+- выполнении component functions;
+- тяжёлых вычислениях;
+- reconciliation большого дерева;
+- неудачной работе с context;
+- создании слишком большого количества DOM nodes.
+
+Поэтому вопрос performance должен звучать не «как убрать все renders», а «где есть измеримая стоимость».
+
+Инструменты:
+
+- React Profiler;
+- browser Performance panel;
+- `React.memo`;
+- `useMemo` / `useCallback` там, где стабильность identity реально нужна;
+- state colocation;
+- virtualization;
+- `startTransition` для несрочных обновлений.
+
+---
+
+## 8. Strict Mode
+
+В development Strict Mode React может дополнительно вызывать render и повторять setup/cleanup effects, чтобы обнаруживать impure code и некорректный cleanup.
+
+Это не означает, что production «рендерит всё дважды».
+
+---
+
+## Формулировка для собеседования
+
+> Render phase вычисляет следующий UI и выполняет reconciliation; она должна быть чистой и в concurrent rendering может быть прервана. Commit phase применяет подготовленные изменения к DOM. Поэтому render компонента не означает, что DOM обязательно изменился.
+
+## Типичные ошибки
+
+| Ошибка | Правильная модель |
+|---|---|
+| Render = DOM update | Render — вычисление, DOM меняется в commit |
+| Любой re-render — performance bug | Оптимизировать нужно измеримую стоимость |
+| Side effect в теле компонента | Render должен быть pure |
+| `useEffect` всегда после paint | Это не абсолютная гарантия |
+| `useMemo` нужен каждому объекту | Memoization нужна при реальной стоимости/identity requirement |
