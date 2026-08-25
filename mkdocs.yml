@@ -1,5 +1,5 @@
 site_name: Frontend Engineering Notes
-site_description: Личная база знаний Middle+/Senior Frontend: JavaScript, browser, React, async и алгоритмы
+site_description: "Личная база знаний Middle+/Senior Frontend: JavaScript, browser, React, async и алгоритмы"
 copyright: Copyright &copy; 2026
 
 theme:
